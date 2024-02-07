@@ -1,0 +1,21 @@
+.statusMain {
+    color: #ffffff  ;
+    padding: 10px 20px;
+    border-radius: 50px 0 0 50px;
+}
+.statusBadgeRequested, .statusBadgePending{
+    background: #FFD500;
+}
+.statusBadgeRejected{
+    background-color: #FF0000;
+}
+.statusBadgeAccepted , .statusBadgeContacted{
+    background-color: #00FF90;
+}
+.position{
+    position:absolute;
+    right: 0;
+}
+.label-text {
+    font-family: 'Qanelas Medium';
+}

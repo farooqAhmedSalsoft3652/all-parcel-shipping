@@ -1,0 +1,118 @@
+
+.tableFilters {
+    margin: 1rem 0;
+    font-size: 15px;
+}
+
+.filterWrapper {
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.filterLabel {
+    color: #000000;
+    margin-bottom: 0.2rem;
+    white-space: nowrap;
+}
+
+.filterInput {
+    display: block;
+    background: #fff;
+    border: 1px solid #D9D9D9;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #141414;
+    resize: none;
+    outline: none;
+    margin-bottom: 0;
+    border-radius: 0px;
+    height: auto;
+}
+
+.searchWrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.searchButton {
+    font-size: 18px;
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    right: 0;
+    color: #00AD5B;
+    width: 50px;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+}
+.searchInput {
+    padding-right: 50px;
+    min-width: 280px;
+    min-height: 50px;
+}
+.filter-btn {
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--primary-color);
+    min-width: inherit;
+    min-height: inherit;
+    padding: 0;
+}
+.filter-btn svg{
+    margin-right: 0px;
+}
+.filter-btn:hover{
+    color: #fff;
+}
+.close-btn {
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    background: var(--primary-color);
+    border-radius: 99px;
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s ease-in-out;
+}
+.close-btn:hover {
+    color: var(--primaryColor);
+    background-color: #fff;
+}
+.off-convas {
+    background-color: #fff;
+}
+.bg-primery{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+.off-convas-btn {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 600;
+    text-transform: capitalize;
+    text-align: center;
+    border-radius: 99px;
+    padding: 0.7rem 1.2rem;
+    min-width: 120px;
+    position: relative;
+    transition: 0.3s linear;
+    cursor: pointer;
+    border: none;
+}
+.hover-grey:focus {
+    background: #fff;
+    color: #000;
+    transition: .5s;
+}
+.hover-grey:hover {
+    background: #fff;
+    color: #000;
+}

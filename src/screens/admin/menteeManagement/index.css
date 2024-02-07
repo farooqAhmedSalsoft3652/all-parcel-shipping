@@ -1,0 +1,20 @@
+.green-bg {
+    background: #00DB48;
+    color: #fff;
+}
+.red-bg {
+    background: #FF0000;
+    color: #fff;
+}
+.drop-down-action {
+    cursor: pointer;
+}
+.red-color {
+    color: #FF0000;
+}
+.status-yellow {
+    color: #FFD500;
+}
+.profile-img {
+    border-radius: 13px;
+}

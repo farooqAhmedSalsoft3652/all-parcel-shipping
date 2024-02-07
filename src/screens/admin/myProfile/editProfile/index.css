@@ -1,0 +1,7 @@
+.PhoneInput .PhoneInputInput {
+    border: none;
+}
+
+.PhoneInput.mainInput {
+    padding: 15px 15px;
+}

@@ -1,0 +1,70 @@
+.modelbutton{
+    display: inline-block;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 600;
+    text-transform: capitalize;
+    text-align: center;
+    border: 1px solid;
+    border-radius: 99px;
+    padding: 0.7rem 1.2rem;
+    min-width: 120px;
+    position: relative;
+    transition: 0.3s linear;
+    cursor: pointer;
+}
+.modal {
+    backdrop-filter: blur(5px);
+}
+.modal-backdrop {
+    z-index: 1;
+}
+.closeButton {
+    font-size: 22px;
+    color: #000000;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    margin: 0.5rem;
+    margin-left: auto;
+    outline: none;
+   border-radius: 99px;
+   background-color: transparent;
+   margin-top: 10px;
+}
+
+.modalImage {
+    width: 100px;
+    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
+}
+
+.modalContent {
+    margin: 1rem 0;
+}
+.modal-content{
+    border-radius: 15px;
+}
+.req-input{
+    padding: 16px 16px 0px 16px;
+}
+.modalHeading{
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 0px;
+}
+.modalPara{
+    color: #003449;
+    padding: 0;
+}
+.req-model .form-check{
+    margin-bottom: 10px;
+}
+.req-model textarea{
+    background-color:#F2F2F2;
+}

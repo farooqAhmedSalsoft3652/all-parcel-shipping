@@ -1,0 +1,60 @@
+.featured_ads {
+    background-color: #E2FAFF;
+}
+.extra_padd{
+  padding: 60px 0px 100px;
+}
+/* 
+  .mySlider .slick-dots{
+    bottom: -50px;
+  }
+
+  .mySlider .slick-dots li.slick-active button:before{
+    opacity: 1;
+    background: #fff;
+    border-radius: 99px;
+  }
+
+  .mySlider .slick-dots li button:before{
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    font-size: 15px;
+    opacity: 1;
+  }
+  .mySlider .slick-dots li {
+    margin: 0 10px;
+} */
+.card-bg {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+}
+.inner-bg-1{
+  background: #FEF1E9;
+}
+.inner-title {
+  padding: 2.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  height: 100%;
+  border-radius: 10px;
+}
+.card-bg .col-md-6:nth-child(2) .inner-title {
+    background: #EBFBFF;
+}
+.card-bg .col-md-6:nth-child(3) .inner-title {
+    background: #F3F9FF;
+}
+.card-bg .col-md-6:nth-child(4) .inner-title {
+    background: #EBFFEE;
+}
+.inner-title h5 {
+  font-family: var(--main-font);
+}

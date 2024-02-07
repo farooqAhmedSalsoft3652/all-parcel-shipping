@@ -1,0 +1,77 @@
+.width-300{
+    min-width: 300px !important;
+}
+.width-220{
+    min-width: 220px !important;
+}
+.site-btn{
+    background: #00AD5B;
+    padding: 12px 30px;
+    min-width: 160px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: ease-in-out .2s;
+    color: white;
+    font-weight: 500;
+    border-radius: 0px;
+    text-transform: capitalize;
+    display: inline-block;
+    font-size: 18px;
+    font-family: "Sofia Sans";
+}
+.site_border_btn{
+    background: transparent;
+    border-color: var(--primary-color);
+    color: var(--primary-color);;
+    
+}
+
+.btn-outline-primary {
+    transition: ease-in-out .2s;
+    color: white;
+    padding: 12px 20px;
+    min-width: 160px;
+    color: #00AD5B;
+    background: #fff;
+    border:1px solid #00AD5B;
+    text-transform: capitalize;
+    font-family: var(--nav-font);
+    min-height: 56px;
+}
+.btn-outline-primary:hover,
+.btn-outline-primary:not(:disabled):not(.disabled):active{background-color: #00AD5B; color:#fff;  border-color: #00AD5B; }
+
+button svg{
+    /* margin-right: 10px; */
+}
+
+.btn-primary {
+    transition: ease-in-out .2s;
+    color: white;
+    padding: 12px 30px;
+    min-width: 160px;
+    background: #00AD5B;
+    border:1px solid #00AD5B;
+    text-transform: capitalize;
+    font-size: 18px;
+    font-family: var(--nav-font);
+    min-height: 56px;
+}
+.btn-primary:hover,
+.btn-primary:not(:disabled):not(.disabled):active{background-color: transparent; color:#00AD5B;  border-color: #00AD5B; }
+
+
+
+.site-btn:hover {
+    transform: scale(1.05); 
+}
+.site-btn:focus-visible {
+    outline: 0;
+}
+
+@media screen and (max-width: 575px) {
+.site-btn {
+    padding: 11px 10px;
+    min-width: 130px;
+}
+}

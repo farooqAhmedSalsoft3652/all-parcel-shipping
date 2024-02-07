@@ -1,0 +1,24 @@
+.img_box {
+    margin-top: -70px;
+}
+.our_aim:before {
+    position: absolute;
+    content: "";
+    background-image: url(/src/assets/images/expert.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 854px;
+    top: 0;
+    width: 580px;
+    left: -198px;
+}
+@media screen and (max-width: 991px) {
+    .img_box {
+        margin-top: 0px;
+    }
+}
+@media screen and (max-width: 575px) {
+    .our_aim:before {
+        width: 517px;
+    }
+}

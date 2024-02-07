@@ -1,0 +1,19 @@
+.camera-icon {
+    position: absolute;
+    bottom: 10%;
+    left: 52%;
+    background-color: var(--secondary-color);
+    padding: 12px;
+    color: #3293FF;
+    border-radius: 99px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    align-items: center;
+}
+    @media screen and (max-width: 575px) {
+    .camera-icon {
+        left: 54%;
+        padding: 10px;
+    }
+}

@@ -1,0 +1,36 @@
+/* Base styles for the packages card */
+.package-card-wrapper{
+    background: linear-gradient(90deg, rgba(50, 147, 255, 1) 0%, rgba(123, 224, 255, 1) 50%, rgba(50, 147, 255, 1) 100%);
+    padding: 10px 4px;
+    border-radius: 10px;
+}
+.packages_card {
+    background: white;
+    width: calc(100% - 10px);
+    margin: auto;   
+    padding: 1.5rem;
+    z-index: 0; 
+    transition: 0.5s ease-in-out;
+    border-radius: 10px; 
+}
+
+.card_title {
+    border-bottom: 1px solid var(--secondary-color);
+    padding-bottom: 1.5rem ;
+}
+
+.packages_card.selected,
+.packages_card:hover{ 
+    background: linear-gradient(90deg, rgba(50, 147, 255, 1) 0%, rgba(123, 224, 255, 1) 50%, rgba(50, 147, 255, 1) 100%);
+    color: white; 
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.packages_card:hover p,
+.packages_card:hover li,
+.packages_card:hover .card_title,
+.packages_card.selected p,
+.packages_card.selected li,
+.packages_card.selected .card_title {
+    color: #fff;
+}

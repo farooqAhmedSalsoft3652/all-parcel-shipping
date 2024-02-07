@@ -1,0 +1,27 @@
+.dashboardBody {
+    background: #f5f5f5;
+    min-height: 100vh;
+    margin-left: 260px;
+    padding: 7rem 1rem 1rem;
+    /* padding: 10rem 3rem 1rem; */
+    transition: ease-in-out .4s;
+}
+.admin-bg {
+    background-image: url(/src/assets/images/banner-bg.png);
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.dashboardBody.expanded {
+    margin-left: 60px;
+}
+
+@media screen and (max-width: 767px) {
+
+    .dashboardBody.expanded, .dashboardBody  {
+        margin-left: 0 !important;
+    }
+    .dashboardBody {
+        padding: 8rem 0.5rem 0rem;
+    }
+}

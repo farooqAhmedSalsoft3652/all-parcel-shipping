@@ -1,0 +1,121 @@
+.two_pices_bg{
+    background-image: url(../../../assets/images/banner-bg.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.banner-mentors{
+    position: relative;
+}
+.mantor_sec {
+    margin-bottom: -3rem;
+}
+.mentor-col-one:before{
+    height: 250px;
+    background: #F4E5FF;
+    position: absolute;
+    content: '';
+    top: -20px;
+    right: 65px;
+    border-radius: 30px;
+    width: 270px;
+}
+.mentor-col-one:after {
+    height: 36px;
+    background-image: url(/src/assets/images/zigzag.png);
+    position: absolute;
+    content: '';
+    width: 147px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    left: 16px;
+    top: 18px;
+}
+.banner_mentors_two {
+    top: 50px;
+}
+.mentor-col-two:before {
+    height: 250px;
+    background: #E2F7F3;
+    position: absolute;
+    content: '';
+    bottom: 0;
+    right: 50px;
+    border-radius: 30px;
+    width: 270px;
+}
+.mentor-col-two:after {
+    height: 86px;
+    background-image: url(/src/assets/images/Star-1.png);
+    position: absolute;
+    content: '';
+    width: 77px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    right: 50px;
+    top: 100px;
+}
+.mentor-col-three:before {
+    height: 250px;
+    background: #FFF2EA;
+    position: absolute;
+    content: '';
+    border-radius: 30px;
+    width: 270px;
+    top: 10px;
+    left: 60px;
+    transform: rotate(45deg);
+}
+.mentor-col-three:after {
+    height: 66px;
+    background-image: url(/src/assets/images/Polygon-2.png);
+    position: absolute;
+    content: '';
+    width: 61px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    right: 50px;
+    top: 18px;
+}
+
+
+@media screen and (max-width: 1199px) {
+    .mentor-col-three:before {
+        left: 17px;
+    }
+    .mentor-col-three:after{
+        right: 0;
+    }
+    .mentor-col-three:after{
+        right: 23px;
+        top: 53px;
+    }
+    
+}
+@media screen and (max-width: 991px) {
+    .mentor-col-one:after{
+        display: none;
+      }
+      .mentor-col-one:before{
+        display: none;
+      }
+      .mentor-col-two:before{
+        display: none;
+      }
+      .mentor-col-two:after{
+        display: none;
+      }
+      .mentor-col-three:before{
+        display: none;
+      }
+      .mentor-col-three:after{
+        display: none;
+      }
+      .banner_mentors_two {
+        top: 0px;
+    }
+ 
+    .mentor-col-one,.mentor-col-two,.mentor-col-three{
+        margin-bottom: 15px;
+    }
+}

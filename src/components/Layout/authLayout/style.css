@@ -1,0 +1,108 @@
+.authBg {
+    background: url('../../../assets/images/auth-bg.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+}
+.authBg.mentor-mentee{
+    min-height:calc(100vh - 114px);
+    padding: 50px 0;
+}
+.authBox {
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #003449;
+    box-shadow: 0 0 20px 6px #3e396b0d, 0 2px 9px #3e396b0d;
+}
+.authImage{
+    /* background-image: url(/all-parcel-shipping/src/assets/images/authImage.png); */
+    background-color: #003449;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center center;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.authImage img {
+    width: 95%;
+    max-width: 100%;
+    border-radius: 0px  8px 8px 0px;
+    margin-left: -13px;
+}
+.authImage:after{
+    content: "";
+    position: absolute;
+    right: -40px;
+    bottom: -10px;
+    background-image: url(../../../assets/images/signup-monkey-box.png);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    width: 350px;
+    height: 350px;
+}
+.ment-mentee-img.authImage img {
+    height: 100%;
+    object-fit: cover;
+    object-position:center;
+}
+.authFormWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.authForm.signup{
+    padding: 30px 50px;
+}
+.authForm {
+    border-radius: 0px;
+    width: 100%;
+    /* max-width: 480px; */
+    padding: 70px 50px;
+}
+
+.authLogo {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.authLogo img {
+    width: 130px;
+    max-width: 100%;
+}
+
+.authFormHeader {
+    text-align: left;
+    margin: 2rem 0;
+}
+.authFormHeader h1{
+    font-size: 45px;
+    font-weight: 500;
+}
+
+.authTitle {
+    font-size: 28px;
+    font-weight: 700;
+    color: var( --blackColor);
+}
+.authPara {
+    font-size: 16px;
+    font-weight: 500;
+    color: #666666;
+}
+.already-acount{
+    color: #666666;
+    
+}
+@media only screen and (max-width: 575px){
+    .authForm {
+        padding: 2rem 1rem;
+    }
+}

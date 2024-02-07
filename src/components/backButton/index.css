@@ -1,0 +1,17 @@
+
+.backButton {
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    color: #003449;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.2rem;
+    transition: 0.3s linear;
+}
+.backButton:hover {
+}
+.backButton svg {
+    margin-right: 0px;
+}

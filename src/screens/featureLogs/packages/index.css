@@ -1,0 +1,17 @@
+.packges-layout {
+    padding: 1.5rem 4rem;
+    background-color: #fff;
+    box-shadow: 0px 8px 6px rgb(133 233 255 / 14%);
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 991px) {
+    .packges-layout {
+        padding: 1.5rem 2rem;
+    }
+}
+@media screen and (max-width: 575px) {
+    .packges-layout {
+        padding: 1.5rem 0rem;
+    }
+}

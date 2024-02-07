@@ -1,0 +1,97 @@
+.fileuploder label{
+  font-size: 16px;
+  font-weight: 500;
+  color: #333333;
+  display: inline-flex;
+  align-items:center;
+}
+.fileuploder .fa-arrow-up-from-bracket{ font-size: 25px; color: var(--primary-color);}
+
+.form_layout {
+    background-color:#fff;
+    box-shadow: 0px 8px 6px rgb(133 233 255 / 14%);
+    padding: 0.5 2rem;
+    border-radius:20px;
+  }
+  .plus_icon{
+    color: #00FF08;
+  }
+  .sign-up-tab {
+    display: flex;
+    justify-content: center;
+    border: none;
+    width: 220px;
+    padding: 4px;
+    border-radius: 10px;
+    margin: 0 auto;
+    background: linear-gradient(90deg, rgba(50,147,255,1) 0%, rgba(123,224,255,1) 50%, rgba(50,147,255,1) 100%);
+}
+
+.sign-up-tab .nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus{
+  border: none;
+}
+:focus-visible {
+  outline: -webkit-focus-ring-color auto 0px;
+}
+
+.sign-up-tab li button {
+  border: 1px solid transparent;
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+  font-size: 20px;
+  border-radius: 10px;
+  text-transform: capitalize;
+  font-family: var(--nav-font);
+}
+
+.sign-up-tab li button:hover,.sign-up-tab li button:active,.sign-up-tab li button:focus,.sign-up-tab li button:focus-visible  {
+  color: #fff;
+}
+.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
+  border: 0 !important;
+}
+.nav-tabs .nav-link{
+  border: 0 !important;
+}
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link{
+  margin-bottom: none !important;
+  border: none !important;
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important; 
+  padding: 10px 24px;
+}
+.select-min-height {
+  min-height: 65px;
+}
+.ant-select-selector {
+  background: #fff;
+  font-weight: 400;
+  height: 55px !important;
+  padding: 16px 15px;
+  font-size: 15px;
+  color: #141414;
+  width: 100%;
+  resize: none;
+  border-radius: 8px;
+  border: 1px solid #D9DEE8;
+  outline: none;
+  box-shadow: 0px 3px 6px rgb(133 233 255 / 14%);
+  z-index: 100;
+}
+
+.ant-select-dropdown{
+  z-index: 100;
+}
+
+:where(.css-dev-only-do-not-override-amq5gd).ant-select-multiple .ant-select-selection-item {
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+}
+
+:where(.css-dev-only-do-not-override-amq5gd).ant-select-multiple .ant-select-selection-item-remove {
+  margin: 0 0 0 10px;
+}

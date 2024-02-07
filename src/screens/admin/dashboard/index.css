@@ -1,0 +1,54 @@
+.dashCard {
+    background: #fff;
+    border-radius: 20px;
+    padding: 1rem 2rem;
+    box-shadow: 0px 8px 6px rgb(133 233 255 / 14%);
+    min-height: calc(100vh - 160px);
+}
+.m-h{
+    min-height: 0;
+}
+.stats {
+    margin-bottom: 1rem;
+}
+.stats:not(:last-child) {
+    border-color: #000;
+}
+.x-axis {
+    position: absolute;
+    rotate: -91deg;
+    top: 40%;
+    left: -96px;
+    font-weight: 400;
+    width: 160px;
+}
+.dropdown-graph {
+    display: block;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #1C1C1C;
+    resize: none;
+    border: 1px solid #E9E9E9;
+    outline: none;
+    margin-bottom: 0.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+@media screen and (max-width: 1200px) and (min-width: 768px) {
+    .stats, .stats:not(:last-child) {
+        border-color: #fff0;
+    }
+
+    .stats:nth-child(odd) {
+        border-color: #000;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .stats, .stats:not(:last-child), .stats:nth-child(odd) {
+        border-color: #fff0;
+    }
+    .dashboard-stats{
+        margin-top: 15px;
+    }
+}

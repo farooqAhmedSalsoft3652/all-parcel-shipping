@@ -1,0 +1,14 @@
+.h-short {
+    padding: 8px 20px;
+}
+.request_list {
+    background: white;
+    border-radius: 99px;
+    display: inline-block;
+    text-align: center;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    color: #00DB48;
+    margin-left: 1.3rem;
+}

@@ -1,0 +1,33 @@
+.req-tab {
+    width: 100%;
+    padding: 0px;
+    border: 1px solid #7777;
+    max-width: 360px ;
+    background: #fff;
+}
+.req-tab.nav-tabs .nav-link {
+    color: #000;
+    margin-bottom: 0px !important;
+    font-size: 18px;
+}
+.req-tab.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    padding: 10px 29px;
+    color: #fff;
+}
+.req-tab.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    color: #fff;
+    background: linear-gradient(90deg, rgba(50,147,255,1) 0%, rgba(123,224,255,1) 50%, rgba(50,147,255,1) 100%) !important;
+    border-color: var(--bs-nav-tabs-link-active-border-color);
+    padding: 10px 29px;
+}
+.status_rejected{
+    color:#FF0000;
+}
+@media screen and (max-width: 575px) {
+    .req-tab {
+        max-width: 300px;
+    }
+    .req-tab.nav-tabs .nav-link {
+        font-size: 14px;
+    }
+}

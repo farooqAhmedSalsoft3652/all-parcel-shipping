@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="230" height="230" viewBox="0 0 230 230">
+  <defs>
+    <filter id="b" width="180%" height="180%" x="-40%" y="-40%" filterUnits="objectBoundingBox">
+      <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="20"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 1 0 0 0 0 0.850980392 0 0 0 0 0.874509804 0 0 0 1 0"/>
+    </filter>
+    <filter id="e" width="109.3%" height="109.3%" x="-4.7%" y="-4.7%" filterUnits="objectBoundingBox">
+      <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="5"/>
+      <feOffset dx="2" dy="4" in="shadowBlurInner1" result="shadowOffsetInner1"/>
+      <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+      <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0.243137255 0 0 0 0 0.0823529412 0 0 0 0 0.31372549 0 0 0 0.3 0"/>
+    </filter>
+    <circle id="a" cx="75" cy="96.136" r="75"/>
+    <circle id="c" cx="75" cy="96.136" r="75"/>
+    <path id="f" d="M150 0v93.41h-.049c.033.904.049 1.813.049 2.726 0 41.422-33.579 75-75 75s-75-33.578-75-75c0-34.131 22.8-62.938 54-72.02V0h96z"/>
+    <path id="i" d="M0 0h33.04a4 4 0 0 1 4 4v137.72a4 4 0 0 1-4 4H0V0z"/>
+    <radialGradient id="d" cx="50%" cy="100%" r="57.259%" fx="50%" fy="100%">
+      <stop offset="0%" stop-color="#2C1F47" stop-opacity=".984"/>
+      <stop offset="100%" stop-color="#863888"/>
+    </radialGradient>
+    <linearGradient id="h" x1="70.575%" x2="19.614%" y1="15.351%" y2="115.754%">
+      <stop offset="0%" stop-color="#5DB900"/>
+      <stop offset="100%" stop-color="#478D00"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(40 18.864)">
+    <use fill="#000" filter="url(#b)" opacity=".3" xlink:href="#a"/>
+    <use fill="url(#d)" xlink:href="#c"/>
+    <use fill="#000" filter="url(#e)" xlink:href="#c"/>
+    <mask id="g" fill="#fff">
+      <use xlink:href="#f"/>
+    </mask>
+    <g mask="url(#g)">
+      <g transform="rotate(9 -45.737 -34.228)">
+        <path fill="#F0B380" d="M36.563 18.113L146.94.663a4.007 4.007 0 0 1 4.577 3.327l21.584 136.024a3.997 3.997 0 0 1-3.324 4.576L59.401 162.04 36.563 18.112z"/>
+        <g transform="rotate(-9 192.093 -423.708)">
+          <path fill="#FEFCE5" d="M4 .001l68.986.02a4.007 4.007 0 0 1 4.001 4.001L77 45a3.997 3.997 0 0 1-4 3.999l-68.986-.02a4.007 4.007 0 0 1-4.001-4.001L0 4A3.997 3.997 0 0 1 4 .001z" opacity=".6"/>
+          <g fill="#863888" transform="translate(8 11)">
+            <rect width="52.308" height="5" rx="2.5"/>
+            <rect width="60" height="5" y="11.889" rx="2.5"/>
+            <rect width="43.077" height="5" y="23.778" rx="2.5"/>
+          </g>
+        </g>
+        <g transform="rotate(-9 419.452 -314.793)">
+          <circle cx="20" cy="20" r="20" fill="url(#h)"/>
+          <path fill="#FFF" fill-rule="nonzero" d="M32.995 19.51a1.493 1.493 0 0 1-.087-.03c-.271-5.021-2.326-9.225-5.757-11.194-.018-.006-.058 0-.053.04.134.626.205 1.268.245 1.94 0 .057-.064.074-.087.028-.526-1.128-1.223-2.101-2.06-2.833a6.845 6.845 0 0 0-1.89-1.19c-.034-.011-.046.023-.035.046.138.28.258.553.372.843.285.697.477 1.44.633 2.227.005.041-.065.075-.088.028-.65-.938-1.453-1.716-2.391-2.27a6.043 6.043 0 0 0-1.178-.539 7.138 7.138 0 0 0-1.843-.362c-.035-.012-.053.04-.018.052.498.306.972.682 1.388 1.114.502.52.922 1.11 1.301 1.761.03.03-.006.075-.041.063-.937-.05-1.882.031-3.388.5a3.768 3.768 0 0 0-1.192-.273c-1.21-.106-2.373.326-3.348 1.229-.827.76-1.489 1.828-1.895 3.003-.132.38-.222.755-.295 1.136-.736.211-1.402.505-2.023.833-1.568.873-2.744 2.132-3.293 3.722-.61 1.763-.358 3.685.552 5.505 1.123 2.221 3.254 4.286 6.043 5.745.609.325 1.27.61 1.938.878.209.071.412.16.62.232 5.628 1.93 11.263.906 13.823-2.217.53-.573 1.007-1.22 1.461-1.915.03-.029.041-.063.053-.098.26-.413.503-.833.722-1.299 1.164.07 2.432-1.002 2.987-2.61.627-1.814.096-3.658-1.176-4.094z" opacity=".4"/>
+        </g>
+        <g transform="rotate(-9 151.855 11.951)">
+          <mask id="j" fill="#fff">
+            <use transform="matrix(-1 0 0 1 37.04 0)" xlink:href="#i"/>
+          </mask>
+          <use fill="#CD996E" transform="matrix(-1 0 0 1 37.04 0)" xlink:href="#i"/>
+          <line x1="35.304" x2="-1.736" y1=".587" y2="148.602" stroke="#BF8555" stroke-linecap="square" stroke-width="3" mask="url(#j)"/>
+          <line x1="37.619" x2=".579" y1=".587" y2="148.602" stroke="#BF8555" stroke-linecap="square" stroke-width="3" mask="url(#j)" transform="matrix(-1 0 0 1 38.198 0)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
