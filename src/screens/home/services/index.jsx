@@ -13,7 +13,7 @@ const Services = () => {
   useEffect(()=>{
     setData(servicesCardData);
   }, [])
-  console.log(data1)
+  // console.log(data1)
 
   return (
     <>

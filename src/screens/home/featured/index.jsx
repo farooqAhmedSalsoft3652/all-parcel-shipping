@@ -27,7 +27,7 @@ const Featured = (props) => {
               <h2 className="usp-insert__title">Lorem ipsum dolor sit amet</h2>
               <ul>
                 {data.map((data, index) => (
-                  <li>
+                  <li key={index}>
                   <span>
                     <span className="label-tag label-tag--dark">{data.tag}</span> {data.text}
                   </span>

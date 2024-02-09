@@ -18,7 +18,7 @@ const AboutUs = () => {
           <Row className="row">
               <Col sx={12}>
                 {data.map((data, index)=>(
-                  <div className="grid">
+                  <div className="grid" key={index}>
                       <div className="grid-item x-large-width-6 t-center pad-bottom-4">
                           <h2 className="h1 color-text-primary">{data.title}</h2>
                           {data.text}

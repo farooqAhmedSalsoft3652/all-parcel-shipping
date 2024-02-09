@@ -101,7 +101,25 @@
     color: #666666;
     
 }
+
+@media(max-width:1199px){
+    .authForm{
+        padding: 30px 40px;
+    }
+}
+@media(max-width:1399px){
+    .authImage{
+        text-align: center;
+    }
+    .authImage img{
+        width: 100%;
+    }
+}
+
 @media only screen and (max-width: 575px){
+    .authFormHeader h1{
+        font-size: 35px;
+    }
     .authForm {
         padding: 2rem 1rem;
     }

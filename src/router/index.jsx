@@ -12,7 +12,14 @@ import ShippingPaymentInformation from "@screens/shipMyParcel/ShippingPaymentInf
 import Tracking from "@screens/tracking";
 import TrackingOrder from "@screens/tracking/trackingOrder";
 import ContactUs from "@screens/contactUs";
-
+import Couriers from "@screens/couriers";
+import CouriersDetails from "@screens/couriers/couriersDetails";
+import PrivacyPolicy from "@screens/privacyPolicy";
+import TermsConditions from "@screens/termsConditions";
+import Faq from "@screens/faq";
+import Reviews from "@screens/reviews";
+import RetailerReturns from "@screens/retailerReturns";
+import AboutUs from "@screens/aboutUs";
 
 
 
@@ -21,33 +28,23 @@ import ForgetPassword from "@screens/auth/forgetPassword";
 import ForgetPassword2 from "@screens/auth/forgetPassword2";
 import ForgetPassword3 from "@screens/auth/forgetPassword3";
 import SignUp from "@screens/auth/signup";
-import MentorShipReq from "@screens/mentorshipReq";
-import MentorReqDetail from "@screens/mentorshipReq/detail";
-import FeaturingLogs from "@screens/featureLogs";
-import FeaturingPackagesLogs from "@screens/featureLogs/packages";
+
 
 import OrderLogs from "@screens/orderLogs";
 import OrderDetails from "@screens/orderLogs/OrderDetails";
 
 
-import PackagesLogs from "@screens/packages";
+// import PackagesLogs from "@screens/packages";
 import Payment from "@screens/payment";
 import MyProfile from "@screens/userProfile";
 import EditProfile from "@screens/userProfile/editProfile";
 import PasswordChange from "@screens/userProfile/changePassword";
 import Notifications from "@screens/notifications";
-import ChargesManagement from "@screens/chargesManagement";
+
 import NotFound from "@screens/Page404";
-import MentorDetail from "@screens/mentee/ourAds/detail";
-import MyRequest from "@screens/mentee/myRequest";
-import MyRequestDetail from "@screens/mentee/myRequest/detail";
-import MenteeProfile from "@screens/mentee/menteeProfile";
-import EditUserProfile from "@screens/mentee/menteeProfile/editProfile";
-import AdminLogIn from "@screens/admin/auth/login";
-import AdminForgetPassword from "@screens/admin/auth/forgetPassword";
+
 import { Dashboard } from "@screens/admin/dashboard";
-import AdminForgetPassword3 from "@screens/admin/auth/forgetPassword3";
-import AdminForgetPassword2 from "@screens/admin/auth/forgetPassword2";
+
 import AdminNotification from "@screens/admin/notification";
 import MenteeManagement from "@screens/admin/menteeManagement";
 import MenteeDetail from "@screens/admin/menteeManagement/detail";
@@ -98,7 +95,17 @@ const UserRouter = () => {
         <Route path="/tracking/tracking-order" element={<TrackingOrder />} />
         <Route path="/contact-us" element={<ContactUs />} />
 
+        <Route path="/couriers" element={<Couriers />} />
+        <Route path="/couriers-details" element={<CouriersDetails />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-conditions" element={<TermsConditions />} />
+        <Route path="/faq" element={<Faq />} />
+        <Route path="/reviews" element={<Reviews />} />
+        <Route path="/retailer-returns" element={<RetailerReturns />} />
+        <Route path="/about-us" element={<AboutUs />} />
 
+        <Route path="/order-logs" element={<OrderLogs />} />
+        <Route path="/order-logs/details/:id" element={<OrderDetails />} />
 
         <Route path="/login" element={<UserLogIn />} />
         <Route path="/signup" element={<SignUp />} />
@@ -106,15 +113,14 @@ const UserRouter = () => {
         <Route path="/forget-password2" element={<ForgetPassword2 />} />
         <Route path="/forget-password3" element={<ForgetPassword3 />} />
 
-        <Route path="/change-password" element={<PasswordChange />} />
+
+
+
         <Route path="/notifications" element={<Notifications />} />
-        <Route path="/order-logs" element={<OrderLogs />} />
-        <Route path="/order-logs/details/:id" element={<OrderDetails />} />
-
-
-
         <Route path="/profile" element={<MyProfile />} />
         <Route path="/profile/edit-profile" element={<EditProfile />} />
+        <Route path="/change-password" element={<PasswordChange />} />
+
 
 
 
@@ -149,7 +155,7 @@ const UserRouter = () => {
       {/* Mentee Screens End */}
 
       {/* Mentor Screens Start */}
-      {/* <Route element={<ProtectedRoutes roles={[roles.mentor]} />}>
+      {/* <Route element={<ProtectedRoutes  roles={[roles.mentor]} />}>
         <Route path="/mentorship-request" element={<MentorShipReq />} />
         <Route
           path="/mentorship-request/details/:id"

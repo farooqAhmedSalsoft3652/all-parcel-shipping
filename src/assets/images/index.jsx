@@ -35,12 +35,22 @@ import pmBoxLabel from "./pm-box-label.svg";
 import ups from "./ups.webp";
 import usps from "./usps.webp";
 import dhl from "./dhl.webp";
+import fedexIcon from "./fedex-icon.svg";
+import purolatorIcon from "./purolator.svg";
 import ips from "./ips.webp";
+import asendia from "./asendia.svg";
+import pitneyBowes from "./pitney-bowes.svg";
+import bpost from "./bpost.svg";
+import dpd from "./dpd.svg";
+import parcelforce from "./parcelforce.svg";
+import chronopost from "./chronopost.svg";
+import colissimo from "./colissimo.svg";
 import services1 from "./services1.png";
 import services2 from "./services2.png";
 import services3 from "./services3.png";
 import services4 from "./services4.png";
 import monkeyHalfBox from "./monkey-half-box.png";
+import aboutImage from "./about-img.png";
 
 import amex from "./amex.svg";
 import maestro from "./maestro.svg";
@@ -51,6 +61,8 @@ import visa from "./visa.svg";
 import dhlCard from "./dhl.png";
 import fedexCard from "./fedex.png";
 import trackImg from "./track-img.png";
+import userAvatar from "./useravatar.png";
+import monkeyBoxWhite from "./signup-monkey-box.png";
 
 
 
@@ -94,6 +106,15 @@ export {
   dhl,
   ips,
   usps,
+  pitneyBowes,
+  bpost,
+  parcelforce,
+  colissimo,
+  chronopost,
+  dpd,
+  asendia,
+  fedexIcon,
+  purolatorIcon,
   services1,
   services2,
   services3,
@@ -108,4 +129,7 @@ export {
   fedexCard,
   trackImg,
   loginImg,
+  userAvatar,
+  aboutImage,
+  monkeyBoxWhite
 };

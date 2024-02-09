@@ -25,32 +25,32 @@ export const SiteFooter = () => {
                   <Col xs={12} lg={4}>
                     <ul className="footer__list">
                       <li>
-                        <Link to="index.html" className="gtm-footer-link">
+                        <Link to="/" className="gtm-footer-link">
                           Home
                         </Link>
                       </li>
                       <li>
-                        <Link to="#_" className="gtm-footer-link">
+                        <Link to="/ship-my-parcel" className="gtm-footer-link">
                           Ship A Package
                         </Link>
                       </li>
                       <li>
-                        <Link to="#_" className="gtm-footer-link">
+                        <Link to="/tracking" className="gtm-footer-link">
                           Track A Package
                         </Link>
                       </li>
                       <li>
-                        <Link to="#_" className="gtm-footer-link">
+                        <Link to="/contact-us" className="gtm-footer-link">
                           Contact Us
                         </Link>
                       </li>
                       <li>
-                        <Link to="#_" className="gtm-footer-link">
-                          FAQs
+                        <Link to="/faq" className="gtm-footer-link">
+                          FAQ’s
                         </Link>
                       </li>
                       <li>
-                        <Link to="#_" className="gtm-footer-link">
+                        <Link to="/about-us" className="gtm-footer-link">
                           About Us
                         </Link>
                       </li>
@@ -59,7 +59,7 @@ export const SiteFooter = () => {
                   <Col xs={12} lg={4}>
                     <ul className="footer__list">
                       <li>
-                        <Link to="#_" className="gtm-footer-link">
+                        <Link to="/couriers" className="gtm-footer-link">
                           Couriers
                         </Link>
                       </li>
@@ -69,7 +69,7 @@ export const SiteFooter = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link to="#_" className="gtm-footer-link">
+                        <Link to="/retailer-returns" className="gtm-footer-link">
                           Retailer Returns
                         </Link>
                       </li>
@@ -79,7 +79,7 @@ export const SiteFooter = () => {
                     <ul className="footer__list">
                       <li>
                         <Link
-                          to="#_"
+                          to="/terms-conditions"
                           rel="nofollow"
                           className="gtm-footer-link"
                         >
@@ -88,7 +88,7 @@ export const SiteFooter = () => {
                       </li>
                       <li>
                         <Link
-                          to="#_"
+                          to="/privacy-policy"
                           rel="nofollow"
                           className="gtm-footer-link"
                         >
@@ -96,7 +96,7 @@ export const SiteFooter = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link to="#_" className="gtm-footer-link">
+                        <Link to="/reviews" className="gtm-footer-link">
                           Reviews
                         </Link>
                       </li>

@@ -14,253 +14,55 @@ const MyProfile = () => {
   const [load, setLoad] = useState(true);
 
   const loadProfileData = async () => {
-    // let response = await axios.get('/profile')
-    //   .then(res => {
-    //     // console.log(res.data);
-    //     setProfileData(res.data.data);
-    //     setLoad(false);
-    //   })
-    //   .catch(err => {
-    //     console.error(err.response.data.message);
-    //     setLoad(false);
-    //   });
+    let response = await axios.get('/profile')
+      .then(res => {
+        // console.log(res.data);
+        setProfileData(res.data.data);
+        setLoad(false);
+      })
+      .catch(err => {
+        console.error(err.response.data.message);
+        setLoad(false);
+      });
   }
 
   useEffect(() => {
-    // setLoad(true);
+    setLoad(true);
     loadProfileData();
   }, []);
 
   return (
     <>
       <Layout>
-        <section className="mantor-detail section_padding two_pices_bg">
+        <main className="align-bottom page-content bg-white">
           <Container>
             <Row>
-              <Col xs={12}>
-                <div className="form_layout pb-3 position-relative">
-                  <Row className="py-5">
-                    <Col xs={11} className="ms-auto pe-2">
-                      <h3>My Profile</h3>
-                    </Col>
-                  </Row>
-                  <Row>
+              <Col xs={6}>
+                <div className="title">
+                  <h2 className="text-primary mb-2 fw-medium">My Profile</h2>
+                </div>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={12} className="mt-5">
+                <div className="bg-light p-4 p-xl-5 detail-block">
+                  <Row className="my-5">
                     {load ? (
                       <LoadingSpinner />
                     ) : (
                       <Col xs={12}>
                         <Row>
-                          <Col xs={12}>
-                            <div className="sec_title d-block text-center">
-                              <div className="mb-2">
-                                <div className="attached">
-                                  <img
-                                    src={SERVER_URL + profileData.avatar}
-                                    className="img-fluid ml-0 profile_img"
-                                    alt={true.toString()}
-                                  />
-                                </div>
-                              </div>
-                              <p className="p-lg primary_color fw-bold mb-0">
-                                {`${profileData.first_name} ${profileData.last_name}`}
-                              </p>
-                              <p className="xl-grey-color p-xs profile_label mb-0">
-                                {profileData.email}
-                              </p>
-                              <p className="xl-grey-color p-xs profile_label">
-                                {profileData.phone_number}
-                              </p>
-                            </div>
+                          <Col xs={12} md={6} lg={4} className="mt-4 mt-md-4 mt-xxl-5">
+                            <h5 className="mb-1 mb-md-2">Name:</h5>
+                            <p className="">Bella Edward</p>
                           </Col>
-                        </Row>
-                        <Row>
-                          <Col xs={10} className="m-auto">
-                            <div className="ps-4 ms-1">
-                              <Row>
-                                <div className="detail_title">
-                                  <p className="p-lg primary_color fw-bold mb-0">
-                                    Personal Details
-                                  </p>
-                                </div>
-                                <Col xs={10} className="p-0 ">
-                                  <div className="my-4">
-                                    <label className="xl-grey-color p-xs profile_label">
-                                      Area Of Interest
-                                    </label>
-                                    <p className="fw-bold mt-3 label-text">
-                                      {profileData.interests?.length > 0 ? (
-                                        profileData.interests.map(
-                                          (item, index) =>
-                                            index + 1 ===
-                                            profileData.interests.length ? (
-                                              <span key={index}>
-                                                {item.interests}
-                                              </span>
-                                            ) : (
-                                              <span key={index}>
-                                                {item.interests},{" "}
-                                              </span>
-                                            )
-                                        )
-                                      ) : (
-                                        <>none</>
-                                      )}
-                                    </p>
-                                  </div>
-                                  <div className="my-4">
-                                    <label className="xl-grey-color p-xs profile_label">
-                                      About Yourself
-                                    </label>
-                                    <p className="fw-bold mt-3 label-text">
-                                      {profileData.about_yourself}
-                                    </p>
-                                  </div>
-                                </Col>
-                              </Row>
-                              <Row>
-                                <div className="detail_title">
-                                  <p className="p-lg primary_color fw-bold mb-0">
-                                    Educational Detail
-                                  </p>
-                                </div>
-                                <Col xs={10} className="p-0">
-                                  {profileData.education?.map((item, index) => (
-                                    <Row key={index}>
-                                      <Col lg={4} xs={6}>
-                                        <div className="my-4">
-                                          <label className="xl-grey-color p-xs profile_label">
-                                            Institute Name
-                                          </label>
-                                          <p className="fw-bold mt-3 label-text">
-                                            {item.institute_name}
-                                          </p>
-                                        </div>
-                                      </Col>
-                                      <Col lg={4} xs={6}>
-                                        <div className="my-4">
-                                          <label className="xl-grey-color p-xs profile_label">
-                                            Degree Title
-                                          </label>
-                                          <p className="fw-bold mt-3 label-text">
-                                            {item.degree_title}
-                                          </p>
-                                        </div>
-                                      </Col>
-                                      <Col lg={4} xs={6}>
-                                        <div className="my-4">
-                                          <label className="xl-grey-color p-xs profile_label">
-                                            Year
-                                          </label>
-                                          <p className="fw-bold mt-3 label-text">
-                                            {item.from.short_date} -{" "}
-                                            {item.to.short_date}
-                                          </p>
-                                        </div>
-                                      </Col>
-                                    </Row>
-                                  ))}
-                                </Col>
-                              </Row>
-                              <Row>
-                                <div className="detail_title">
-                                  <p className="p-lg primary_color fw-bold mb-0">
-                                    Work Experience
-                                  </p>
-                                </div>
-                                <Col xs={10} className="p-0">
-                                  {profileData.work_experiences?.map(
-                                    (item, index) => (
-                                      <Row key={index}>
-                                        <Col lg={4} xs={6}>
-                                          <div className="my-4">
-                                            <label className="xl-grey-color p-xs profile_label">
-                                              Organization Name
-                                            </label>
-                                            <p className="fw-bold mt-3 label-text">
-                                              {item.organization_name}
-                                            </p>
-                                          </div>
-                                        </Col>
-                                        <Col lg={4} xs={6}>
-                                          <div className="my-4">
-                                            <label className="xl-grey-color p-xs profile_label">
-                                              Designation
-                                            </label>
-                                            <p className="fw-bold mt-3 label-text">
-                                              {item.designation}
-                                            </p>
-                                          </div>
-                                        </Col>
-                                        <Col lg={4} xs={6}>
-                                          <div className="my-4">
-                                            <label className="xl-grey-color p-xs profile_label">
-                                              Year
-                                            </label>
-                                            <p className="fw-bold mt-3 label-text">
-                                              {item.from.short_date} -{" "}
-                                              {item.to.short_date}
-                                            </p>
-                                          </div>
-                                        </Col>
-                                      </Row>
-                                    )
-                                  )}
-                                </Col>
-                              </Row>
-                              <Row>
-                                <div className="detail_title">
-                                  <p className="p-lg primary_color fw-bold mb-0">
-                                    Certification Detail
-                                  </p>
-                                </div>
-                                <Col xs={10} className="p-0">
-                                  {profileData.certifications?.map(
-                                    (item, index) => (
-                                      <Row key={index}>
-                                        <Col lg={4} xs={6}>
-                                          <div className="my-4">
-                                            <label className="xl-grey-color p-xs profile_label">
-                                              Institute Name
-                                            </label>
-                                            <p className="fw-bold mt-3 label-text">
-                                              {item.institute_name}
-                                            </p>
-                                          </div>
-                                        </Col>
-                                        <Col lg={4} xs={6}>
-                                          <div className="my-4">
-                                            <label className="xl-grey-color p-xs profile_label">
-                                              Certificate Title
-                                            </label>
-                                            <p className="fw-bold mt-3 label-text">
-                                              {item.certificate_title}
-                                            </p>
-                                          </div>
-                                        </Col>
-                                        <Col lg={4} xs={6}>
-                                          <div className="my-4">
-                                            <label className="xl-grey-color p-xs profile_label">
-                                              Certificate Picture
-                                            </label>
-                                            <div className="my-3">
-                                              <img
-                                                src={
-                                                  SERVER_URL +
-                                                  item.certificate_picture
-                                                }
-                                                className="img-fluid img-thumbnail"
-                                                alt="certificate"
-                                                width={100}
-                                              />
-                                            </div>
-                                          </div>
-                                        </Col>
-                                      </Row>
-                                    )
-                                  )}
-                                </Col>
-                              </Row>
-                            </div>
+                          <Col xs={12} md={6} lg={4} className="mt-4 mt-md-4 mt-xxl-5">
+                            <h5 className="mb-1 mb-md-2">Contact Number:</h5>
+                            <p className="">+123-456-7890</p>
+                          </Col>
+                          <Col xs={12} md={6} lg={4} className="mt-4 mt-md-4 mt-xxl-5">
+                            <h5 className="mb-1 mb-md-2">Email:</h5>
+                            <p className="">bellaedward@gmail.com</p>
                           </Col>
                         </Row>
                       </Col>
@@ -271,26 +73,26 @@ const MyProfile = () => {
                       <Col xs={12}>
                         <div>
                           <Link
-                            to="/profile/edit-profile"
-                            className="site-btn text-decoration-none"
-                          >
-                            Edit Profile
-                          </Link>
-                          <Link
                             to="/change-password"
-                            className="ms-3 site-btn site_border_btn text-decoration-none"
+                            className=" site-btn site_border_btn text-decoration-none width-220"
                           >
                             Change Password
+                          </Link>
+                          <Link
+                            to="/profile/edit-profile"
+                            className="site-btn ms-3 text-decoration-none width-220"
+                          >
+                            Edit Profile
                           </Link>
                         </div>
                       </Col>
                     )}
-                  </Row>
+                  </Row> 
                 </div>
               </Col>
             </Row>
           </Container>
-        </section>
+        </main>
       </Layout>
     </>
   );
