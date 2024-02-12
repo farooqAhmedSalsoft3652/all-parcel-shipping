@@ -7,20 +7,20 @@ import axios from 'axios'
 
 
 const NotificationsCard = (props) => {
-    const handleRead = async (e, id) => {
-        let btn = e.target;
-        let data = await axios.get(`/mark-as-read/${id}`)
-        .then(() => {
-            let item = document.getElementById(`notification_${id}`);
-            item.classList.remove('markRead');
-            item.classList.add('markUnread');
-            btn.classList.add("d-none");
-        })
-        .catch(err => console.error(err.response.data.message));
-    }
+    // const handleRead = async (e, id) => {
+    //     let btn = e.target;
+    //     let data = await axios.get(`/mark-as-read/${id}`)
+    //     .then(() => {
+    //         let item = document.getElementById(`notification_${id}`);
+    //         item.classList.remove('markRead');
+    //         item.classList.add('markUnread');
+    //         btn.classList.add("d-none");
+    //     })
+    //     .catch(err => console.error(err.response.data.message));
+    // }
 
     return (
-        <div className={`${props.data?.read_at ? 'markUnread' : 'markRead'} flex-sm-row flex-column d-flex align-items-sm-center align-items-end justify-content-between`} id={`notification_${props.data.id}`}>
+        <div className={`${props.data?.read ? 'markUnread' : 'markRead'} flex-sm-row flex-column d-flex align-items-sm-center align-items-end justify-content-between`} id={`notification_${props.data.id}`}>
             <div className="d-flex align-items-center">
             <div className="bellbg ">
                 <FontAwesomeIcon className='bell_icon' icon={faBell}/>
@@ -29,13 +29,16 @@ const NotificationsCard = (props) => {
                     {/* <img src={props.image} alt='' /> */}
                 </div>
                 <div className="noti_boxr ">
-                    <p className='d-grey-color first'>{props.data.data.content}</p>
+                    {/* <p className='d-grey-color first'>{props.data.data.content}</p> */}
+                    <p className='d-grey-color first'>{props.data.content}</p>
                     <p className='second'>
                         <span className='pe-2'>
-                            {moment(props.data.created_at, "DD-MM-YYYY hh:mm:ss").format("DD-MM-YYYY")}
+                            {/* {moment(props.data.created_at, "DD-MM-YYYY hh:mm:ss").format("DD-MM-YYYY")} */}
+                            {props.data.time}
                         </span> | 
                         <span className='ps-2'> 
-                            {moment(props.data.created_at, "DD-MM-YYYY hh:mm:ss").format("hh:mm A")}
+                            {props.data.date}
+                            {/* {moment(props.data.created_at, "DD-MM-YYYY hh:mm:ss").format("DD-MM-YYYY")} */}
                         </span>
                     </p>
                 </div>

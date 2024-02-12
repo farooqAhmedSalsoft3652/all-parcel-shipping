@@ -7,6 +7,9 @@ import CustomPagination from '@components/customPagination'
 import usePageTitle from '@hooks/usePageTitle'
 import axios from 'axios'
 
+import { notificationData } from "@config/data";
+
+
 const Notifications = () => {
   usePageTitle("Notification");
   const [type, setType] = useState("");
@@ -40,45 +43,56 @@ const Notifications = () => {
     loadNotifications();
   }, [type, currentPage]);
 
+  console.log("Data", notificationData);
   return (
     <Layout>
-      <div className="notification-section section_padding two_pices_bg position-relative">
+      <main className="notification-section align-bottom page-content bg-white position-relative">
         <Container>
+          <Row>
+            <Col xs={12} className='d-block d-lg-flex justify-content-between'>
+              <div className="title">
+                <h2 className="text-primary mb-2 fw-medium">Notification</h2>
+              </div>
+              <div className="d-flex align-self-center">
+                <label className='align-self-center me-3' htmlFor="">Showing:</label>
+                <select className='mainInput notify_input' name="notifications" id="notifications"
+                  onChange={e => setType(e.target.value)}>
+                    <option value="">All</option>
+                    <option value="read">Read</option>
+                    <option value="unread">Unread</option>
+                  </select>
+              </div>
+            </Col>
+          </Row>
             <Row>
-              <Col xs={12}>
-                <div className="form_layout">
+              <Col xs={12} className='mt-5'>
+                
                   <Row>
-                    <Col lg={10} className="offset-lg-1">
-                        <Row className="py-4">
-                          <Col xs={12}>
-                              <h3 className='headingMina'>Notifications</h3>
-                              <div className="py-4">
-                                <select className='mainInput notify_input' name="notifications" id="notifications"
-                                  onChange={e => setType(e.target.value)}>
-                                    <option value="">All</option>
-                                    <option value="read">Read</option>
-                                    <option value="unread">Unread</option>
-                                  </select>
-                              </div>
-                            </Col>
-                        </Row>
+                    <Col lg={12} className="">
                         <div className="noti_boxm">   
                           <ul className="noti_box">
-                          {notifications.length === 0 ? (
+                          {/* {notifications.length === 0 ? (
                             <h3 className="text-center text-muted">No notification found!</h3>
                           ) : (
-                          notifications.map((item, index) => {
+                            notificationData.map((item, index) => {
                             return (
                               <li key={index}>
                                 <NotificationsCard data={item} />
                               </li>
                             );
-                          }))} 
+                          }))}  */}
+                          {notificationData.map((item, index) => {
+                            return (
+                              <li key={index}> 
+                                <NotificationsCard data={item} />
+                              </li>
+                            )
+                          })}
                           </ul>
                         </div>
                     </Col>
                   </Row>
-                </div>
+                
                 <Row className="justify-content-between">
                   <Col xs={12}>
                     <CustomPagination
@@ -92,7 +106,7 @@ const Notifications = () => {
               </Col>
             </Row>
         </Container>
-      </div>
+      </main>
  
     </Layout>
   )

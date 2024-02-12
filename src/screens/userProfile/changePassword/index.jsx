@@ -22,123 +22,132 @@ const PasswordChange = () => {
   });
   const [load, setLoad] = useState(false);
 
-  const {values, errors, touched, handleChange, handleBlur, handleSubmit} = useFormik({
-    initialValues: formData,
-    validationSchema: changePasswordValidate,
-    onSubmit: (value) => handleFormSubmit(value)
-  });
+  // const {values, errors, touched, handleChange, handleBlur, handleSubmit} = useFormik({
+  //   initialValues: formData,
+  //   validationSchema: changePasswordValidate,
+  //   onSubmit: (value) => handleFormSubmit(value)
+  // });
 
-  const handleFormSubmit = async (data) => {
-    setLoad(true);
+  // const handleFormSubmit = async (data) => {
+  //   setLoad(true);
 
-    let response = await axios.post('/change-password', data)
-      .then(() => {
-        setShowModal(true);
-        setLoad(false);
-      })
-      .catch(err => {
-        document.getElementById('response').innerHTML = 
-        `<div className="alert alert-danger" role="alert"><strong>Ops!</strong> ${err.response.data.message}</div>`;
-        setLoad(false);
-      });
-  }
+  //   let response = await axios.post('/change-password', data)
+  //     .then(() => {
+  //       setShowModal(true);
+  //       setLoad(false);
+  //     })
+  //     .catch(err => {
+  //       document.getElementById('response').innerHTML = 
+  //       `<div className="alert alert-danger" role="alert"><strong>Ops!</strong> ${err.response.data.message}</div>`;
+  //       setLoad(false);
+  //     });
+  // }
 
   const passwordUpdate = () => {
     navigate(-1);
   }
+
+  const handleSubmit = ((event)=>{
+    event.preventDefault();
+    setShowModal(true)
+  })
+
+
   return (
     <>
     <Layout>
-    <section className="password_change section_padding two_pices_bg">
+    <main className="align-bottom page-content bg-white">
         <Container>
           <Row>
-            <Col xs={12}>
-              <div className="form_layout">
-                <Row className="pt-5 ms-auto ps-4">
-                  <Col xs={12}>
-                    <div className="section_title">
-                      <h3>
-                        <BackButton />
-                         Change Password
-                      </h3>
-                    </div>
-                  </Col>
-                </Row>
-                <Row className="my-5">
-                    <Col xs={12}>
-                        <Row className="justify-content-center">
-                            <Col xs={10} xl={5} lg={4}>
-                              <div id="response"></div>
-                              <Form onSubmit={handleSubmit}>
-                                <CustomInput 
-                                  label="Current Password" 
-                                  labelClass="mainLabel" 
-                                  type="password" 
-                                  id="old_password"
-                                  placeholder="Enter Current Password" 
-                                  inputClass="mainInput" 
-                                  required
-                                  value={values.old_password}
-                                  onChange={handleChange}
-                                  onBlur={handleBlur}
-                                  errors={errors.old_password}
-                                  touched={touched.old_password}
-                                />  
-
-                                <CustomInput 
-                                  label="New Password" 
-                                  labelClass="mainLabel" 
-                                  type="password" 
-                                  id="new_password"
-                                  placeholder="Enter New Password" 
-                                  inputClass="mainInput" 
-                                  required 
-                                  value={values.new_password}
-                                  onChange={handleChange}
-                                  onBlur={handleBlur}
-                                  errors={errors.new_password}
-                                  touched={touched.new_password}
-                                />  
-
-                                <CustomInput 
-                                  label="Confirm Password" 
-                                  labelClass="mainLabel" 
-                                  type="password" 
-                                  id="confirm_password"
-                                  placeholder="Enter Confirm Password" 
-                                  inputClass="mainInput" 
-                                  required 
-                                  value={values.confirm_password}
-                                  onChange={handleChange}
-                                  onBlur={handleBlur}
-                                  errors={errors.confirm_password}
-                                  touched={touched.confirm_password}
-                                />  
-
-                                <div className="text-center py-4">
-                                  <SiteButton className="site-btn" type="submit" load={load}>
-                                    Update
-                                  </SiteButton>
-                                </div>
-                              </Form>
-                            </Col>
-                        </Row>
-                    </Col>
-              </Row>
+            <Col xs={6}>
+              <div className="title">
+                <h2 className="text-primary mb-2 fw-medium"><BackButton className="text-primary" /> Change Password</h2>
               </div>
-             
+            </Col>
+          </Row>
+
+          <Row>
+            <Col xs={12} className="mt-5">
+              <div className="bg-light p-4 p-xl-5 detail-block">
+                <Form onSubmit={handleSubmit}>
+                  <div id="response"></div>
+                  <Row>
+                    <Col lg={11}>
+                      <Row>
+                        <Col xs={12} md={6} lg={6} className="mt-4 mt-md-4 mt-xxl-5">
+                          <CustomInput 
+                            label="Current Password" 
+                            labelClass="mainLabel" 
+                            type="password" 
+                            id="old_password"
+                            placeholder="Enter Current Password" 
+                            inputClass="mainInput" 
+                            required
+                            // value={values.old_password}
+                            // onChange={handleChange}
+                            // onBlur={handleBlur}
+                            // errors={errors.old_password}
+                            // touched={touched.old_password}
+                          />
+                        </Col>
+                        <Col xs={12} md={6} lg={6} className="mt-4 mt-md-4 mt-xxl-5">
+                          <CustomInput 
+                            label="New Password" 
+                            labelClass="mainLabel" 
+                            type="password" 
+                            id="new_password"
+                            placeholder="Enter New Password" 
+                            inputClass="mainInput" 
+                            required 
+                            // value={values.new_password}
+                            // onChange={handleChange}
+                            // onBlur={handleBlur}
+                            // errors={errors.new_password}
+                            // touched={touched.new_password}
+                          />
+                        </Col>
+                        <Col xs={12} md={6} lg={6} className="mt-4 mt-md-4 mt-xxl-5">
+                          <CustomInput 
+                            label="Confirm Password" 
+                            labelClass="mainLabel" 
+                            type="password" 
+                            id="confirm_password"
+                            placeholder="Enter Confirm Password" 
+                            inputClass="mainInput" 
+                            required 
+                            // value={values.confirm_password}
+                            // onChange={handleChange}
+                            // onBlur={handleBlur}
+                            // errors={errors.confirm_password}
+                            // touched={touched.confirm_password}
+                          />
+                        </Col>
+                        <Col xs={12} className="mt-4 mt-md-4 mt-xxl-5">
+                          <div className="py-4">
+                            <SiteButton className="site-btn" type="submit" load={load}>
+                              Update
+                            </SiteButton>
+                          </div>
+                        </Col>
+                      </Row>
+                    </Col>
+                  </Row>
+                </Form>
+              </div>
             </Col>
           </Row>
         </Container>
-      </section>
+    </main>
     </Layout>
 
     <CustomModal
         show={showModal}
         close={() => setShowModal(false)}
-        para="Password Has Been Successfully Updated"
+        heading="System Message"
+        para="Password updated successfully"
         success={true}
-        onClickOk={passwordUpdate}
+        buttonText="Okay"
+        onClickOk={() => setShowModal(false)}
       />
     </>
   )

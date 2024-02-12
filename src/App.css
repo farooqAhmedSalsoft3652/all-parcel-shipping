@@ -16631,9 +16631,10 @@ ul>li.rich-text__ticked-list-item {
 }
 
 .header__nav {
-    font-family: SofiaProMedium, Helvetica, Arial, sans-serif, "Comic Sans MS";
+    font-family: "SofiaPro", Helvetica, Arial, sans-serif, "Comic Sans MS";
     /* float: right */
     font-size: 1.6rem;
+    font-weight: 500;
 }
 
 .header__nav>ul {
@@ -34001,6 +34002,9 @@ h1,h2,h3,h4,h5,h6{
     font-weight: 800 !important;
 }
 
+.navbar-nav li{
+    margin-right: 1rem;
+}
 .home__brands .slick-slider{
     padding-bottom: 150px;
 }

@@ -427,6 +427,50 @@ export const faqData = [
     faqAnswer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
   },
 ]
+
+export const notificationData = [
+  {
+    id: "01",
+    content: "Lorem Ipsum is simply dummy text ",
+    notPara: "Lorem Ipsum is simply dummy text.",
+    date: "01/01/2022",
+    time: "01 sec ago",
+    read: false,
+  },
+  {
+    id: "02",
+    content: "Lorem Ipsum is simply dummy text asdasdas",
+    notPara: "Lorem Ipsum is simply dummy text.",
+    date: "01/01/2022",
+    time: "02 hour ago",
+    read: true,
+  },
+  {
+    id: "03",
+    content: "Lorem Ipsum is simply dummy text adsadasd3",
+    notPara: "Lorem Ipsum is simply dummy text.",
+    date: "01/01/2022",
+    time: "02 hour ago",
+    read: false,
+  },
+  {
+    id: "04",
+    content: "Lorem Ipsum is simply dummy text ",
+    notPara: "Lorem Ipsum is simply dummy text.",
+    date: "Dec 19, 2020",
+    time: "02 hour ago",
+    read: true,
+  },
+  {
+    id: "05",
+    content: "Lorem Ipsum is simply dummy text ",
+    notPara: "Lorem Ipsum is simply dummy text.",
+    date: "01/01/2022",
+    time: "02 hour ago",
+    read: true,
+  },
+];
+
 // New Objects END
 
 export const SERVER_URL = "http://localhost:8000/";
@@ -461,48 +505,7 @@ export const authCredentials = [
     role: "mentee",
   },
 ];
-export const notifificationData = [
-  {
-    id: "01",
-    content: "Lorem Ipsum is simply dummy text ",
-    notPara: "Lorem Ipsum is simply dummy text.",
-    date: "Dec 19, 2020",
-    time: "01/01/2022",
-    read: false,
-  },
-  {
-    id: "02",
-    content: "Lorem Ipsum is simply dummy text asdasdas",
-    notPara: "Lorem Ipsum is simply dummy text.",
-    date: "Dec 19, 2020",
-    time: "01/01/2022",
-    read: true,
-  },
-  {
-    id: "03",
-    content: "Lorem Ipsum is simply dummy text adsadasd3",
-    notPara: "Lorem Ipsum is simply dummy text.",
-    date: "Dec 19, 2020",
-    time: "01/01/2022",
-    read: false,
-  },
-  {
-    id: "04",
-    content: "Lorem Ipsum is simply dummy text ",
-    notPara: "Lorem Ipsum is simply dummy text.",
-    date: "Dec 19, 2020",
-    time: "01/01/2022",
-    read: true,
-  },
-  {
-    id: "05",
-    content: "Lorem Ipsum is simply dummy text ",
-    notPara: "Lorem Ipsum is simply dummy text.",
-    date: "Dec 19, 2020",
-    time: "01/01/2022",
-    read: true,
-  },
-];
+
 export const userProfileData = {
   image: UserProfile,
   name: "Tom Albert",

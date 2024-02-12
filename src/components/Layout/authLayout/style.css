@@ -102,6 +102,69 @@
     
 }
 
+.notiDropdown.dropdown .dropdown-toggle,
+.userDropdown.dropdown .dropdown-toggle{
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+    color: #003449;
+    display: block;
+    padding: 0px 0 7px 0px;
+    margin: 0 5px;
+    font-size: 21px;
+}
+.notiDropdown.dropdown .dropdown-toggle .rounded-circle{
+    width: 20px;
+    border-radius: 50% !important;
+    height: 20px;
+    font-size: 13px;
+    color: #fff;
+    background-color: #00AD5B;
+}
+.userDropdown.dropdown .dropdown-toggle::after{
+    margin-top:10px ;
+}
+
+
+
+
+.notiDropdown .dropdown-menu,
+.userDropdown .dropdown-menu {
+    border: 1px solid #00AD5B !important;
+    min-width: 17rem;
+    background: var(--bs-white);
+    border-radius: 7px !important;
+}
+.notiDropdown .dropdown-menu {
+    min-width: 20rem;
+}
+.notiDropdown .dropdown-item{
+    padding: 5px 10px;
+}
+.notiDropdown .mediaLeft{
+    margin-right: 15px;
+}
+.notiDropdown .mediaLeft svg{
+    background-color: #00AD5B;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 5px;
+    
+}
+
+.notiDropdown h6{
+    color:#003449;
+    font-weight: 600;
+}
+.notiDropdown .notificationText{
+    color:#949494;
+    text-transform: none;
+    font-size: 15px;
+    line-height: 1.1;
+    font-weight: 400;
+}
+
 @media(max-width:1199px){
     .authForm{
         padding: 30px 40px;

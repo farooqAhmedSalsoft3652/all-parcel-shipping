@@ -4,6 +4,7 @@ import { Layout } from "@components/Layout/layout";
 import { Col, Container, Row } from "react-bootstrap";
 import SiteButton from "../../components/Button/button";
 import {CustomInput} from "@components/CustomInput";
+import PhoneInput from "react-phone-number-input";
 // import { Form } from "react-router-dom";
 import BackButton from "@components/backButton";
 
@@ -110,27 +111,31 @@ const ShipMyParcelStep2 = () => {
                             </h3>
                           </Col>
                           <Col md={6} className="mb-3 mb-md-0">
-                            <CustomInput
-                              label="Your Contact No"
-                              type="text"
-                              id="full_name"
-                              required
-                              placeholder="Your Contact No"
-                              labelClass="mainLabel bold"
-                              inputClass="mainInput"
-                              inputUnit="Kg"
-                            />
+                          <label className="mainLabel bold">
+                            Your Contact No
+                            <span className="text-danger">*</span>
+                          </label>
+                          <PhoneInput
+                            placeholder="Enter Contact Number"
+                            // value={value}
+                            // onChange={setValue}
+                            className="mainInput"
+                            defaultCountry="US"
+                            // focusInputOnCountrySelection="false"
+                          />
                           </Col>
                           <Col md={6} className="mb-3 mb-md-0">
-                            <CustomInput
-                              label="Contact No. of Receiver"
-                              type="text"
-                              id="full_name"
-                              required
-                              placeholder="Contact No. of Receiver"
-                              labelClass="mainLabel bold"
-                              inputClass="mainInput"
-                              inputUnit="Kg"
+                            <label className="mainLabel bold">
+                            Contact No. of Receiver
+                              <span className="text-danger">*</span>
+                            </label>
+                            <PhoneInput
+                              placeholder="Enter Contact Number"
+                              // value={value}
+                              // onChange={setValue}
+                              className="mainInput"
+                              defaultCountry="US"
+                              // focusInputOnCountrySelection="false"
                             />
                           </Col>
                           <Col

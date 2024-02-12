@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Col, Container, Nav, Navbar, Row, Offcanvas, Dropdown } from "react-bootstrap";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
-import { logo } from "../../assets/images";
+import { logo, userAvatar } from "../../assets/images";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faChevronDown, faSearch, faBell, faUser, faSignOut } from "@fortawesome/free-solid-svg-icons";
 // import { faBell } from '@fortawesome/free-regular-svg-icons';
@@ -36,7 +36,7 @@ export const SiteHeader = () => {
   }
 
   useEffect(() => {
-    if ((role && role?.role == roles.mentee) || (role && role?.role == roles.mentor)) {
+    if ((role && role?.role == roles.mentor)) {
       setCheckAuth(true);
 
       let user = JSON.parse(decode(localStorage.getItem('user')));
@@ -95,7 +95,7 @@ export const SiteHeader = () => {
 
             <Navbar.Collapse>
               {role.role === roles.mentor ? (
-                <Nav className="mx-auto align-items-lg-center align-items-start position-relative headerNav d-lg-flex mentor-nav">
+                <Nav as="ul" className="mx-auto align-items-lg-center align-items-start position-relative headerNav d-lg-flex">
                   <Nav.Item as="li">
                     <NavLink
                       // exact
@@ -106,38 +106,34 @@ export const SiteHeader = () => {
                       Home
                     </NavLink>
                   </Nav.Item>
-
-                  <NavLink
-                    activeclassname="active"
-                    className=""
-                    to="/mentorship-request"
-                  >
-                    Ship A Package
-                  </NavLink>
-                  <NavLink activeclassname="active" className="" to="/ads-logs">
-                    Tracking
-                  </NavLink>
-                  <NavLink
-                    activeclassname="active"
-                    className=""
-                    to="/featuring-logs"
-                  >
-                    Contact Admin
-                  </NavLink>
-                  <NavLink
-                    activeclassname="active"
-                    className=""
-                    to="/charges-management"
-                  >
-                    Login
-                  </NavLink>
-                  <NavLink
-                    activeclassname="active"
-                    className=""
-                    to="/contact-us"
-                  >
-                    Sign up
-                  </NavLink>
+                  <Nav.Item as="li">
+                    <NavLink
+                      activeclassname="active"
+                      className=""
+                      to="/ship-my-parcel"
+                    >
+                      Ship A Package
+                    </NavLink>
+                  </Nav.Item>
+                  <Nav.Item as="li">
+                    <NavLink activeclassname="active" className="" to="/tracking">
+                      Tracking
+                    </NavLink>
+                  </Nav.Item>
+                  <Nav.Item as="li">
+                    <NavLink activeclassname="active" className="" to="/order-logs">
+                    Order Logs
+                    </NavLink>
+                  </Nav.Item>
+                  <Nav.Item as="li">
+                    <NavLink
+                      activeclassname="active"
+                      className=""
+                      to="/contact-us"
+                    >
+                      Contact Admin
+                    </NavLink>
+                  </Nav.Item>
                 </Nav>
               ) : (
                 <Nav
@@ -148,7 +144,7 @@ export const SiteHeader = () => {
                     <NavLink
                       // exact
                       activeclassname="active"
-                      className="me-xl-4 me-lg-3"
+                      className=""
                       to="/"
                     >
                       Home
@@ -157,7 +153,7 @@ export const SiteHeader = () => {
                   <Nav.Item as="li">
                     <NavLink
                       activeclassname="active"
-                      className="me-xl-4 me-lg-3"
+                      className=""
                       to="/ship-my-parcel"
                     >
                       Ship A Package
@@ -166,7 +162,7 @@ export const SiteHeader = () => {
                   <Nav.Item as="li">
                     <NavLink
                       activeclassname="active"
-                      className="me-xl-4 me-lg-3"
+                      className=""
                       to="/tracking"
                     >
                       Tracking
@@ -175,7 +171,7 @@ export const SiteHeader = () => {
                   <Nav.Item as="li">
                     <NavLink
                       activeclassname="active"
-                      className="me-xl-4 me-lg-3"
+                      className=""
                       to="/contact-us"
                     >
                       Contact Admin
@@ -212,8 +208,8 @@ export const SiteHeader = () => {
                   </Nav.Item>
                 </Nav>
               ) : (
-                <Nav className="align-items-lg-center">
-                  <Dropdown className="notiDropdown me-2 ">
+                <Nav className="align-items-lg-center ms-3">
+                  <Dropdown className="notiDropdown me-4 ">
                     <Dropdown.Toggle
                       variant="transparent pb-0"
                       className="notButton notifi-btn px-1"
@@ -221,7 +217,7 @@ export const SiteHeader = () => {
                       <FontAwesomeIcon className="bellIcon" icon={faBell} />
                       {/* <span className="badge">9+</span> */}
                       {notificationState.length > 0 && (
-                        <span class="position-absolute top-0 start-90 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
+                        <span class="position-absolute top-0 start-90 translate-middle p-1 border border-light rounded-circle">2</span>
                       )}
                     </Dropdown.Toggle>
                     <Dropdown.Menu className="notiMenu" align="end">
@@ -252,6 +248,7 @@ export const SiteHeader = () => {
                                       />
                                     </div>
                                     <div className="mediaRight">
+                                      <h6 className="mb-1">Lorem ipsum dolor sit</h6>
                                       <p className="notificationText mb-0">
                                         {item.data.content}
                                       </p>
@@ -288,93 +285,43 @@ export const SiteHeader = () => {
                         variant="transparent"
                         className="notButton toggleButton px-1"
                       >
-                        <div className="userImage online_show">
-                          <img
-                            src={SERVER_URL + user?.avatar}
-                            alt={true.toString()}
-                            className="img-fluid rounded-circle"
-                          />
-                          <span className="ms-2">{`${user.first_name} ${user.last_name}`}</span>
-                          <FontAwesomeIcon
-                            icon={faChevronDown}
-                            className="ms-2"
-                          />
-                        </div>
-                      </Dropdown.Toggle>
-
-                      <Dropdown.Menu className="userMenu" align="end">
-                        <Link className="userMenuItem" to={"/profile"}>
-                          <FontAwesomeIcon
-                            className="me-3 primary_color"
+                        <FontAwesomeIcon
+                            className="primary_color"
                             icon={faUser}
                           />
-                          My Profile
+                      </Dropdown.Toggle>
+                      <Dropdown.Menu className="userMenu" align="end">
+                      <Link className="userMenuItem" to={"/profile"}>
+                          <div className="userImage online_show">
+                            {/* <img
+                              src={SERVER_URL + user?.avatar}
+                              alt={true.toString()}
+                              className="img-fluid rounded-circle"
+                              /> */}
+                            <img
+                              src={userAvatar}
+                              alt={true.toString()}
+                              className="img-fluid rounded-circle"
+                              />
+                            <span className="ms-0 d-block mt-3">{`${user.first_name} ${user.last_name}`}</span>
+                          </div>
                         </Link>
+                        <Link className="userMenuItem" to={"/profile"}>My Profile</Link>
                         <Link
                           className="userMenuItem"
                           onClick={() => handleClick()}
-                        >
-                          <FontAwesomeIcon
-                            className="me-3 primary_color"
-                            icon={faSignOut}
-                          />
-                          Logout
-                        </Link>
+                        >Logout</Link>
                       </Dropdown.Menu>
                     </Dropdown>
-                  ) : (
-                    <Dropdown className="userDropdown">
-                      <Dropdown.Toggle
-                        variant="transparent"
-                        className="notButton toggleButton"
-                      >
-                        <div className="userImage online_show">
-                          <img
-                            src={SERVER_URL + user?.avatar}
-                            alt={true.toString()}
-                            className="img-fluid rounded-circle"
-                          />
-                          <span className="ms-2">{`${user?.first_name} ${user?.last_name}`}</span>
-                          <FontAwesomeIcon
-                            icon={faChevronDown}
-                            className="ms-3"
-                          />
-                        </div>
-                      </Dropdown.Toggle>
-
-                      <Dropdown.Menu className="userMenu" align="end">
-                        <Link className="userMenuItem" to={"/user/profile"}>
-                          <FontAwesomeIcon
-                            className="me-3 primary_color"
-                            icon={faUser}
-                          />
-                          My Profile
-                        </Link>
-                        <Link className="userMenuItem" to={"/my-request"}>
-                          <FontAwesomeIcon
-                            className="me-3 primary_color"
-                            icon={faUser}
-                          />
-                          My Request
-                        </Link>
-                        <Link
-                          className="userMenuItem"
-                          onClick={() => handleClick()}
-                        >
-                          <FontAwesomeIcon
-                            className="me-3 primary_color"
-                            icon={faSignOut}
-                          />
-                          Logout
-                        </Link>
-                      </Dropdown.Menu>
-                    </Dropdown>
-                  )}
+                  ) : "" }
                 </Nav>
               )}
             </Navbar.Collapse>
           </Navbar>
         </Container>
+
+
+
 
         {/* Offcanvas component */}
         <Offcanvas
@@ -644,6 +591,7 @@ export const SiteHeader = () => {
           show={showModal}
           close={() => setShowModal(false)}
           action={handleLogout}
+          heading="System Message"
           para="Are you sure you want to logout?"
         />
       </header>

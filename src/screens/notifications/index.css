@@ -11,13 +11,13 @@ ul.noti_box {
 .noti_boxr .first {
     font-size: 16px;
     margin: 0;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 .noti_boxr .second {
     font-size: 14px;
     margin: 0;
-    font-weight: bold;
-    color: #418bfa;
+    /* font-weight: bold; */
+    color: #77838F;
 }
 .bell_icon {
     transform: rotate(45deg);
@@ -47,12 +47,16 @@ ul.noti_box li>div {
     background: #fff;
     border: 1px solid #f2f2f2;
     transition: all 0.5s 0s ease;
-    box-shadow: 0px 8px 6px rgb(133 233 255 / 14%);
+    box-shadow: 0px 8px 6px rgba(0, 0, 0, 0.14);
     margin-bottom: 30px;
 }
 .noti_box li>div.markRead {
     box-shadow: 0px 6px 8px rgb(0 0 0 / 6%);
-    background: #C5E0FF;
+    background: #E4EDE9;
+    border-color: #00AD5B;
+}
+.noti_box li>div.markRead .noti_boxr .second{
+    color: #00AD5B;
 }
 .notification_btn{
     padding: 12px 25px;
@@ -68,8 +72,10 @@ ul.noti_box li>div {
     font-size: 14px;
 }
 .read_btn {
-    background: #3293FF;
-    color: white;
+    background: transparent;
+    color: #7A7A7A;
+    text-decoration: underline;
+    font-weight: 500;
 }
 .unread_btn {
     background: #83E9FF;
@@ -77,12 +83,15 @@ ul.noti_box li>div {
     font-weight: bold;
 }
 .notify_input {
-    max-width: 128px;
+    min-width: 100px;
     border: none;
-    box-shadow: 1px 1px 0px 2px #e1e1e1;
+    /* box-shadow: 1px 1px 0px 2px #e1e1e1; */
     border-radius: 5px;
     width: 100%;
     padding: 0.8rem;
+    height: auto;
+    color: #7A7A7A;
+    background: #F4F4F4;
 }
 @media screen and (max-width: 767px) {
     .notification_btn {

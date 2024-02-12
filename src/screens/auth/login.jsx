@@ -25,27 +25,27 @@ const UserLogIn = () => {
         e.preventDefault();
         setLoad(true);
 
-        // let resp = await axios.post('/login', formData)
-        //     .then(response => {
-        //         // document.getElementById('response').innerHTML = 
-        //         // `<div class="alert alert-success" role="alert"><strong>Success! </strong>${response.data.message}</div>`;
+        let resp = await axios.post('/login', formData)
+            .then(response => {
+                // document.getElementById('response').innerHTML = 
+                // `<div class="alert alert-success" role="alert"><strong>Success! </strong>${response.data.message}</div>`;
 
-        //         localStorage.setItem('_token', encode(response.data.data.access_token));
-        //         localStorage.setItem('user', encode(JSON.stringify(response.data.data.user)));
+                localStorage.setItem('_token', encode(response.data.data.access_token));
+                localStorage.setItem('user', encode(JSON.stringify(response.data.data.user)));
 
-        //         setTimeout(() => {
-        //             document.getElementById('response').hidden = true;
-        //             setRole(response.data.data.user.role_id);
-        //             setLoad(false);
-        //             navigate('/');
-        //             axios.defaults.headers.common["Authorization"] = `Bearer ${response.data.data.access_token}`;
-        //         }, 1000);
-        //     })
-        //     .catch(error => {
-        //         document.getElementById('response').innerHTML = 
-        //         `<div className="alert alert-danger"role="alert"><strong>Opss! </strong>${error.response.data.message}</div>`;
-        //         setLoad(false);
-        //     });
+                setTimeout(() => {
+                    document.getElementById('response').hidden = true;
+                    setRole(response.data.data.user.role_id);
+                    setLoad(false);
+                    navigate('/');
+                    axios.defaults.headers.common["Authorization"] = `Bearer ${response.data.data.access_token}`;
+                }, 1000);
+            })
+            .catch(error => {
+                document.getElementById('response').innerHTML = 
+                `<div className="alert alert-danger"role="alert"><strong>Opss! </strong>${error.response.data.message}</div>`;
+                setLoad(false);
+            });
     }
 
     return (

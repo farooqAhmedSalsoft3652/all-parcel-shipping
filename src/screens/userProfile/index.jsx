@@ -8,6 +8,7 @@ import usePageTitle from "@hooks/usePageTitle";
 import LoadingSpinner from "@components/loader";
 import axios from "axios";
 
+
 const MyProfile = () => {
   usePageTitle("My Profile");
   const [profileData, setProfileData] = useState({});
@@ -74,13 +75,13 @@ const MyProfile = () => {
                         <div>
                           <Link
                             to="/change-password"
-                            className=" site-btn site_border_btn text-decoration-none width-220"
+                            className="site-btn text-decoration-none width-220"
                           >
                             Change Password
                           </Link>
                           <Link
                             to="/profile/edit-profile"
-                            className="site-btn ms-3 text-decoration-none width-220"
+                            className="site-btn site_border_btn ms-3 text-decoration-none width-220"
                           >
                             Edit Profile
                           </Link>
