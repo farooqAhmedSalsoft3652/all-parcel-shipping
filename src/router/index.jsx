@@ -20,6 +20,7 @@ import Faq from "@screens/faq";
 import Reviews from "@screens/reviews";
 import RetailerReturns from "@screens/retailerReturns";
 import AboutUs from "@screens/aboutUs";
+import DeliveryServices from "@screens/deliveryServices";
 
 
 
@@ -90,7 +91,7 @@ const UserRouter = () => {
         <Route path="/prices-comparison" element={<PricesComparison />} />
         <Route path="/shipping-details-pickup" element={<ShippingDetailsPickup />} />
         <Route path="/shipping-details-dropoff" element={<ShippingDetailsDropOff />} />
-        <Route path=" /shipping-payment-information" element={<ShippingPaymentInformation />} />
+        <Route path="/shipping-payment-information" element={<ShippingPaymentInformation />} />
         <Route path="/tracking" element={<Tracking />} />
         <Route path="/tracking/tracking-order" element={<TrackingOrder />} />
         <Route path="/contact-us" element={<ContactUs />} />
@@ -103,6 +104,7 @@ const UserRouter = () => {
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/retailer-returns" element={<RetailerReturns />} />
         <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/delivery-services" element={<DeliveryServices />} />
 
         <Route path="/order-logs" element={<OrderLogs />} />
         <Route path="/order-logs/details/:id" element={<OrderDetails />} />

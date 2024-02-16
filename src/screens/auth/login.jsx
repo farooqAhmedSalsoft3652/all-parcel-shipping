@@ -43,7 +43,7 @@ const UserLogIn = () => {
             })
             .catch(error => {
                 document.getElementById('response').innerHTML = 
-                `<div className="alert alert-danger"role="alert"><strong>Opss! </strong>${error.response.data.message}</div>`;
+                `<div class="alert alert-danger 12"role="alert"><strong>Opss! </strong>${error.response.data.message}</div>`;
                 setLoad(false);
             });
     }
@@ -107,7 +107,7 @@ const UserLogIn = () => {
 
             <div className="mt-4 text-center">
               <SiteButton type="submit" className="site-btn w-100" load={load}>
-                Sign In
+                Login
               </SiteButton>
             </div>
             <div className="mt-3 text-center">

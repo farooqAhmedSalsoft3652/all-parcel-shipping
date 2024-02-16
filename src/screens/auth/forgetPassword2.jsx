@@ -100,7 +100,7 @@ const ForgetPassword2 = () => {
                   labelClass="mainLabel"
                   type="number"
                   id="code"
-                  placeholder="Verification Code"
+                  placeholder="Enter Verification Code"
                   inputClass="mainInput"
                   required
                   value={values.code}

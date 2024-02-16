@@ -88,11 +88,11 @@ const ForgetPassword3 = () => {
                             <CustomInput 
                                 label='New Password' 
                                 labelClass='mainLabel' 
-                                // type='password' 
-                                // id='password' 
+                                type='password' 
+                                id='password' 
                                 placeholder='Enter New Password' 
                                 inputClass='mainInput' 
-                                // required
+                                required
                                 // value={values.password}
                                 // onChange={handleChange}
                                 // onBlur={handleBlur}
@@ -104,11 +104,11 @@ const ForgetPassword3 = () => {
                             <CustomInput 
                                 label='Confirm Password' 
                                 labelClass='mainLabel' 
-                                // type='password' 
-                                // id='confirm_password' 
-                                placeholder='Enter Confirm Password' 
+                                type='password' 
+                                id='confirm_password' 
+                                placeholder='Confirm New Password' 
                                 inputClass='mainInput' 
-                                // required 
+                                required 
                                 // value={values.confirm_password}
                                 // onChange={handleChange}
                                 // onBlur={handleBlur}
@@ -123,7 +123,7 @@ const ForgetPassword3 = () => {
                 </Form>
             </AuthLayout>
 
-            <CustomModal show={showModal} close={passwordUpdate} onClickOk={passwordUpdate} buttonText="Please Login To Continue" btntext="continue" success para='Password Successfully Updated' />
+            <CustomModal show={showModal} close={passwordUpdate} onClickOk={passwordUpdate} buttonText="Please Login To Continue" btntext="continue" heading="System Message" success para='Password updated successfully' />
         </>
     )
 }

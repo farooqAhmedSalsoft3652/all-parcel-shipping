@@ -51,7 +51,7 @@ const Notifications = () => {
           <Row>
             <Col xs={12} className='d-block d-lg-flex justify-content-between'>
               <div className="title">
-                <h2 className="text-primary mb-2 fw-medium">Notification</h2>
+                <h2 className="text-primary mb-2 fw-medium">Notifications</h2>
               </div>
               <div className="d-flex align-self-center">
                 <label className='align-self-center me-3' htmlFor="">Showing:</label>
@@ -70,7 +70,7 @@ const Notifications = () => {
                   <Row>
                     <Col lg={12} className="">
                         <div className="noti_boxm">   
-                          <ul className="noti_box">
+                          <ul className="noti_box mb-0">
                           {/* {notifications.length === 0 ? (
                             <h3 className="text-center text-muted">No notification found!</h3>
                           ) : (

@@ -95,3 +95,10 @@
 :where(.css-dev-only-do-not-override-amq5gd).ant-select-multiple .ant-select-selection-item-remove {
   margin: 0 0 0 10px;
 }
+
+@media (max-width: 575px){
+  .authForm.signup{
+    padding: 30px 30px;
+  }
+}
+

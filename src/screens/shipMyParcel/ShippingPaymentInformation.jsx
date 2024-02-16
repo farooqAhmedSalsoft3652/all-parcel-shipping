@@ -30,7 +30,7 @@ const ShippingPaymentInformation = () => {
         <main className="align-bottom page-content bg-white">
           <Container>
             <Row>
-              <Col xs={6}>
+              <Col xs={12}>
                 <div className="title">
                   <h2 className="text-primary mb-2 fw-medium">
                     <BackButton className="text-primary" /> Payment Information
@@ -47,7 +47,7 @@ const ShippingPaymentInformation = () => {
                         <Row>
                           <Col xs={12}>
                             <h3 className="mb-3 mb-md-4 fw-bold">
-                              Dropoff Details
+                            Amount to Pay: $ 1000
                             </h3>
                           </Col>
                           <Col md={6} className="mb-3 mb-md-5">
@@ -74,22 +74,22 @@ const ShippingPaymentInformation = () => {
                           </Col>
                           <Col md={6} className="mb-3 mb-md-5">
                             <CustomInput
-                              label="Address Line 1"
+                              label="CVV Number"
                               type="text"
                               id="full_name"
                               required
-                              placeholder="Enter Address Line 1"
+                              placeholder="CVV Number"
                               labelClass="mainLabel bold"
                               inputClass="mainInput"
                             />
                           </Col>
                           <Col md={6} className="mb-3 mb-md-5">
                             <CustomInput
-                              label="CVV Number"
-                              type="text"
+                              label="Expiry Date"
+                              type="date"
                               id="full_name"
                               required
-                              placeholder="Enter CVV Number"
+                              placeholder="Expiry Date"
                               labelClass="mainLabel bold"
                               inputClass="mainInput"
                             />

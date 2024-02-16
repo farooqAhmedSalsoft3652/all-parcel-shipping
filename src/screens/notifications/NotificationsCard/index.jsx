@@ -20,13 +20,10 @@ const NotificationsCard = (props) => {
     // }
 
     return (
-        <div className={`${props.data?.read ? 'markUnread' : 'markRead'} flex-sm-row flex-column d-flex align-items-sm-center align-items-end justify-content-between`} id={`notification_${props.data.id}`}>
+        <div className={`${props.data?.read ? 'markUnread' : 'markRead'} flex-sm-row flex-column d-flex justify-content-between`} id={`notification_${props.data.id}`}>
             <div className="d-flex align-items-center">
-            <div className="bellbg ">
-                <FontAwesomeIcon className='bell_icon' icon={faBell}/>
-              </div>
-                <div className="noti_boxl me-4">
-                    {/* <img src={props.image} alt='' /> */}
+                <div className="noti_avatar me-3">
+                    <img src={props.data.image} alt='' className='rounded-circle' />
                 </div>
                 <div className="noti_boxr ">
                     {/* <p className='d-grey-color first'>{props.data.data.content}</p> */}
@@ -50,7 +47,8 @@ const NotificationsCard = (props) => {
                     className={`notification_btn read_btn`} 
                     onClick={(e) => handleRead(e, props.data?.id)}
                 >
-                    Mark as Read
+                    {props.data?.read ? 'Mark as Unread' : 'Mark as Read'}
+                    
                 </SiteButton>
                 )}
             </div>

@@ -3,9 +3,9 @@ import { Container, Row, Col } from "react-bootstrap";
 import {packagesCardData} from "@config/data";
 import { useNavigate } from "react-router-dom";
 import SiteButton from "@components/Button/button";
-import { useEffect, useState } from "react";
+import { useEffect, useState, forwardRef } from "react";
 
-const HomePackages = (props) => {
+const HomePackages = forwardRef(({ className }, ref) => {
 
   const navigate = useNavigate()
   const [data, setData] = useState([]);
@@ -16,7 +16,7 @@ const HomePackages = (props) => {
 
   return (
     <>
-      <section className="pad-top-4 pad-bottom-4 color-bg-oompa-light">
+      <section className={`pad-top-4 pad-bottom-4 color-bg-oompa-light home-packages ${className}`} ref={ref}>
         <Container>
           <Row>
             <Col xs={12}>
@@ -25,7 +25,7 @@ const HomePackages = (props) => {
               </h3>
               <div className="home-steps push-bottom-4 js-animate-in-view">
                 {data.slice(0, 4).map((data, index) => (
-                  <div className="home-steps__data" key={index}>
+                  <div className="home-steps__item" key={index}>
                     <div className="home-steps__img">
                       <img
                         src={data.packageimage}
@@ -44,7 +44,7 @@ const HomePackages = (props) => {
                 <SiteButton
                   type="button"
                   className="btn btn--quarternary btn--ghosted color-bg-white"
-                  onClick={() => navigate("/")}
+                  onClick={() => navigate("/ship-my-parcel")}
                 >
                   Try our shipping calculator
                 </SiteButton>
@@ -55,6 +55,6 @@ const HomePackages = (props) => {
       </section>
     </>
   );
-};
+});
 
 export default HomePackages;

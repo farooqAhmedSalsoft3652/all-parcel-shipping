@@ -59,7 +59,7 @@ const PasswordChange = () => {
     <main className="align-bottom page-content bg-white">
         <Container>
           <Row>
-            <Col xs={6}>
+            <Col xs={12}>
               <div className="title">
                 <h2 className="text-primary mb-2 fw-medium"><BackButton className="text-primary" /> Change Password</h2>
               </div>
@@ -112,7 +112,7 @@ const PasswordChange = () => {
                             labelClass="mainLabel" 
                             type="password" 
                             id="confirm_password"
-                            placeholder="Enter Confirm Password" 
+                            placeholder="Confirm New Password" 
                             inputClass="mainInput" 
                             required 
                             // value={values.confirm_password}

@@ -48,6 +48,7 @@
 .notificationsBody {
     height: 230px;
     overflow-y: auto;
+   
 }
 .notificationsBody::-webkit-scrollbar {
     width: 10px !important;
@@ -352,6 +353,7 @@ header a{
 .fa-square-youtube{ color: #E54441;} 
 .fa-square-twitter{ color: #449ED7;}
 .fa-square-pinterest{ color: #BF353C;}
+
 
 
 @media screen and (max-width: 1399px) {

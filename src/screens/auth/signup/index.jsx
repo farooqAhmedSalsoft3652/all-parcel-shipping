@@ -192,7 +192,7 @@ const SignUp = () => {
                             value={formData.email}
                             onChange={handleInputChange}
                             required
-                            placeholder="Enter Email Address"
+                            placeholder="Enter Your Email Address"
                             labelClass="mainLabel bold"
                             inputClass="mainInput"
                             inputError={formErrors.email}
@@ -200,13 +200,13 @@ const SignUp = () => {
                         </Col>
                         <Col xs={12} className="mb-4">
                           <CustomInput
-                            label="New Password"
+                            label="Password"
                             type="password"
                             id="password"
                             value={formData.password}
                             onChange={handleInputChange}
                             required
-                            placeholder="Enter New Password"
+                            placeholder="Enter Password"
                             labelClass="mainLabel bold"
                             inputClass="mainInput"
                             inputError={formErrors.password}
@@ -214,7 +214,7 @@ const SignUp = () => {
                         </Col>
                         <Col xs={12} className="mb-4">
                           <CustomInput
-                            label="Enter Confirm Password"
+                            label="Confirm Password"
                             type="password"
                             id="confirm_password"
                             value={formData.confirm_password}
@@ -255,7 +255,7 @@ const SignUp = () => {
                   </div>
                 </div>
               </Col>
-              <Col xs={6} className="authImage position-relative">
+              <Col xs={6} className="authImage d-none d-lg-block position-relative">
                 <img src={loginImg} alt="authImage"/>
               </Col>
             </Row>

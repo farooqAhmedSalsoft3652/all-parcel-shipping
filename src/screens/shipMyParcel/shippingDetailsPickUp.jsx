@@ -38,7 +38,7 @@ const ShippingDetailsPickup = () => {
         <main className="align-bottom page-content bg-white">
           <Container>
             <Row>
-              <Col xs={6}>
+              <Col xs={12}>
                 <div className="title">
                   <h2 className="text-primary mb-2 fw-medium">
                     <BackButton className="text-primary" /> Shipping Details
@@ -96,7 +96,6 @@ const ShippingDetailsPickup = () => {
                               label="Address Line 2"
                               type="text"
                               id="full_name"
-                              required
                               placeholder="Enter Address Line 2"
                               labelClass="mainLabel bold"
                               inputClass="mainInput"
@@ -118,6 +117,7 @@ const ShippingDetailsPickup = () => {
                               label="State"
                               labelClass="mainLabel bold"
                               options={selState}
+                              required
                             />
                           </Col>
                           <Col md={6} className="mb-3 mb-md-5">
@@ -136,6 +136,7 @@ const ShippingDetailsPickup = () => {
                               label="Country"
                               labelClass="mainLabel bold"
                               options={selCountry}
+                              required
                             />
                           </Col>
                           <Col md={4} className="mb-3 mb-md-5">

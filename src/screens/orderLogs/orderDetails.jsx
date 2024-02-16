@@ -86,13 +86,13 @@ const OrderDetails = () => {
       <section className="align-bottom page-content bg-white">
         <Container>
           <Row>
-            <Col xs={12} className="title d-block d-md-flex justify-content-lg-between">
+            <Col xs={12} className="title d-block d-md-flex justify-content-md-between">
               <h2 className="text-primary mb-2 fw-medium">
                 <BackButton className="text-primary" /> Order Details
               </h2>
               
               <div class={`order-tag align-self-center ${data.status === "completed" ? 'completed' : data.status === "cancelled" ? 'cancelled' : data.status === "pending" ? 'pending' : ''}`}>
-                {data.status === "completed" ? 'Completed' : data.status === "cancelled" ? 'Cancelled' : data.status === "pending" ? 'Pending' : ''}
+                {data.status === "completed" ? 'Completed' : data.status === "cancelled" ? 'Cancelled By User' : data.status === "pending" ? 'Pending' : ''}
               </div>
             </Col>
             <Col xs={12}>
@@ -323,8 +323,18 @@ const OrderDetails = () => {
                       lg={3}
                       className="mt-4 mt-md-4 mt-xxl-5"
                     >
-                      <h5 className="mb-1 mb-md-2">Estimated Delivery Time</h5>
-                      <p className="">{data.dropoffDetails.estimatedDeliveryTime}</p>
+                      {data.status === "cancelled" ? (
+                        <>
+                          <h5 className="mb-1 mb-md-2">Estimated Delivery Time</h5>
+                          <p className="">{data.dropoffDetails.estimatedDeliveryTime}</p>
+                        </>
+                      ) : (
+                        <>
+                        <h5 className="mb-1 mb-md-2">Delivered On</h5>
+                        <p className="">{data.dropoffDetails.estimatedDeliveryTime}</p>
+                        </>
+                      )}
+                      
                     </Col>
                     <Col xs={12} className="mt-4 mt-md-4 mt-xxl-5">
                       <h5 className="mb-1 mb-md-2">Special Instructions</h5>
@@ -340,17 +350,46 @@ const OrderDetails = () => {
                       </Col>
                     </Row>
                   ):""}
-                   {data.status === "completed" || data.status === "cancelled" ? (
+                   {/* {data.status === "completed" ? (
                     <Row>
                       <Col xs={12} className="mt-4 mt-lg-5">
                         <SiteButton onClick={showReportBooking} type="button" className="site-btn me-3">Report Booking?</SiteButton>
                       </Col>
                     </Row>
+                   ): "" } */}
+
+                   {data.status === "cancelled" ? (
+                    <>
+                    
+                     <Row>
+                    <Col xs={12} className="mt-4 mt-md-4 mt-xxl-5">
+                    <h5 className="mb-1 mb-md-2">Cancellation Reason</h5>
+                    <p className="">{data.pickupDetails.specialInstructions}</p>
+                  </Col>
+                     </Row>
+
+                    <Row>
+                      <Col xs={12} className="mt-4 mt-lg-5">
+                        <SiteButton onClick={showReportBooking} type="button" className="site-btn me-3">Report Booking?</SiteButton>
+                        {/* <SiteButton onClick={showReportBooking} type="button" className="site-btn me-3">Cancellation Reason</SiteButton> */}
+                      </Col>
+                    </Row>
+                    </>
                    ): "" }
 
                 </div>
               ) : (
                 ""
+              )}
+              {data.status === "completed" && (
+              <div className="detail-block bg-light position-relative p-4 p-lg-5  mt-5">
+                  <Row>
+                    <Col xs={12} className="mb-3">
+                      <h3 className="mb-2">Reported Reason</h3>
+                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa vitae neque laborum porro, similique obcaecati minus ex quibusdam odio minima, nam atque quas? Ullam odit voluptas vitae incidunt, dolor dolorum!</p>
+                    </Col>
+                </Row>
+              </div>
               )}
             </Col>
           </Row>

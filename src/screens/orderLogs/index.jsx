@@ -15,7 +15,7 @@ import { orderLogsData } from "@config/data";
 
 const OrderLogs = () => {
   usePageTitle("Order Logs");
-  const [adlogsData, setAdLogsData] = useState([]);
+  const [orderData, setOrderData] = useState([]);
   const [filters, setFilters] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
   const [totalRecords, setTotalRecords] = useState(0);
@@ -23,7 +23,7 @@ const OrderLogs = () => {
   const [load, setLoad] = useState(true);
 
   const {
-    filterSort, filterSortValue, setFilterSortValue, filterSortValues, filterSearch, filterSearchValue, setFilterSearchValue, dateFilter, filterFrom, setFilterFrom, filterTo, setFilterTo
+    filterSort, filterSortValue, setFilterSortValue, filterSortValues, filterSearch, filterSearchValue, setFilterSearchValue, dateFilter, dateEndFilter, filterFrom, setFilterFrom, filterTo, setFilterTo
   } = UseTableControls();
   
   const orderLogsHeader = [
@@ -96,7 +96,8 @@ const OrderLogs = () => {
         let records_per_page = response.data.data.meta.per_page;
         let total_pages      = Math.ceil(total_records / records_per_page);
 
-        setAdLogsData(response.data.data.data);
+         //setOrderData(response.data.data.data); // API Data
+        setOrderData(orderLogsData); // Static Data
         setCurrentPage(response.data.data.meta.current_page);
         setTotalRecords(total_records);
         setTotalPages(total_pages);
@@ -108,13 +109,16 @@ const OrderLogs = () => {
       });
   }
 
+
   useEffect(() => {
     loadAdsLogs();
   }, [currentPage, filters]);
 
   useEffect(()=>{
-    setAdLogsData(orderLogsData);
-  },[])
+    setOrderData(orderLogsData);
+  },[orderLogsData])
+  
+  console.log("ata", orderData);
 
   return (
     <Layout>
@@ -122,9 +126,9 @@ const OrderLogs = () => {
         <Container>
           <Row>
             <Col xs={12} className="title text-center">
-              <h2 class="text-primary mb-2 fw-medium">Order Logs</h2>
+              <h2 className="text-primary mb-2 fw-medium">Order Logs</h2>
               <Link
-                to={"/ads-logs/packages"}
+                to={"/tracking"}
                 className="site-btn text-decoration-none text-center mt-2 width-220"
               >
                 Track Order
@@ -150,6 +154,7 @@ const OrderLogs = () => {
                 // setFilterSearchValue={setFilterSearchValue}
 
                 dateFilter={true}
+                dateEndFilter={true}
                 // filterFrom={filterFrom}
                 // setFilterFrom={setFilterFrom}
                 // filterTo={filterTo}
@@ -163,7 +168,7 @@ const OrderLogs = () => {
                       </td>
                     </tr>
                   ) : (
-                    adlogsData.map((item, index) => (
+                    orderData.map((item, index) => (
                       <tr key={index}>
                         <td>{(index + 1).toString().padStart(2, "0")}</td>
                         <td>{item.orderNo}</td>
@@ -204,7 +209,7 @@ const OrderLogs = () => {
                                 to={`/order-logs/details/${item?.id}`}
                               >
                                 <FontAwesomeIcon icon={faEye} />
-                                view
+                                View
                               </Dropdown.Item>
                             </Dropdown.Menu>
                           </Dropdown>

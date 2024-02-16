@@ -22,7 +22,7 @@ const TrackingOrder = () => {
         <main className="align-bottom page-content bg-white">
           <Container>
             <Row>
-              <Col xs={6} className="title">
+              <Col lg={6} className="title">
                 <h2 className="text-primary mb-2 fw-medium">
                   <BackButton className="text-primary" /> Order Id #0000000
                 </h2>
@@ -32,7 +32,7 @@ const TrackingOrder = () => {
               <Col xs={12} className="mt-3">
                 <Row>
                   <Col xs={12} className="text-center">
-                    <img src={trackImg} alt="" />
+                    <img src={trackImg} alt="" className="img-fluid" />
                   </Col>
                   <Col xs={12} className="text-center mt-3">
                     <h2 className="fw-bold">Your parcel has left the warehouse! ETA - 2 Days</h2>

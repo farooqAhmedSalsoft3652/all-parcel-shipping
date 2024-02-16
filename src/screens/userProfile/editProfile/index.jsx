@@ -17,6 +17,8 @@ const MyProfile = () => {
   usePageTitle("Edit Profile");
   const [showModal, setShowModal] = useState(false);
 
+  const [value, setValue] = useState()
+
   const [load, setLoad] = useState(true);
 
   const loadProfileData = async () => {
@@ -38,7 +40,7 @@ const handleUpdate = ((event)=>{
 })
 
   useEffect(() => {
-    setLoad(true);
+    setLoad(false);
     loadProfileData();
   }, []);
 
@@ -48,7 +50,7 @@ const handleUpdate = ((event)=>{
         <main className="align-bottom page-content bg-white">
           <Container>
             <Row>
-              <Col xs={6}>
+              <Col xs={12}>
                 <div className="title">
                   <h2 className="text-primary mb-2 fw-medium"><BackButton className="text-primary" /> Edit Profile</h2>
                 </div>
@@ -93,7 +95,7 @@ const handleUpdate = ((event)=>{
                             <PhoneInput
                               placeholder="Enter Contact Number"
                               // value={value}
-                              // onChange={setValue}
+                              onChange={setValue}
                               className="mainInput"
                               defaultCountry="US"
                               // focusInputOnCountrySelection="false"
@@ -102,7 +104,6 @@ const handleUpdate = ((event)=>{
                             <Col xs={12} md={6} lg={4} className="mt-4 mt-md-4 mt-xxl-5">
                               <label className="mainLabel bold ms-0">
                               Email:
-                                <span className="text-danger">*</span>
                               </label>
                               <p className="fw-regular">bellaedward@gmail.com</p>                          
                             </Col>
@@ -132,7 +133,7 @@ const handleUpdate = ((event)=>{
         show={showModal}
         close={()=>{setShowModal(false)}}
         heading="System Message"
-        para="Profile Edited Successfully!"
+        para="Profile Updated Successfully!"
         success={true}
         buttonText="Okay"
         onClickOk={()=>{setShowModal(false)}}

@@ -62,7 +62,7 @@ const ContactUs = () => {
         <main className="align-bottom page-content bg-white">
           <Container>
             <Row>
-              <Col xs={6} className="title">
+              <Col xs={12} className="title">
                 <h2 className="text-primary mb-2 fw-medium">Contact Admin</h2>
               </Col>
             </Row>
@@ -166,7 +166,7 @@ const ContactUs = () => {
         close={contactSuccess}
         onClickOk={contactSuccess}
         heading="System Message"
-        para="Your Request has been Submitted!"
+        para="Your Message has been Submitted!"
         success
       />
     </>

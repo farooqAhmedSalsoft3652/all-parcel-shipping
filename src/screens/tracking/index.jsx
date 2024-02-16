@@ -24,7 +24,7 @@ const Tracking = () => {
         <main className="align-bottom page-content bg-white">
           <Container>
             <Row>
-              <Col xs={6} className="title">
+              <Col xs={12} className="title">
                 <h2 className="text-primary mb-2 fw-medium">
                   Track Your Order!
                 </h2>
@@ -37,10 +37,10 @@ const Tracking = () => {
                     <Row>
                       <Col xxl={11} className="mt-0">
                         <Row>
-                          <Col xs={12} className="mb-3 my-md-4 d-flex">
+                          <Col xs={12} className="mb-3 my-md-4 d-md-flex">
                             <div className="flex-grow-1">
                               <CustomInput
-                                label="Input Order ID"
+                                label="Order ID"
                                 type="text"
                                 id="full_name"
                                 required
@@ -49,10 +49,10 @@ const Tracking = () => {
                                 inputClass="mainInput"
                               />
                             </div>
-                            <div className="flex-shrink-0 align-self-end">
+                            <div className="flex-shrink-0 align-self-end mt-3 mt-md-0 text-center text-md-start">
                               <SiteButton
                                 type="submit"
-                                className="btn-primary d-block width-220"
+                                className="btn-primary width-220"
                               >
                                 Continue
                               </SiteButton>

@@ -22,6 +22,7 @@ const CustomTable = (props) => {
     shouldDisplaySpan,
     requestButtonClasses,
     onRequestButton,
+    
   } = props;
 
   const handleRequestButtonClick = () => {
@@ -57,13 +58,13 @@ const CustomTable = (props) => {
   return (
     <>
       <div
-        className={`d-block d-md-flex ${
+        className={`d-block d-sm-flex ${
           renderEntries ? "justify-content-between" : "justify-content-end"
         } `}
       >
         {renderEntries && (
-          <div className="filterWrapper d-flex align-items-center">
-            <label className="filterLabel me-2">Show</label>
+          <div className="filterWrapper d-flex align-items-center align-self-center mb-3 mb-sm-0">
+            <label className="filterLabel me-2 mb-0">Show</label>
             <select
               className="filterInput"
               value={props?.filters?.limit}
@@ -77,7 +78,7 @@ const CustomTable = (props) => {
               <option value="15">15</option>
               <option value="20">20</option>
             </select>
-            <span className="filterLabel ms-2">Entries</span>
+            <span className="filterLabel ms-2 d-none d-md-block">Entries</span>
           </div>
         )}
         {RequestButton && (
@@ -95,9 +96,9 @@ const CustomTable = (props) => {
             </button>
           </div>
         )}
-        <div className="filterWrapper justify-content-end d-flex gap-3">
+        <div className="filterWrapper justify-content-end d-flex gap-3 mb-0">
           {renderSearchWrapper && (
-            <div className="searchWrapper">
+            <div className="searchWrapper flex-grow-1">
               <CustomInput
                 type="text"
                 placeholder="Search"
@@ -134,6 +135,8 @@ const CustomTable = (props) => {
               statusFilterText={props?.statusFilterText}
               filters={props?.filters}
               setFilters={props?.setFilters}
+              dateEndFilter={props?.dateEndFilter}
+
             />
           )}
         </div>

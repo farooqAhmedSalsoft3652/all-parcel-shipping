@@ -1,18 +1,21 @@
 import "./index.css";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 
 import { roles } from "@config/data";
 import useAuth from "@hooks/useAuth";
 import SiteButton from "@components/Button/button";
 import CustomModal from "@components/customModal";
+import { CustomInput } from "@components/CustomInput";
+
+
 import {
     CountrySelect,
 } from "react-country-state-city";
+import ReactFlagsSelect from "react-flags-select";
 
 // import "react-country-state-city/dist/react-country-state-city.css";
-
 
 const Banner = () => {
     const [countryid, setCountryid] = useState(0);
@@ -22,6 +25,9 @@ const Banner = () => {
   const [showModal, setShowModal] = useState(false);
   const [showLoginButton, setShowLoginButton] = useState(true);
   const [showSignUpButton, setShowSignUpButton] = useState(true);
+
+  const [selected, setSelected] = useState("US");
+
 
   const navigate = useNavigate();
 
@@ -40,6 +46,8 @@ const Banner = () => {
         id="hero-1"
         className="hero hero--home pad-bottom-3 js-animate-in-view has-qq hero--show-qq-form-for-mobile animate-in-view animate-in-view--once"
       >
+        
+
         <div className="hero__text-cont">
           <h1 className="hero__title ">Lorem ipsum dolor</h1>
           <p className="hero__sub-title " role="heading" aria-level="2">
@@ -49,50 +57,74 @@ const Banner = () => {
             <span className="label-tag">Discounted</span> Lorem ipsum dolor sit
             amet consectetur adipisicing
           </p>
+          
           <div className="hero-flex-image-wrapper">
             <div className="hero__flex-image"></div>
           </div>
         </div>
+        
         <section className="js-quick-quote quick-quote quick-quote--hero quick-quote--show-form-for-mobile">
           <div className="container">
             <div className="quick-quote__outer">
               <h2 className="h3 quick-quote__header">
                 Get a quote without signing up
               </h2>
+              
               <div className="quick-quote__window">
-                <div className="modal quick-quote__modal" id="modal_quick-quote_1">
-                  <div className="modal__window quick-quote__inner">
-                    <div className="modal__inner cf">
-                      <div className="modal__content quick-quote__field-outer">
-                        <div className="grid">
-                          <div className="grid-item medium-width-4">
-                            <div className="form-input  quick-quote__from-input">
-                              {/* <label for="collection_country_code_1" class="required">From:</label>
-                                                <div className="form-input__input has-icon">
-                                                    <div className="js-dropdown-container">
-                                                        <select required="required" class="js-dropdown" id="collection_country_code_1" name="collection_country_code">
-                                                            <option value="">Select a country</option>
-                                                        </select>
-                                                    </div>
-                                                </div> */}
-                              <CountrySelect
-                                onChange={(e) => {
-                                  setCountryid(e.id);
-                                }}
-                                placeHolder="Select Country"
-                              />
-                            </div>
-                          </div>
-                        </div>
+                <div className="quick-quote__field-outer">
+                  <div className="grid">
+                    <div className="grid-item medium-width-4 border-end">
+                      <div className="form-input  quick-quote__from-input d-lg-flex">
+                        <label for="collection_country_code_1" class="d-inline-block flex-shrink-0 align-self-center pe-2">From:</label>
+                        <ReactFlagsSelect
+                          selected={selected}
+                          onSelect={(code) => setSelected(code)}
+                          className="flex-grow-1"
+                          searchable
+                        />
                       </div>
+                    </div>
+                    <div className="grid-item medium-width-4 border-end">
+                      <div className="form-input  quick-quote__from-input d-lg-flex">
+                        <label for="collection_country_code_1" class="d-inline-block flex-shrink-0 align-self-center pe-2">To:</label>
+                        <ReactFlagsSelect
+                          selected={selected}
+                          onSelect={(code) => setSelected(code)}
+                          className="flex-grow-1"
+                          searchable
+                        />
+                      </div>
+                    </div>
+                    <div className="grid-item medium-width-4">
+                      <div className="form-input quick-quote__from-input  d-flex">
+                        <div className="flex-grow-1">
+                          <CustomInput
+                            labelClass="mainLabel bold ms-0"
+                            type="number"
+                            id="firstname"
+                            placeholder="Parcel Weight?"
+                            inputClass="mainInput"
+                          />
+                          </div>
+                        <label for="collection_country_code_1" class="d-inline-block flex-shrink-0 align-self-center ps-2 ps-lg-0 pe-lg-5">lb</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="grid">
+                    <div class="grid-item medium-width-12 text-center textt-lg-start">
+                      <SiteButton type="submit" className="btn-primary" onClick={()=> navigate('/ship-my-parcel')}>
+                        Get Quote
+                      </SiteButton>
                     </div>
                   </div>
                 </div>
               </div>
+              <div className="tes"><Link to="/ship-my-parcel" class="quick-quote__multiple-link">Need to book multiple shipments?</Link></div>
             </div>
           </div>
         </section>
       </section>
+      
 
       {/* <section className="banner position-relative two_pices_bg">
       <Container>

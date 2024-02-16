@@ -64,7 +64,7 @@ export const SiteFooter = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link to="#_" className="gtm-footer-link">
+                        <Link to="/delivery-services" className="gtm-footer-link">
                           Delivery Services
                         </Link>
                       </li>
@@ -104,7 +104,7 @@ export const SiteFooter = () => {
                     </ul>
                   </Col>
                 </Row>
-                <div className="t-center cl push-top-2 push-bottom-2 large-push-bottom-0 large-left">
+                <div className="t-center footer-pay-cards cl mt-lg-5 large-push-bottom-0 large-left">
                   <img src={amex} alt="AMEX" width="64" height="36" />
                   <img src={maestro} alt="MAESTRO" width="64" height="36" />
                   <img

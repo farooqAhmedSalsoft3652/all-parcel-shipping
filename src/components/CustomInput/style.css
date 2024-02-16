@@ -10,7 +10,8 @@
     margin-left: 2rem;
     font-family: "SofiaProMedium";
 }
-.mainInput::placeholder{
+.mainInput::placeholder,
+.PhoneInputInput::placeholder{
     color: #acb3c0;
 }
 .mainInput {

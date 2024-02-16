@@ -5,6 +5,7 @@ import SiteButton from "../../../components/Button/button";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { forwardRef } from "react";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -27,7 +28,7 @@ function SamplePrevArrow(props) {
 
 
 
-const ComparePrice = () => {
+const ComparePrice = forwardRef(({ className }, ref) => {
   const navigate = useNavigate()
   const brandSliderSettings = {
     dots: false,
@@ -65,7 +66,7 @@ const ComparePrice = () => {
   };
   return (
     <>
-      <section className="pad-top-4 pad-bottom-4 color-bg-apple-light home__brands__hold js-animate-in-view">
+      <section className={`pad-top-4 pad-bottom-4 color-bg-apple-light home__brands__hold ${className}`} ref={ref}>
         <Container>
           <Row>
             <Col xs={12} className="z-1">
@@ -95,7 +96,7 @@ const ComparePrice = () => {
                 <SiteButton
                   type="button"
                   className="btn btn--quarternary btn--ghosted color-bg-white"
-                  onClick={() => navigate("/")}
+                  onClick={() => navigate("/couriers")}
                 >
                   See all couriers
                 </SiteButton>
@@ -408,6 +409,6 @@ const ComparePrice = () => {
       </section>
     </>
   );
-};
+});
 
 export default ComparePrice;

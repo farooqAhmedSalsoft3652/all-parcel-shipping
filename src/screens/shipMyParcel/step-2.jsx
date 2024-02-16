@@ -10,12 +10,14 @@ import BackButton from "@components/backButton";
 
 import Form from "react-bootstrap/Form";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 
 
 const ShipMyParcelStep2 = () => {
 
   const navigate = useNavigate()
+  const [value, setValue] = useState()
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -30,7 +32,7 @@ const ShipMyParcelStep2 = () => {
         <main className="align-bottom page-content bg-blue">
           <Container>
             <Row>
-              <Col xs={6}>
+              <Col xs={12}>
                 <div className="title">
                   <h2 className="text-white mb-2 fw-medium">
                     <BackButton className="text-white" /> Ship My Parcel
@@ -67,7 +69,7 @@ const ShipMyParcelStep2 = () => {
                                 id={`inline-radio-2`}
                               />
                             </div>
-                            <div class="text-danger fw-medium pt-2">
+                            <div className="text-danger fw-medium pt-2">
                               Note: Prices May Vary According To The Option You
                               Choose
                             </div>
@@ -85,7 +87,7 @@ const ShipMyParcelStep2 = () => {
                               type="text"
                               id="full_name"
                               required
-                              placeholder="LLocation of Pickup"
+                              placeholder="Location of Pickup"
                               labelClass="mainLabel bold"
                               inputClass="mainInput"
                               location={true}
@@ -118,7 +120,7 @@ const ShipMyParcelStep2 = () => {
                           <PhoneInput
                             placeholder="Enter Contact Number"
                             // value={value}
-                            // onChange={setValue}
+                            onChange={setValue}
                             className="mainInput"
                             defaultCountry="US"
                             // focusInputOnCountrySelection="false"
@@ -132,7 +134,7 @@ const ShipMyParcelStep2 = () => {
                             <PhoneInput
                               placeholder="Enter Contact Number"
                               // value={value}
-                              // onChange={setValue}
+                              onChange={setValue}
                               className="mainInput"
                               defaultCountry="US"
                               // focusInputOnCountrySelection="false"

@@ -18,7 +18,7 @@ const CustomModal = (props) => {
         <FontAwesomeIcon icon={faTimes} />
       </button>
       <Modal.Body className='text-center'>
-        <div className={`${showAdditionalContent || showRejectionReason ?  "" : "py-4"}`}>
+        <div className={`${showAdditionalContent || showRejectionReason ?  "reason-modal" : "py-5"}`}>
         {showAdditionalContent || showRejectionReason ? null  : (
             <>
               {props?.success ? (
@@ -92,7 +92,7 @@ const CustomModal = (props) => {
                     </Form>
                    )}
                    {showRejectionReason && (
-                      <div className=' req-model p-4 text-start'>
+                      <div className=' req-model p-5 text-start'>
                         {props?.Reasonheading && (
                           <h4 className="modalHeading fw-bold primary_color text-center mb-5">{props?.Reasonheading}</h4>
                         )  }
@@ -111,7 +111,7 @@ const CustomModal = (props) => {
                         />
 
                         {/* <label htmlFor="" className='mainLabel bold d-flex'>Rejection Reason<span className='text-danger'>*</span></label> */}
-                        <textarea name="reason" id="reason" cols="10" rows="5" className='mainInput mt-3' placeholder='Enter Cancelation Reason' onChange={e => props.setFormData(prev => ({...prev, reason: e.target.value}))} required />
+                        <textarea name="reason" id="reason" cols="10" rows="5" className='mainInput mt-3' placeholder='Enter Report Reason' onChange={e => props.setFormData(prev => ({...prev, reason: e.target.value}))} required />
                         <div className="text-start py-2">
                           <SiteButton className="site-btn" onClick={props.handleReason}>Submit</SiteButton>
                         </div>

@@ -42,7 +42,7 @@ const ShippingDetailsDropOff = () => {
         <main className="align-bottom page-content bg-white">
           <Container>
             <Row>
-              <Col xs={6}>
+              <Col xs={12}>
                 <div className="title">
                   <h2 className="text-primary mb-2 fw-medium">
                     <BackButton className="text-primary" /> Shipping Details
@@ -67,6 +67,7 @@ const ShippingDetailsDropOff = () => {
                               label="Country"
                               labelClass="mainLabel bold"
                               options={selCountry}
+                              required
                             />
                           </Col>
                           <Col md={6} className="mb-3 mb-md-5">
@@ -96,7 +97,6 @@ const ShippingDetailsDropOff = () => {
                               label="Address Line 2"
                               type="text"
                               id="full_name"
-                              required
                               placeholder="Enter Address Line 2"
                               labelClass="mainLabel bold"
                               inputClass="mainInput"
@@ -118,6 +118,7 @@ const ShippingDetailsDropOff = () => {
                               label="State"
                               labelClass="mainLabel bold"
                               options={selState}
+                              required
                             />
                           </Col>
                           <Col md={6} className="mb-3 mb-md-5">

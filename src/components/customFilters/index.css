@@ -1,6 +1,6 @@
 
 .tableFilters {
-    margin: 1rem 0;
+    margin: 1rem 0 0 0;
     font-size: 15px;
 }
 
@@ -13,6 +13,7 @@
     color: #000000;
     margin-bottom: 0.2rem;
     white-space: nowrap;
+    font-size: 16px;
 }
 
 .filterInput {
@@ -50,6 +51,7 @@
     padding-right: 50px;
     min-width: 280px;
     min-height: 50px;
+    width: 100%;
 }
 .filter-btn {
     width: 50px;
@@ -65,9 +67,18 @@
 .filter-btn svg{
     margin-right: 0px;
 }
+.filter-btn::after{
+    display: none;
+}
 .filter-btn:hover{
     color: #fff;
+    background: #00AD5B;
 }
+.filter-btn.show{
+    background: var(--primary-color);
+    border-color:var(--primary-color);
+}
+
 .close-btn {
     font-size: 16px;
     color: #fff;
@@ -115,4 +126,42 @@
 .hover-grey:hover {
     background: #fff;
     color: #000;
+}
+
+
+/* DrowDown Filter */
+.user-filters-dropdown .dropdown-header{
+    padding: 10px 20px;
+}
+.user-filters-dropdown .dropdown-menu h3 {
+    font-size: 26px;
+    color: #010101;
+    border-bottom: 1px solid #F5F5F5;
+    line-height: normal;
+}
+.user-filters-dropdown .dropdown-body{
+    padding: 0px 20px 30px 20px;
+}
+.user-filters-dropdown .dropdown-menu {
+    /* padding: 20px 20px 30px 20px; */
+    min-width: 345px;
+    background: #FFFFFF;
+    box-shadow:0px 0px 10px rgb(0 0 0 / 35%);
+    border: none;
+  }
+
+  .user-filters-dropdown .filterInput{
+    border-radius: 6px;
+    border: 1px solid #C4C4C4;
+    padding: 12px 15px;
+  }
+  .user-filters-dropdown .site-btn{
+    min-width: 130px;
+  }
+
+
+@media(max-width:575px){
+  .user-filters-dropdown .dropdown-menu {
+      min-width: 285px;
+    }
 }

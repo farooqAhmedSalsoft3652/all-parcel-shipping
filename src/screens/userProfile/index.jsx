@@ -8,7 +8,7 @@ import usePageTitle from "@hooks/usePageTitle";
 import LoadingSpinner from "@components/loader";
 import axios from "axios";
 
-
+import { Us } from "react-flags-select";
 const MyProfile = () => {
   usePageTitle("My Profile");
   const [profileData, setProfileData] = useState({});
@@ -38,7 +38,7 @@ const MyProfile = () => {
         <main className="align-bottom page-content bg-white">
           <Container>
             <Row>
-              <Col xs={6}>
+              <Col xs={12}>
                 <div className="title">
                   <h2 className="text-primary mb-2 fw-medium">My Profile</h2>
                 </div>
@@ -59,7 +59,7 @@ const MyProfile = () => {
                           </Col>
                           <Col xs={12} md={6} lg={4} className="mt-4 mt-md-4 mt-xxl-5">
                             <h5 className="mb-1 mb-md-2">Contact Number:</h5>
-                            <p className="">+123-456-7890</p>
+                            <p className=""><Us /> +123-456-7890</p>
                           </Col>
                           <Col xs={12} md={6} lg={4} className="mt-4 mt-md-4 mt-xxl-5">
                             <h5 className="mb-1 mb-md-2">Email:</h5>
@@ -71,17 +71,17 @@ const MyProfile = () => {
                   </Row>
                   <Row className="my-5 text-center">
                     {!load && (
-                      <Col xs={12}>
+                      <Col xs={12} className="pt-5">
                         <div>
                           <Link
                             to="/change-password"
-                            className="site-btn text-decoration-none width-220"
+                            className="site-btn text-decoration-none width-220 mx-2"
                           >
                             Change Password
                           </Link>
                           <Link
                             to="/profile/edit-profile"
-                            className="site-btn site_border_btn ms-3 text-decoration-none width-220"
+                            className="site-btn site_border_btn mt-3 mt-md-0 mx-2 text-decoration-none width-220"
                           >
                             Edit Profile
                           </Link>

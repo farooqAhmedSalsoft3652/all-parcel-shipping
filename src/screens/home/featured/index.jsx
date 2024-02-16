@@ -4,9 +4,10 @@ import {featuresCardData} from "@config/data";
 import { Link, useNavigate } from "react-router-dom";
 import SiteButton from "@components/Button/button";
 import { coin1, coin2, coin3 } from "../../../assets/images";
-import { useEffect, useState } from "react";
+import { useEffect, useState, forwardRef } from "react";
 
-const Featured = (props) => {
+const Featured = forwardRef(({ className }, ref) => {
+  const [selected, setSelected] = useState("US");
   const navigate = useNavigate()
   const [data, setData]= useState([])
   useEffect(()=>{
@@ -18,8 +19,9 @@ const Featured = (props) => {
       <div className="quick-quote__highlight"></div>
       <div
         dusk="usp"
-        className="usp-insert usp-insert--home pad-top-4 pad-bottom-4 js-animate-in-view"
         id="usp"
+        className={`usp-insert usp-insert--home pad-top-4 pad-bottom-4 ${className}`} ref={ref}
+
       >
         <Container>
           <Row>
@@ -35,7 +37,7 @@ const Featured = (props) => {
                 ))}
               </ul>
               <div className="medium-width-6 h-center t-center push-top-2">
-                <SiteButton type="button" className="btn btn--quarternary" onClick={() => navigate("/")}>Try our shipping calculator</SiteButton>
+                <SiteButton type="button" className="btn btn--quarternary" onClick={() => navigate("/ship-my-parcel")}>Try our shipping calculator</SiteButton>
               </div>
               <p className="usp-insert__disclaimer t-small push-top-2">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque,
@@ -50,6 +52,6 @@ const Featured = (props) => {
       </div>
     </>
   );
-};
+});
 
 export default Featured;

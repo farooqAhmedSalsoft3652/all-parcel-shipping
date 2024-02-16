@@ -1,12 +1,12 @@
 {
-  "name": "acolai",
-  "homepage": "https://dev125.onlinetestingserver.com/acolai/",
+  "name": "all-parcel-shipping",
+  "homepage": "all-parcel-shipping",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=./",
+    "build": "vite build --base=/all-parcel-shipping/",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
@@ -29,6 +29,7 @@
     "react-chartjs-2": "^5.2.0",
     "react-country-state-city": "^1.1.0",
     "react-dom": "^18.2.0",
+    "react-flags-select": "^2.2.3",
     "react-phone-number-input": "^3.3.6",
     "react-router-dom": "^6.14.2",
     "react-slick": "^0.29.0",

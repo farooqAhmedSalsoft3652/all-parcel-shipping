@@ -20,6 +20,8 @@ import {
   services2,
   services3,
   services4,
+  userAvatar,
+
 } from "../assets/images";
 
 export const roles = {
@@ -187,6 +189,11 @@ export const orderLogsData = [
     startOrder: "MM/DD/YYYY",
     endOrder: "MM/DD/YYYY",
     status: "completed",
+    shippingCarrier: "ABC",
+    noParcels: "01",
+    pickUpGenerated: "MM/DD/YYYY",
+    estimatedDeliveryDate: "MM/DD/YYYY",
+    deliveryType: "Urgent",
     action: true,
     pickupDetails: {
       yourContactNo: "123",
@@ -226,6 +233,11 @@ export const orderLogsData = [
     startOrder: "MM/DD/YYYY",
     endOrder: "MM/DD/YYYY",
     status: "cancelled",
+    shippingCarrier: "ABC",
+    noParcels: "01",
+    pickUpGenerated: "MM/DD/YYYY",
+    estimatedDeliveryDate: "MM/DD/YYYY",
+    deliveryType: "Urgent",
     action: true,
     pickupDetails: {
       yourContactNo: "123",
@@ -265,6 +277,11 @@ export const orderLogsData = [
     startOrder: "MM/DD/YYYY",
     endOrder: "MM/DD/YYYY",
     status: "cancelled",
+    shippingCarrier: "ABC",
+    noParcels: "01",
+    pickUpGenerated: "MM/DD/YYYY",
+    estimatedDeliveryDate: "MM/DD/YYYY",
+    deliveryType: "Urgent",
     action: true,
     pickupDetails: {
       yourContactNo: "123",
@@ -304,6 +321,11 @@ export const orderLogsData = [
     startOrder: "MM/DD/YYYY",
     endOrder: "MM/DD/YYYY",
     status: "pending",
+    shippingCarrier: "ABC",
+    noParcels: "01",
+    pickUpGenerated: "MM/DD/YYYY",
+    estimatedDeliveryDate: "MM/DD/YYYY",
+    deliveryType: "Urgent",
     action: true,
     pickupDetails: {
       yourContactNo: "123",
@@ -343,6 +365,11 @@ export const orderLogsData = [
     startOrder: "MM/DD/YYYY",
     endOrder: "MM/DD/YYYY",
     status: "pending",
+    shippingCarrier: "ABC",
+    noParcels: "01",
+    pickUpGenerated: "MM/DD/YYYY",
+    estimatedDeliveryDate: "MM/DD/YYYY",
+    deliveryType: "Urgent",
     action: true,
     pickupDetails: {
       yourContactNo: "123",
@@ -436,6 +463,7 @@ export const notificationData = [
     date: "01/01/2022",
     time: "01 sec ago",
     read: false,
+    image: userAvatar
   },
   {
     id: "02",
@@ -444,6 +472,7 @@ export const notificationData = [
     date: "01/01/2022",
     time: "02 hour ago",
     read: true,
+    image: userAvatar
   },
   {
     id: "03",
@@ -452,6 +481,7 @@ export const notificationData = [
     date: "01/01/2022",
     time: "02 hour ago",
     read: false,
+    image: userAvatar
   },
   {
     id: "04",
@@ -460,6 +490,7 @@ export const notificationData = [
     date: "Dec 19, 2020",
     time: "02 hour ago",
     read: true,
+    image: userAvatar
   },
   {
     id: "05",
@@ -468,6 +499,7 @@ export const notificationData = [
     date: "01/01/2022",
     time: "02 hour ago",
     read: true,
+    image: userAvatar
   },
 ];
 

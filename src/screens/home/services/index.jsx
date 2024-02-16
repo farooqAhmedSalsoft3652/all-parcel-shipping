@@ -17,10 +17,10 @@ const Services = () => {
 
   return (
     <>
-      <section className="pad-top-4 pad-bottom-6 color-bg-berry-darker oh js-animate-in-view">
+      <section className="py-5 color-bg-berry-darker oh js-animate-in-view services">
         <Container>
           <Row>
-            <Col xs={12}>
+            <Col xs={12} className="py-5">
               <h3 className="h2 t-center font-size-5 color-text-white">
                 Lorem ipsum dolor sit amet consectetur
               </h3>
@@ -50,7 +50,7 @@ const Services = () => {
               </div>
               <div className="medium-width-6 t-center h-center">
                 <SiteButton
-                  onClick={() => navigate("/contact-us")}
+                  onClick={() => navigate("/delivery-services")}
                   className="btn btn--secondary"
                 >
                   See more delivery services

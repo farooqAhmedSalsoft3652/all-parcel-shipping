@@ -29,7 +29,7 @@ const PricesComparison = () => {
         <main className="align-bottom page-content bg-white">
           <Container>
             <Row>
-              <Col xs={6}>
+              <Col xs={12}>
                 <div className="title">
                   <h2 className="text-primary mb-2 fw-medium">
                     <BackButton className="text-primary" /> Prices Comparison
@@ -40,12 +40,12 @@ const PricesComparison = () => {
             <Row>
               <Col xs={12} className="mt-5">
                 <Row className="g-5">
-                  <Col md={6}>
-                    <div className="card-compare d-flex">
+                  <Col xl={6}>
+                    <div className="card-compare d-sm-flex">
                       <div className="flex-shrink-0 card-img">
                         <img src={dhlCard} alt="" />
                       </div>
-                      <div className="flex-grow-1 card-detail p-5 text-center align-self-center">
+                      <div className="flex-grow-1 card-detail p-3 p-xxl-5 text-center align-self-center">
                         <h3 className="fw-medium text-capitalize mb-4">
                           <span className="d-block">DHL</span>Shipping
                         </h3>
@@ -71,12 +71,12 @@ const PricesComparison = () => {
                       </div>
                     </div>
                   </Col>
-                  <Col md={6}>
-                    <div className="card-compare d-flex">
+                  <Col xl={6}>
+                    <div className="card-compare d-sm-flex">
                       <div className="flex-shrink-0 card-img">
                         <img src={fedexCard} alt="" />
                       </div>
-                      <div className="flex-grow-1 card-detail p-5 text-center align-self-center">
+                      <div className="flex-grow-1 card-detail p-3 p-xxl-5 text-center align-self-center">
                         <h3 className="fw-medium text-capitalize mb-4">
                           <span className="d-block">FedEx</span>Shipping
                         </h3>

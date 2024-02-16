@@ -48,10 +48,10 @@ const Couriers = () => {
                 <ul>
                     <li>
                       <Link to="/couriers-details">
-                        <div div class="logo-tags__logo"><img src={dhl} alt="DHL" /></div>
-                        <div class="logo-tags__content">
-                          <div class="logo-tags__title">DHL</div>
-                          <div class="logo-tags__sub-text">
+                        <div div className="logo-tags__logo"><img src={dhl} alt="DHL" /></div>
+                        <div className="logo-tags__content">
+                          <div className="logo-tags__title">DHL</div>
+                          <div className="logo-tags__sub-text">
                             View courier details
                             <FontAwesomeIcon icon={faAngleRight} />
                           </div>
@@ -60,10 +60,10 @@ const Couriers = () => {
                     </li>
                     <li>
                       <Link to="/couriers-details">
-                        <div div class="logo-tags__logo"><img src={fedexIcon} alt="FedEx" /></div>
-                        <div class="logo-tags__content">
-                          <div class="logo-tags__title">FedEx</div>
-                          <div class="logo-tags__sub-text">
+                        <div div className="logo-tags__logo"><img src={fedexIcon} alt="FedEx" /></div>
+                        <div className="logo-tags__content">
+                          <div className="logo-tags__title">FedEx</div>
+                          <div className="logo-tags__sub-text">
                             View courier details
                             <FontAwesomeIcon icon={faAngleRight} />
                           </div>
@@ -72,10 +72,10 @@ const Couriers = () => {
                     </li>
                     <li>
                       <Link to="/couriers-details">
-                        <div div class="logo-tags__logo"><img src={purolatorIcon} alt="Purolator" /></div>
-                        <div class="logo-tags__content">
-                          <div class="logo-tags__title">Purolator</div>
-                          <div class="logo-tags__sub-text">
+                        <div div className="logo-tags__logo"><img src={purolatorIcon} alt="Purolator" /></div>
+                        <div className="logo-tags__content">
+                          <div className="logo-tags__title">Purolator</div>
+                          <div className="logo-tags__sub-text">
                             View courier details
                             <FontAwesomeIcon icon={faAngleRight} />
                           </div>
@@ -84,10 +84,10 @@ const Couriers = () => {
                     </li>
                     <li>
                       <Link to="/couriers-details">
-                        <div div class="logo-tags__logo"><img src={ups} alt="UPS" /></div>
-                        <div class="logo-tags__content">
-                          <div class="logo-tags__title">UPS</div>
-                          <div class="logo-tags__sub-text">
+                        <div div className="logo-tags__logo"><img src={ups} alt="UPS" /></div>
+                        <div className="logo-tags__content">
+                          <div className="logo-tags__title">UPS</div>
+                          <div className="logo-tags__sub-text">
                             View courier details
                             <FontAwesomeIcon icon={faAngleRight} />
                           </div>
@@ -96,10 +96,10 @@ const Couriers = () => {
                     </li>
                     <li>
                       <Link to="/couriers-details">
-                        <div div class="logo-tags__logo"><img src={usps} alt="DHL" /></div>
-                        <div class="logo-tags__content">
-                          <div class="logo-tags__title">DHL</div>
-                          <div class="logo-tags__sub-text">
+                        <div div className="logo-tags__logo"><img src={usps} alt="DHL" /></div>
+                        <div className="logo-tags__content">
+                          <div className="logo-tags__title">DHL</div>
+                          <div className="logo-tags__sub-text">
                             View courier details
                             <FontAwesomeIcon icon={faAngleRight} />
                           </div>
@@ -128,10 +128,10 @@ const Couriers = () => {
                 <ul>
                     <li>
                       <Link to="/couriers-details">
-                        <div div class="logo-tags__logo"><img src={asendia} alt="Asendia" /></div>
-                        <div class="logo-tags__content">
-                          <div class="logo-tags__title">Asendia</div>
-                          <div class="logo-tags__sub-text">
+                        <div div className="logo-tags__logo"><img src={asendia} alt="Asendia" /></div>
+                        <div className="logo-tags__content">
+                          <div className="logo-tags__title">Asendia</div>
+                          <div className="logo-tags__sub-text">
                             View courier details
                             <FontAwesomeIcon icon={faAngleRight} />
                           </div>
@@ -140,10 +140,10 @@ const Couriers = () => {
                     </li>
                     <li>
                       <Link to="/couriers-details">
-                        <div div class="logo-tags__logo"><img src={ips} alt="IPS" /></div>
-                        <div class="logo-tags__content">
-                          <div class="logo-tags__title">IPS</div>
-                          <div class="logo-tags__sub-text">
+                        <div div className="logo-tags__logo"><img src={ips} alt="IPS" /></div>
+                        <div className="logo-tags__content">
+                          <div className="logo-tags__title">IPS</div>
+                          <div className="logo-tags__sub-text">
                             View courier details
                             <FontAwesomeIcon icon={faAngleRight} />
                           </div>
@@ -152,10 +152,10 @@ const Couriers = () => {
                     </li>
                     <li>
                       <Link to="/couriers-details">
-                        <div div class="logo-tags__logo"><img src={pitneyBowes} alt="Pitney Bowes" /></div>
-                        <div class="logo-tags__content">
-                          <div class="logo-tags__title">Pitney Bowes</div>
-                          <div class="logo-tags__sub-text">
+                        <div div className="logo-tags__logo"><img src={pitneyBowes} alt="Pitney Bowes" /></div>
+                        <div className="logo-tags__content">
+                          <div className="logo-tags__title">Pitney Bowes</div>
+                          <div className="logo-tags__sub-text">
                             View courier details
                             <FontAwesomeIcon icon={faAngleRight} />
                           </div>
@@ -189,10 +189,10 @@ const Couriers = () => {
                 <ul>
                     <li>
                       <Link to="/couriers-details">
-                        <div div class="logo-tags__logo"><img src={bpost} alt="BPost" /></div>
-                        <div class="logo-tags__content">
-                          <div class="logo-tags__title">BPost</div>
-                          <div class="logo-tags__sub-text">
+                        <div div className="logo-tags__logo"><img src={bpost} alt="BPost" /></div>
+                        <div className="logo-tags__content">
+                          <div className="logo-tags__title">BPost</div>
+                          <div className="logo-tags__sub-text">
                             View courier details
                             <FontAwesomeIcon icon={faAngleRight} />
                           </div>
@@ -201,10 +201,10 @@ const Couriers = () => {
                     </li>
                     <li>
                       <Link to="/couriers-details">
-                        <div div class="logo-tags__logo"><img src={chronopost} alt="Chronopost" /></div>
-                        <div class="logo-tags__content">
-                          <div class="logo-tags__title">Chronopost</div>
-                          <div class="logo-tags__sub-text">
+                        <div div className="logo-tags__logo"><img src={chronopost} alt="Chronopost" /></div>
+                        <div className="logo-tags__content">
+                          <div className="logo-tags__title">Chronopost</div>
+                          <div className="logo-tags__sub-text">
                             View courier details
                             <FontAwesomeIcon icon={faAngleRight} />
                           </div>
@@ -213,10 +213,10 @@ const Couriers = () => {
                     </li>
                     <li>
                       <Link to="/couriers-details">
-                        <div div class="logo-tags__logo"><img src={colissimo} alt="Colissimo" /></div>
-                        <div class="logo-tags__content">
-                          <div class="logo-tags__title">Colissimo</div>
-                          <div class="logo-tags__sub-text">
+                        <div div className="logo-tags__logo"><img src={colissimo} alt="Colissimo" /></div>
+                        <div className="logo-tags__content">
+                          <div className="logo-tags__title">Colissimo</div>
+                          <div className="logo-tags__sub-text">
                             View courier details
                             <FontAwesomeIcon icon={faAngleRight} />
                           </div>
@@ -225,10 +225,10 @@ const Couriers = () => {
                     </li>
                     <li>
                       <Link to="/couriers-details">
-                        <div div class="logo-tags__logo"><img src={dpd} alt="DPD" /></div>
-                        <div class="logo-tags__content">
-                          <div class="logo-tags__title">DPD</div>
-                          <div class="logo-tags__sub-text">
+                        <div div className="logo-tags__logo"><img src={dpd} alt="DPD" /></div>
+                        <div className="logo-tags__content">
+                          <div className="logo-tags__title">DPD</div>
+                          <div className="logo-tags__sub-text">
                             View courier details
                             <FontAwesomeIcon icon={faAngleRight} />
                           </div>
@@ -237,10 +237,10 @@ const Couriers = () => {
                     </li>
                     <li>
                       <Link to="/couriers-details">
-                        <div div class="logo-tags__logo"><img src={parcelforce} alt="ParcelForce" /></div>
-                        <div class="logo-tags__content">
-                          <div class="logo-tags__title">ParcelForce</div>
-                          <div class="logo-tags__sub-text">
+                        <div div className="logo-tags__logo"><img src={parcelforce} alt="ParcelForce" /></div>
+                        <div className="logo-tags__content">
+                          <div className="logo-tags__title">ParcelForce</div>
+                          <div className="logo-tags__sub-text">
                             View courier details
                             <FontAwesomeIcon icon={faAngleRight} />
                           </div>

@@ -69,7 +69,7 @@ export const SiteHeader = () => {
   };
 
  let location = useLocation();
-//  console.log("Location",location);
+ console.log("Location",role);
 
 
   return (
@@ -87,7 +87,7 @@ export const SiteHeader = () => {
           </Navbar.Brand>
           <Navbar expand="lg" className="header__nav">
             <SiteButton
-              className="transparent-btn p-xl d-lg-none"
+              className="transparent-btn p-xl d-lg-none menu-toggle order-1"
               onClick={toggleOffCanvasMenu}
             >
               <FontAwesomeIcon icon={faBars} />
@@ -179,14 +179,12 @@ export const SiteHeader = () => {
                   </Nav.Item>
                 </Nav>
               )}
-              {/* <SiteButton className="d-block me-lg-2 me-xl-2 transparent-btn mt-lg-0 mt-3 SearchBtn ">
-                  <FontAwesomeIcon icon={faSearch} />
-                </SiteButton> */}
-
-              {checkAuth === false ? (
+            </Navbar.Collapse>
+            
+            {checkAuth === false ? (
                 <Nav
                   as="ul"
-                  className="mx-auto align-items-lg-center align-items-start position-relative headerNav d-lg-flex"
+                  className="login-nav mx-auto align-items-lg-center align-items-start position-relative headerNav d-md-flex flex-row me-3 me-lg-0"
                 >
                   <Nav.Item as="li">
                     <NavLink
@@ -208,7 +206,7 @@ export const SiteHeader = () => {
                   </Nav.Item>
                 </Nav>
               ) : (
-                <Nav className="align-items-lg-center ms-3">
+                <Nav className="align-items-lg-center ms-3 flex-row">
                   <Dropdown className="notiDropdown me-4 ">
                     <Dropdown.Toggle
                       variant="transparent pb-0"
@@ -217,7 +215,7 @@ export const SiteHeader = () => {
                       <FontAwesomeIcon className="bellIcon" icon={faBell} />
                       {/* <span className="badge">9+</span> */}
                       {notificationState.length > 0 && (
-                        <span class="position-absolute top-0 start-90 translate-middle p-1 border border-light rounded-circle">2</span>
+                        <span className="position-absolute top-0 start-90 translate-middle p-1 border border-light rounded-circle">2</span>
                       )}
                     </Dropdown.Toggle>
                     <Dropdown.Menu className="notiMenu" align="end">
@@ -233,7 +231,7 @@ export const SiteHeader = () => {
                         {notificationState.length > 0 ? (
                           notificationState.slice(0, 5).map((item) => (
                             <>
-                              <div key={item.id}>
+                              <div key={item.id} className={`${item.data?.read ? 'markUnread' : 'markRead'}`}>
                                 <Dropdown.Item
                                   className="drop_icon"
                                   key={item.id}
@@ -252,13 +250,14 @@ export const SiteHeader = () => {
                                       <p className="notificationText mb-0">
                                         {item.data.content}
                                       </p>
-                                      <div className="d-md-flex align-items-baseline justify-content-between">
-                                        <p className="text-muted mb-0">
+                                      <div className="meta d-md-flex align-items-baseline justify-content-between">
+                                        <p className="mb-0">
                                           {moment(
                                             item.created_at,
                                             "DD-MM-YYYY hh:mm:ss"
                                           ).fromNow()}
                                         </p>
+                                        <button className="btn-read">Mark as Read</button>
                                       </div>
                                     </div>
                                   </div>
@@ -279,44 +278,41 @@ export const SiteHeader = () => {
                       </div>
                     </Dropdown.Menu>
                   </Dropdown>
-                  {role.role === roles.mentor ? (
-                    <Dropdown className="userDropdown">
-                      <Dropdown.Toggle
-                        variant="transparent"
-                        className="notButton toggleButton px-1"
-                      >
-                        <FontAwesomeIcon
-                            className="primary_color"
-                            icon={faUser}
-                          />
-                      </Dropdown.Toggle>
-                      <Dropdown.Menu className="userMenu" align="end">
-                      <Link className="userMenuItem" to={"/profile"}>
-                          <div className="userImage online_show">
-                            {/* <img
-                              src={SERVER_URL + user?.avatar}
-                              alt={true.toString()}
-                              className="img-fluid rounded-circle"
-                              /> */}
-                            <img
-                              src={userAvatar}
-                              alt={true.toString()}
-                              className="img-fluid rounded-circle"
-                              />
-                            <span className="ms-0 d-block mt-3">{`${user.first_name} ${user.last_name}`}</span>
-                          </div>
-                        </Link>
-                        <Link className="userMenuItem" to={"/profile"}>My Profile</Link>
-                        <Link
-                          className="userMenuItem"
-                          onClick={() => handleClick()}
-                        >Logout</Link>
-                      </Dropdown.Menu>
-                    </Dropdown>
-                  ) : "" }
+                  <Dropdown className="userDropdown">
+                    <Dropdown.Toggle
+                      variant="transparent"
+                      className="notButton toggleButton px-1"
+                    >
+                      <FontAwesomeIcon
+                          className="primary_color"
+                          icon={faUser}
+                        />
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu className="userMenu" align="end">
+                    <Link className="userMenuItem" to={"/profile"}>
+                        <div className="userImage online_show">
+                          {/* <img
+                            src={SERVER_URL + user?.avatar}
+                            alt={true.toString()}
+                            className="img-fluid rounded-circle"
+                            /> */}
+                          <img
+                            src={userAvatar}
+                            alt={true.toString()}
+                            className="img-fluid rounded-circle"
+                            />
+                          <span className="ms-0 d-block mt-3">{`${user.first_name} ${user.last_name}`}</span>
+                        </div>
+                      </Link>
+                      <Link className="userMenuItem" to={"/profile"}>My Profile</Link>
+                      <Link
+                        className="userMenuItem"
+                        onClick={() => handleClick()}
+                      >Logout</Link>
+                    </Dropdown.Menu>
+                  </Dropdown>
                 </Nav>
               )}
-            </Navbar.Collapse>
           </Navbar>
         </Container>
 
@@ -338,251 +334,104 @@ export const SiteHeader = () => {
             {role.role === roles.mentor ? (
               <Nav className="flex-column">
                 <Nav.Item as="li">
-                  <NavLink
-                    // exact
-                    activeclassname="active"
-                    className="me-xl-4 me-lg-3"
-                    to="/"
-                  >
-                    Home
-                  </NavLink>
-                </Nav.Item>
-
-                <NavLink
-                  activeclassname="active"
-                  className="me-xl-4 me-lg-3"
-                  to="/mentorship-Request"
-                >
-                  Mentorship Requests
-                </NavLink>
-                <NavLink
-                  activeclassname="active"
-                  className="me-xl-4 me-lg-3"
-                  to="/ads-logs"
-                >
-                  Ad Logs
-                </NavLink>
-                <NavLink
-                  activeclassname="active"
-                  className="me-xl-4 me-lg-3"
-                  to="/featuring-logs"
-                >
-                  Featuring Logs
-                </NavLink>
-                <NavLink
-                  activeclassname="active"
-                  className="me-xl-4 me-lg-3"
-                  to="/charges-management"
-                >
-                  Charges Management
-                </NavLink>
-                <NavLink
-                  activeclassname="active"
-                  className="me-xl-4 me-lg-3"
-                  to="/contact-us"
-                >
-                  Contact Us
-                </NavLink>
+                    <NavLink
+                      // exact
+                      activeclassname="active"
+                      className=""
+                      to="/"
+                    >
+                      Home
+                    </NavLink>
+                  </Nav.Item>
+                  <Nav.Item as="li">
+                    <NavLink
+                      activeclassname="active"
+                      className=""
+                      to="/ship-my-parcel"
+                    >
+                      Ship A Package
+                    </NavLink>
+                  </Nav.Item>
+                  <Nav.Item as="li">
+                    <NavLink activeclassname="active" className="" to="/tracking">
+                      Tracking
+                    </NavLink>
+                  </Nav.Item>
+                  <Nav.Item as="li">
+                    <NavLink activeclassname="active" className="" to="/order-logs">
+                    Order Logs
+                    </NavLink>
+                  </Nav.Item>
+                  <Nav.Item as="li">
+                    <NavLink
+                      activeclassname="active"
+                      className=""
+                      to="/contact-us"
+                    >
+                      Contact Admin
+                    </NavLink>
+                  </Nav.Item>
               </Nav>
             ) : (
               <Nav className="flex-column">
-                <NavLink
-                  // exact
-                  activeclassname="active"
-                  className="me-xl-4 me-lg-3"
-                  to="/"
-                >
-                  Home
-                </NavLink>
-                <NavLink
-                  activeclassname="active"
-                  className="me-xl-4 me-lg-3"
-                  to="/about-us"
-                >
-                  About Us
-                </NavLink>
-                <NavLink
-                  activeclassname="active"
-                  className="me-xl-4 me-lg-3"
-                  to="/featured-ads"
-                >
-                  Featured Mentors
-                </NavLink>
-                <NavLink
-                  activeclassname="active"
-                  className="me-xl-4 me-lg-3"
-                  to="/ads"
-                >
-                  Ads
-                </NavLink>
-                <NavLink
-                  activeclassname="active"
-                  className="me-xl-4 me-lg-3"
-                  to="/contact-us"
-                >
-                  Contact Us
-                </NavLink>
+                <Nav.Item as="li">
+                    <NavLink
+                      // exact
+                      activeclassname="active"
+                      className=""
+                      to="/"
+                    >
+                      Home
+                    </NavLink>
+                  </Nav.Item>
+                  <Nav.Item as="li">
+                    <NavLink
+                      activeclassname="active"
+                      className=""
+                      to="/ship-my-parcel"
+                    >
+                      Ship A Package
+                    </NavLink>
+                  </Nav.Item>
+                  <Nav.Item as="li">
+                    <NavLink
+                      activeclassname="active"
+                      className=""
+                      to="/tracking"
+                    >
+                      Tracking
+                    </NavLink>
+                  </Nav.Item>
+                  <Nav.Item as="li">
+                    <NavLink
+                      activeclassname="active"
+                      className=""
+                      to="/contact-us"
+                    >
+                      Contact Admin
+                    </NavLink>
+                  </Nav.Item>
+                  <Nav.Item as="li">
+                    <NavLink
+                      activeclassname="active"
+                      className=""
+                      to="/login"
+                    >
+                      Login
+                    </NavLink>
+                  </Nav.Item>
+                  <Nav.Item as="li">
+                    <NavLink
+                      activeclassname="active"
+                      className=""
+                      to="/signup"
+                    >
+                      Signup
+                    </NavLink>
+                  </Nav.Item>
               </Nav>
             )}
-            <div
-              className={`${
-                checkAuth === false ? "d-flex align-items-center" : ""
-              } d-flex align-items-center mt-3`}
-            >
-              <button className="d-block me-lg-3 me-xl-4 transparent-btn mt-lg-0 SearchBtn me-3">
-                <FontAwesomeIcon icon={faSearch} />
-              </button>
-              {checkAuth === false ? (
-                <div className="site-btn text-center mt-lg-0 mt-0">
-                  <Link to="/login" className="text-white inline-btn">
-                    login
-                  </Link>
-                  /
-                  <Link to="/signup" className="text-white inline-btn">
-                    signup
-                  </Link>
-                </div>
-              ) : (
-                <Nav className="align-items-lg-center">
-                  <Dropdown className="notiDropdown me-2 p-2">
-                    <Dropdown.Toggle
-                      variant="transparent pb-0"
-                      className="notButton notifi-btn"
-                    >
-                      <FontAwesomeIcon className="bellIcon" icon={faBell} />
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu className="notiMenu" align="end">
-                      <div className="d-flex justify-content-between align-items-baseline pt-3 singleNoti notify-border">
-                        <h6 className="fw-bold ps-2">Notifications</h6>
-                        <p className="notify-bg">5 New</p>
-                      </div>
-                      <div className="notificationsBody">
-                        {notificationState.slice(0, 5).map((item) => (
-                          <>
-                            <div key={item.id}>
-                              <Dropdown.Item
-                                className="drop_icon"
-                                key={item.id}
-                                as={Link}
-                                to="/notifications"
-                              >
-                                <div className="d-flex">
-                                  <div className="mediaLeft">
-                                    <FontAwesomeIcon
-                                      className="bell-icon"
-                                      icon={faBell}
-                                    />
-                                  </div>
-                                  <div className="mediaRight">
-                                    <p className="notificationText mb-2 ">
-                                      {item.notPara}
-                                    </p>
-                                    <div className="d-md-flex align-items-baseline justify-content-between">
-                                      <p className="primaryColor mb-0 ">
-                                        {item.date}
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </Dropdown.Item>
-                            </div>
-                          </>
-                        ))}
-                      </div>
-                      <div className="notiFooter">
-                        <Link to={"/notifications"}>View All</Link>
-                      </div>
-                    </Dropdown.Menu>
-                  </Dropdown>
-                  {role.role === roles.mentor ? (
-                    <Dropdown className="userDropdown">
-                      <Dropdown.Toggle
-                        variant="transparent"
-                        className="notButton toggleButton"
-                      >
-                        <div className="userImage online_show">
-                          <img
-                            src={SERVER_URL + user?.avatar}
-                            alt={true.toString()}
-                            className="img-fluid rounded-circle"
-                          />
-                          <span className="ms-2">{`${user.first_name} ${user.last_name}`}</span>
-                          <FontAwesomeIcon
-                            icon={faChevronDown}
-                            className="ms-3"
-                          />
-                        </div>
-                      </Dropdown.Toggle>
-                      <Dropdown.Menu className="userMenu" align="end">
-                        <Link className="userMenuItem" to={"/profile"}>
-                          <FontAwesomeIcon
-                            className="me-2 primary_color"
-                            icon={faUser}
-                          />
-                          My Profile
-                        </Link>
-                        <Link
-                          className="userMenuItem"
-                          onClick={() => handleClick()}
-                        >
-                          <FontAwesomeIcon
-                            className="me-1 primary_color"
-                            icon={faSignOut}
-                          />
-                          Logout
-                        </Link>
-                      </Dropdown.Menu>
-                    </Dropdown>
-                  ) : (
-                    <Dropdown className="userDropdown">
-                      <Dropdown.Toggle
-                        variant="transparent"
-                        className="notButton toggleButton"
-                      >
-                        <div className="userImage online_show">
-                          <img
-                            src={SERVER_URL + user?.avatar}
-                            alt={true.toString()}
-                            className="img-fluid rounded-circle"
-                          />
-                          <span className="ms-2">{`${user.first_name} ${user.last_name}`}</span>
-                          <FontAwesomeIcon
-                            icon={faChevronDown}
-                            className="ms-3"
-                          />
-                        </div>
-                      </Dropdown.Toggle>
-                      <Dropdown.Menu className="userMenu" align="end">
-                        <Link className="userMenuItem" to={"/user/profile"}>
-                          <FontAwesomeIcon
-                            className="me-3 primary_color"
-                            icon={faUser}
-                          />
-                          My Profile
-                        </Link>
-                        <Link className="userMenuItem" to={"/my-request"}>
-                          <FontAwesomeIcon
-                            className="me-3 primary_color"
-                            icon={faUser}
-                          />
-                          My Request
-                        </Link>
-                        <Link
-                          className="userMenuItem"
-                          onClick={() => handleClick()}
-                        >
-                          <FontAwesomeIcon
-                            className="me-3 primary_color"
-                            icon={faSignOut}
-                          />
-                          Logout
-                        </Link>
-                      </Dropdown.Menu>
-                    </Dropdown>
-                  )}
-                </Nav>
-              )}
-            </div>
+           
           </Offcanvas.Body>
         </Offcanvas>
 

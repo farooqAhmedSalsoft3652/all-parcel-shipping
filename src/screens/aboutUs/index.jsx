@@ -57,17 +57,16 @@ const AboutUs = () => {
           </Container>
         </section>
 
-        <section class="align-bottom content-section bg-white about-sec2">
-          <Container class="monkey-hands-video js-animate-in-view container">
+        <section className="align-bottom content-section bg-white about-sec2">
+          <Container className="monkey-hands-video js-animate-in-view container">
             <Row>
               <Col md={6} className="align-self-center">
-                <h2 class="h1 color-text-primary mb-5">Lorem ipsum dolor sit amet</h2>
+                <h2 className="h1 color-text-primary mb-5">Lorem ipsum dolor sit amet</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, totam amet aliquid quas veniam atque temporibus magnam</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, totam amet aliquid quas veniam atque temporibus magnam</p>
-                <button type="button" class="btn btn--quarternary btn--ghosted">Learn more about us</button>
               </Col>
-              <Col md={6} class="col">
-                <img src={video} alt="true" class="img-fluid" />
+              <Col md={6} className="col">
+                <img src={video} alt="true" className="img-fluid" />
               </Col>
             </Row>
           </Container>

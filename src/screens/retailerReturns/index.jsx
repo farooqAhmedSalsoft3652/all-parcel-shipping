@@ -36,30 +36,31 @@ const retailerReturns = () => {
                 </Col>
                 <Col xs={12} className="mt-5">
                 <ul className="order-list p-0 m-0">
-                  <li><Link href="https://www.parcelmonkey.com/retailer-returns/amazon-returns">Amazon Returns</Link></li>
-                  <li><Link href="https://www.parcelmonkey.com/retailer-returns/asos-returns">ASOS Returns</Link></li>
-                  <li><Link href="https://www.parcelmonkey.com/retailer-returns/best-buy-returns">Best Buy Returns</Link></li>
-                  <li><Link href="https://www.parcelmonkey.com/retailer-returns/bloomingdales-returns">Bloomingdales Returns</Link></li>
-                  <li><Link href="https://www.parcelmonkey.com/retailer-returns/forever-21-returns">Forever 21 Returns</Link></li>
-                  <li><Link href="https://www.parcelmonkey.com/retailer-returns/gap-returns">Gap Returns</Link></li>
-                  <li><Link href="https://www.parcelmonkey.com/retailer-returns/home-depot-returns">Home Depot Returns</Link></li>
-                  <li><Link href="https://www.parcelmonkey.com/retailer-returns/ikea-returns">IKEA Returns</Link></li>
-                  <li><Link href="https://www.parcelmonkey.com/retailer-returns/kohls-returns">Kohls Returns</Link></li>
-                  <li><Link href="https://www.parcelmonkey.com/retailer-returns/ll-bean-returns">LL Bean Returns</Link></li>
-                  <li><Link href="https://www.parcelmonkey.com/retailer-returns/lulus-returns">Lulus Returns</Link></li>
-                  <li><Link href="https://www.parcelmonkey.com/retailer-returns/macys-returns">Macys Returns Policy</Link></li>
-                  <li><Link href="https://www.parcelmonkey.com/retailer-returns/neiman-marcus-returns">Neiman Marcus Returns</Link></li>
-                  <li><Link href="https://www.parcelmonkey.com/retailer-returns/nordstrom-returns">Nordstrom Returns</Link></li>
-                  <li><Link href="https://www.parcelmonkey.com/retailer-returns/old-navy-returns">Old Navy Returns</Link></li>
-                  <li><Link href="https://www.parcelmonkey.com/retailer-returns/patagonia-returns">Patagonia Returns</Link></li>
-                  <li><Link href="https://www.parcelmonkey.com/retailer-returns/sephora-returns">Sephora Returns</Link></li>
-                  <li><Link href="https://www.parcelmonkey.com/retailer-returns/target-returns">Target Returns</Link></li>
-                  <li><Link href="https://www.parcelmonkey.com/retailer-returns/venus-returns">Venus Returns</Link></li>
-                  <li><Link href="https://www.parcelmonkey.com/retailer-returns/walmart-returns">Walmart Returns</Link></li>
-                  <li><Link href="https://www.parcelmonkey.com/retailer-returns/wayfair-returns">Wayfair Returns</Link></li>
-                  <li><Link href="https://www.parcelmonkey.com/retailer-returns/zappos-returns">Zappos Returns</Link></li>
-                  <li><Link href="https://www.parcelmonkey.com/retailer-returns/zara-returns">Zara Returns</Link></li>
-                </ul>
+                    <li><Link href="_#">Amazon Returns</Link></li>
+                    <li><Link href="https://www.parcelmonkey.com/retailer-returns/asos-returns">ASOS Returns</Link></li>
+                    <li><Link href="https://www.parcelmonkey.com/retailer-returns/best-buy-returns">Best Buy Returns</Link></li>
+                    <li><Link href="https://www.parcelmonkey.com/retailer-returns/bloomingdales-returns">Bloomingdales Returns</Link></li>
+                    <li><Link href="https://www.parcelmonkey.com/retailer-returns/forever-21-returns">Forever 21 Returns</Link></li>
+                    <li><Link href="https://www.parcelmonkey.com/retailer-returns/gap-returns">Gap Returns</Link></li>
+                    <li><Link href="https://www.parcelmonkey.com/retailer-returns/home-depot-returns">Home Depot Returns</Link></li>
+                    <li><Link href="https://www.parcelmonkey.com/retailer-returns/ikea-returns">IKEA Returns</Link></li>
+                    <li><Link href="https://www.parcelmonkey.com/retailer-returns/kohls-returns">Kohls Returns</Link></li>
+                    <li><Link href="https://www.parcelmonkey.com/retailer-returns/ll-bean-returns">LL Bean Returns</Link></li>
+                    <li><Link href="https://www.parcelmonkey.com/retailer-returns/lulus-returns">Lulus Returns</Link></li>
+                    <li><Link href="https://www.parcelmonkey.com/retailer-returns/macys-returns">Macys Returns Policy</Link></li>
+                    <li><Link href="https://www.parcelmonkey.com/retailer-returns/neiman-marcus-returns">Neiman Marcus Returns</Link></li>
+                    <li><Link href="https://www.parcelmonkey.com/retailer-returns/nordstrom-returns">Nordstrom Returns</Link></li>
+                    <li><Link href="https://www.parcelmonkey.com/retailer-returns/old-navy-returns">Old Navy Returns</Link></li>
+                    <li><Link href="https://www.parcelmonkey.com/retailer-returns/patagonia-returns">Patagonia Returns</Link></li>
+                    <li><Link href="https://www.parcelmonkey.com/retailer-returns/sephora-returns">Sephora Returns</Link></li>
+                    <li><Link href="https://www.parcelmonkey.com/retailer-returns/target-returns">Target Returns</Link></li>
+                    <li><Link href="https://www.parcelmonkey.com/retailer-returns/venus-returns">Venus Returns</Link></li>
+                    <li><Link href="https://www.parcelmonkey.com/retailer-returns/walmart-returns">Walmart Returns</Link></li>
+                    <li><Link href="https://www.parcelmonkey.com/retailer-returns/wayfair-returns">Wayfair Returns</Link></li>
+                    <li><Link href="https://www.parcelmonkey.com/retailer-returns/zappos-returns">Zappos Returns</Link></li>
+                    <li><Link href="https://www.parcelmonkey.com/retailer-returns/zara-returns">Zara Returns</Link></li>
+                  </ul>
+                
                 </Col>
               </Row>
           </Container>
