@@ -3,10 +3,14 @@ import { CChart } from '@coreui/react-chartjs';
 import { Row, Col } from "react-bootstrap";
 
 const ChartCard = ({ title }) => (
-  <div className="dashCard mb-5 py-5 m-h">
+  <>
+  
     <Row>
       <Col xs={12} className="d-sm-flex justify-content-between mb-3">
-        <h3 className="mainTitle">{title}</h3>
+        <div class="mainTitle mb-0">
+          <h2 class="text-black fw-medium">{title}</h2>
+        </div>
+
         <select className="dropdown-graph">
           <option value="all">Monthly</option>
           <option value="quarterly">Quarterly</option>
@@ -53,7 +57,7 @@ const ChartCard = ({ title }) => (
         </div>
       </Col>
     </Row>
-  </div>
+  </>
 );
 
 export default ChartCard

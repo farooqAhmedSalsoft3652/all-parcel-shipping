@@ -1,9 +1,10 @@
 import '.././../notifications/index.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBell } from '@fortawesome/free-solid-svg-icons'
+import { faClock, faCalendar } from '@fortawesome/free-solid-svg-icons'
 import SiteButton from '@components/Button/button'
 import moment from 'moment'
 import axios from 'axios'
+
 
 
 const NotificationsCard = (props) => {
@@ -22,7 +23,7 @@ const NotificationsCard = (props) => {
     return (
         <div className={`${props.data?.read ? 'markUnread' : 'markRead'} flex-sm-row flex-column d-flex justify-content-between`} id={`notification_${props.data.id}`}>
             <div className="d-flex align-items-center">
-                <div className="noti_avatar me-3">
+                <div className="noti_avatar me-4">
                     <img src={props.data.image} alt='' className='rounded-circle' />
                 </div>
                 <div className="noti_boxr ">
@@ -31,10 +32,9 @@ const NotificationsCard = (props) => {
                     <p className='second'>
                         <span className='pe-2'>
                             {/* {moment(props.data.created_at, "DD-MM-YYYY hh:mm:ss").format("DD-MM-YYYY")} */}
-                            {props.data.time}
-                        </span> | 
-                        <span className='ps-2'> 
-                            {props.data.date}
+                            <FontAwesomeIcon icon={faClock} className='me-1' /> {props.data.time}
+                        </span> | <span className='ps-2'> 
+                        <FontAwesomeIcon icon={faCalendar} className='me-1' /> {props.data.date}
                             {/* {moment(props.data.created_at, "DD-MM-YYYY hh:mm:ss").format("DD-MM-YYYY")} */}
                         </span>
                     </p>

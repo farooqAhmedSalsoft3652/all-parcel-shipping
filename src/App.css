@@ -34171,9 +34171,10 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .detail-block h5 {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
     color: #111111;
+    margin-bottom: 0px;
 }
 
 .detail-block p {
@@ -34352,6 +34353,21 @@ h1,h2,h3,h4,h5,h6{
 .reason-modal{
     /* margin-top: -20px; */
 }
+
+/* Admin Start */
+.mainTitle h2{
+    font-size: 30px;
+    line-height: 1.5;
+    margin-bottom: 0px;
+}
+.rounded-10 {
+    border-radius: 10px;
+}
+.shadow-sm {
+    box-shadow: 0 10px 40px #3e396b12,0 2px 9px #3e396b0f!important;
+}
+
+
 @media(max-width:1666px){
     .our-story-card {
         padding: 60px 120px 60px 60px;

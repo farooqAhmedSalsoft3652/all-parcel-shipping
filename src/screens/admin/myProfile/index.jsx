@@ -5,6 +5,9 @@ import { SERVER_URL } from "@config/data";
 import { DashboardLayout } from "@/layout/dashboardLayout";
 import usePageTitle from "@hooks/usePageTitle";
 import { decode } from "base-64";
+import {userAvatar} from "../../../assets/images";
+
+import "./style.css"
 
 const AdminProfile = () => {
   usePageTitle("My Profile");
@@ -21,20 +24,21 @@ const AdminProfile = () => {
         <section className="profile">
           <Container fluid>
             <div className="dashCard">
-              <Row>
-                <Col md={11} xs={12}>
-                  <Row className="py-5">
-                    <Col md={11} xs={12} className="ps-5">
-                      <h3>My Profile</h3>
-                    </Col>
-                  </Row>
+              <div className="bg-white rounded-10 shadow-sm p-5 p-lg-5 p-xxl-5">
+                <div class="mainTitle mb-0 mb-5">
+                  <div className="d-flex align-items-center gap-2 ">
+                    <h2 class="text-black fw-medium">My Profile</h2>  
+                  </div>
+                </div>                
+                <div className="detail-block">
                   <Row>
                     <Col xs={12}>
-                      <div className="sec_title d-block text-center">
+                      <div className="sec_title d-block">
                         <div className="mb-2">
                           <div className="attached">
                             <img
-                              src={SERVER_URL + profileData.avatar}
+                              src={userAvatar}
+                              // src={SERVER_URL + profileData.avatar}
                               className="img-fluid ml-0 profile_img"
                               alt={true.toString()}
                             />
@@ -42,73 +46,37 @@ const AdminProfile = () => {
                         </div>
                       </div>
                     </Col>
-                  </Row>
-                  <Row>
-                    <Col md={9} xs={12} className="m-auto">
-                      <Row className="pt-sm-5 pt-3 text-center">
-                        <Col sm={6} lg={3} xs={12}>
-                          <div className="my-sm-4 ">
-                            <label className="xl-grey-color p-xs profile_label py-2">
-                              First Name
-                            </label>
-                            <p className="fw-bold mt-xs-3 label-text">
-                              {profileData.first_name}
-                            </p>
-                          </div>
-                        </Col>
-                        <Col sm={6} lg={3} xs={12}>
-                          <div className="my-sm-4 ">
-                            <label className="xl-grey-color p-xs profile_label py-2">
-                              Last Name
-                            </label>
-                            <p className="fw-bold mt-xs-3 label-text">
-                              {profileData.last_name}
-                            </p>
-                          </div>
-                        </Col>
-                        <Col sm={6} lg={3} xs={12}>
-                          <div className="my-sm-4 ">
-                            <label className="xl-grey-color p-xs profile_label py-2">
-                              Email Address
-                            </label>
-                            <p className="fw-bold mt-xs-3 label-text">
-                              {profileData.email}
-                            </p>
-                          </div>
-                        </Col>
-                        <Col sm={6} lg={3} xs={12}>
-                          <div className="my-sm-4 ">
-                            <label className="xl-grey-color p-xs profile_label py-2">
-                              Phone Number
-                            </label>
-                            <p className="fw-bold mt-xs-3 label-text">
-                              {profileData.phone_number}
-                            </p>
-                          </div>
-                        </Col>
-                      </Row>
+                    <Col xs={12} className="my-sm-4">
+                      <h5 className="xl-grey-color p-xs profile_label py-2 fw-medium">Name:</h5>
+                      <p className="mt-xs-3 label-text">
+                        {profileData.first_name}
+                      </p>
                     </Col>
-                  </Row>
-                  <Row className="my-3 text-center">
-                    <Col xs={12}>
+                    <Col xs={12} className="my-sm-4">
+                      <h5 className="xl-grey-color p-xs profile_label py-2 fw-medium">Email:</h5>
+                      <p className="mt-xs-3 label-text">
+                        {profileData.email}
+                      </p>
+                    </Col>
+                    <Col xs={12} className="my-5">
                       <div>
                         <Link
-                          to="/admin/edit/profile"
-                          className="m-2 site-btn text-decoration-none"
-                        >
-                          Edit Profile
-                        </Link>
-                        <Link
                           to="/admin/change-password"
-                          className="site-btn site_border_btn text-decoration-none"
+                          className="site-btn text-decoration-none me-2"
                         >
                           Change Password
+                        </Link>
+                        <Link
+                          to="/admin/edit/profile"
+                          className="site-btn site_border_btn edit-btn text-decoration-none ms-2"
+                        >
+                          Edit Profile
                         </Link>
                       </div>
                     </Col>
                   </Row>
-                </Col>
-              </Row>
+                </div>
+              </div>
             </div>
           </Container>
         </section>

@@ -55,7 +55,7 @@ export const AdminHeader = (props) => {
       <Navbar className="customHeader" expand="md">
         <Container fluid>
           <Link to={"/admin/dashboard"} className="siteLogo order-2 order-lg-1">
-            <img src={logo} alt="Logo" />
+            <img src={logo} alt="Logo" className="img-fluid" />
           </Link>
           <Navbar.Toggle className="order-4 order-lg-2 notButton">
             <FontAwesomeIcon className="bell-icon " icon={faEllipsisV} />

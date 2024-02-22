@@ -5,7 +5,7 @@
     transition: all 0.35s ease-in-out, left 0.35s ease-in-out, margin-right 0.35s ease-in-out, right 0.35s ease-in-out;
     background: #fff ;
     z-index: 2;
-    top: 6rem;
+    top: 10rem;
     padding-bottom: 6rem;
     scrollbar-width: thin;
     -ms-overflow-style: none;
@@ -18,16 +18,16 @@
 }
 
 .sideLink {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
     text-decoration: none;
     color: #666666;
     display: flex;
     align-items: baseline;
-    padding: 0.8rem 1rem;
+    padding: 1.5rem 1.5rem;
     position: relative;
     transition: 0.3s linear;
-    border-bottom: 1px solid var(--secondary-color);
+    border-bottom:1px solid #00000014;
 }
 .sideLinkText{
     white-space: nowrap;
@@ -35,11 +35,12 @@
 .sideLink:hover, .sideLink.active {
     color: #fff;
     background: var(--primary-color);
+    text-decoration: none;
 }
 
 .sideIcon {
-    font-size: 16px;
-    margin-right: 0.5rem;
+    font-size: 20px;
+    margin-right: 1rem;
 }
 
 

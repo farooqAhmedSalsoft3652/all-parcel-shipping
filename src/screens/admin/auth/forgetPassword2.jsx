@@ -18,12 +18,12 @@ const AdminForgetPassword2 = () => {
   const [load, setLoad] = useState(false);
   const [remainingTime, setRemainingTime] = useState(0);
 
-  useEffect(() => {
-    if(!state?.email && state?.email == null){
-      navigate('/login');
-    }
-    else setFormData({...formData, email: state?.email});
-  }, []);
+  // useEffect(() => {
+  //   if(!state?.email && state?.email == null){
+  //     navigate('/login');
+  //   }
+  //   else setFormData({...formData, email: state?.email});
+  // }, []);
 
   const {values, errors, touched, handleChange, handleBlur, handleSubmit} = useFormik({
     initialValues: formData,
@@ -33,37 +33,38 @@ const AdminForgetPassword2 = () => {
 
   const handleClick = async (data) => {
     setLoad(true);
+    navigate('/admin/forget-password3');
 
-    let response = await axios.post('/verify-code', data)
-      .then(() => {
-        setLoad(false);
-        navigate("/admin/forget-password3", {
-          state: {
-            email: state.email,
-            code: data.code
-          }
-        });
-      })
-      .catch(err => {
-        document.getElementById('response').innerHTML = 
-        `<div className="alert alert-danger" role="alert"><strong>Opss!</strong> ${err.response.data.message}</div>`;
-        setLoad(false);
-      });
+    // let response = await axios.post('/verify-code', data)
+    //   .then(() => {
+    //     setLoad(false);
+    //     navigate("/admin/forget-password3", {
+    //       state: {
+    //         email: state.email,
+    //         code: data.code
+    //       }
+    //     });
+    //   })
+    //   .catch(err => {
+    //     document.getElementById('response').innerHTML = 
+    //     `<div className="alert alert-danger" role="alert"><strong>Opss!</strong> ${err.response.data.message}</div>`;
+    //     setLoad(false);
+    //   });
   };
 
   const resendCode = async (e) => {
     e.preventDefault()
-    setRemainingTime(59);
+    // setRemainingTime(59);
 
-    let data = await axios.post('/forget-password', { email: state.email })
-    .then(() => {
-        console.log("Code has been sent");
-    })
-    .catch(err => {
-        document.getElementById('response').innerHTML = 
-        `<div className="alert alert-danger"role="alert"><strong>Opss! </strong>${err.response.data.message}</div>`;
-        // console.error(err.response.data)
-    });
+    // let data = await axios.post('/forget-password', { email: state.email })
+    // .then(() => {
+    //     console.log("Code has been sent");
+    // })
+    // .catch(err => {
+    //     document.getElementById('response').innerHTML = 
+    //     `<div className="alert alert-danger"role="alert"><strong>Opss! </strong>${err.response.data.message}</div>`;
+    //     // console.error(err.response.data)
+    // });
   };
 
   useEffect(() => {
@@ -83,8 +84,7 @@ const AdminForgetPassword2 = () => {
     <>
       <AuthLayout
         authTitle="Verification Code"
-        authPara="Please check your email for verification code.
-        Your code is 6 digit in length."
+        authPara="Enter verification code to recover your password."
         backOption={true}
       >
         <div id="response"></div>
@@ -103,7 +103,7 @@ const AdminForgetPassword2 = () => {
             errors={errors.code}
             touched={touched.code}
           />
-          <div className="d-flex justify-content-between align-items-center">
+          <div className="d-flex mt-1 justify-content-between align-items-center">
             <p className="redColor m-0">
               {remainingTime > 0 && (<>Resending in {remainingTime} seconds</>)}
             </p>
@@ -112,16 +112,16 @@ const AdminForgetPassword2 = () => {
               <SiteButton
                 type="button"
                 className="resend-btn primary_color"
-                onClick={resendCode}
+                // onClick={resendCode}
               >
                 Resend Code
               </SiteButton>
             )}
           </div>
-          <div className="mt-4 text-center">
+          <div className="mt-5 text-center">
             <SiteButton
               type="submit"
-              className="site-btn"
+              className="site-btn w-100"
               load={load}
             >
               Continue

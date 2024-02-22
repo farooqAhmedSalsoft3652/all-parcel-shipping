@@ -1,0 +1,10 @@
+.profile .detail-block h5{
+    color: #333;
+}
+.profile .detail-block p{
+    color: #999999;
+}
+.profile .edit-btn{
+    padding-left:50px;
+    padding-right:50px;
+}

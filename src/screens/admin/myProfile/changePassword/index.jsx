@@ -59,76 +59,81 @@ const AdminChangePassword = () => {
         <section className="profile">
           <Container fluid>
             <div className="dashCard">
-              <Row>
-                <Col md={11} xs={12}>
-                  <Row className="py-5">
-                    <Col md={11} xs={12} className="ps-sm-5">
-                      <h3>
-                        <BackButton />
-                        Change Password
-                      </h3>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col xl={6} xs={12}>
-                      <div className="ps-sm-5 ms-sm-4">
-                        <div id="response"></div>
-                        <Form onSubmit={handleSubmit}>
-                          <CustomInput
-                            label="Current Password"
-                            labelClass="mainLabel"
-                            id="old_password"
-                            type="password"
-                            name="old_password"
-                            placeholder="Enter Current Password"
-                            inputClass="mainInput"
-                            required
-                            value={values.old_password}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            errors={errors.old_password}
-                            touched={touched.old_password}
-                          />
-                          <CustomInput
-                            label="New Password"
-                            labelClass="mainLabel"
-                            id="new_password"
-                            type="password"
-                            name="new_password"
-                            placeholder="Enter New Password"
-                            inputClass="mainInput"
-                            required
-                            value={values.new_password}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            errors={errors.new_password}
-                            touched={touched.new_password}
-                          />
-                          <CustomInput
-                            label="Confirm Password"
-                            labelClass="mainLabel"
-                            type="password"
-                            id="confirm_password"
-                            name="confirm_password"
-                            placeholder="Enter Confirm Password"
-                            inputClass="mainInput"
-                            required
-                            value={values.confirm_password}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            errors={errors.confirm_password}
-                            touched={touched.confirm_password}
-                          />
-                          <div className="pt-4">
-                            <SiteButton type="submit" className="site-btn" load={load}>Update</SiteButton>
-                          </div>
-                        </Form>
-
-                      </div>
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
+              <div className="bg-white rounded-10 shadow-sm p-4 p-lg-4 p-xxl-5">
+                <div class="mainTitle mb-0 mb-5">
+                  <div className="d-flex align-items-center gap-2 ">
+                    <BackButton />
+                    <h2 class="text-black fw-medium">Change Password</h2>  
+                  </div>
+                </div>
+                <Row>                  
+                  <Col md={6} xs={12} xxl={5}>
+                      <Form onSubmit={handleSubmit}>
+                      <div id="response"></div>
+                      
+                       
+                          <Row>
+                            <Col xs={12} className="mt-4 mt-md-4 mt-xxl-4">
+                              <CustomInput
+                                label="Current Password"
+                                labelClass="mainLabel"
+                                id="old_password"
+                                type="password"
+                                name="old_password"
+                                placeholder="Enter Current Password"
+                                inputClass="mainInput"
+                                required
+                                value={values.old_password}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                errors={errors.old_password}
+                                touched={touched.old_password}
+                              />
+                            </Col>
+                            <Col xs={12} className="mt-4 mt-md-4 mt-xxl-4">
+                              <CustomInput
+                                label="New Password"
+                                labelClass="mainLabel"
+                                id="new_password"
+                                type="password"
+                                name="new_password"
+                                placeholder="Enter New Password"
+                                inputClass="mainInput"
+                                required
+                                value={values.new_password}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                errors={errors.new_password}
+                                touched={touched.new_password}
+                              />
+                            </Col>
+                            <Col xs={12} className="mt-4 mt-md-4 mt-xxl-4">
+                              <CustomInput
+                                label="Confirm Password"
+                                labelClass="mainLabel"
+                                type="password"
+                                id="confirm_password"
+                                name="confirm_password"
+                                placeholder="Confirm Password"
+                                inputClass="mainInput"
+                                required
+                                value={values.confirm_password}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                errors={errors.confirm_password}
+                                touched={touched.confirm_password}
+                              />
+                            </Col>
+                          </Row>
+                        <div className="mt-5 pt-3">
+                          <SiteButton type="submit" className="site-btn me-2" load={load}>Update</SiteButton>
+                          <SiteButton type="submit" className="site-btn site_border_btn ms-2">Cancel</SiteButton>
+                        </div>
+                      
+                      </Form>
+                  </Col>
+                </Row>
+              </div>
             </div>
           </Container>
         </section>
@@ -138,7 +143,9 @@ const AdminChangePassword = () => {
         close={() => setShowModal(false)}
         success
         onClickOk={modalAction}
-        para="Password Has Been Successfully Updated"
+        heading="System Message"
+        para="Password Updated Successfully!"
+        buttonText="Okay"
       />
     </>
   );

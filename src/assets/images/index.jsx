@@ -18,7 +18,9 @@ import UserProfile from './userProfile.png';
 import CertificateImg from './certificate.png';
 import StatsOne from './stats1.png';
 import StatsTwo from './stats2.png';
-import StatsThree from './statsThree.png';
+import graphIcon1 from './graphIcon1.png';
+import graphIcon2 from './graphIcon2.png';
+
 import MenteeProfile from './menteeProfille.png';
 import Statsdoller from './doller.png'
 
@@ -63,6 +65,7 @@ import fedexCard from "./fedex.png";
 import trackImg from "./track-img.png";
 import userAvatar from "./useravatar.png";
 import monkeyBoxWhite from "./signup-monkey-box.png";
+import adminAuthImages from "./admin-auth.png";
 
 
 
@@ -91,7 +94,8 @@ export {
   CertificateImg,
   StatsOne,
   StatsTwo,
-  StatsThree,
+  graphIcon1,
+  graphIcon2,
   MenteeProfile,
   Statsdoller,
   coin1,
@@ -131,5 +135,6 @@ export {
   loginImg,
   userAvatar,
   aboutImage,
-  monkeyBoxWhite
+  monkeyBoxWhite,
+  adminAuthImages
 };

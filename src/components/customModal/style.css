@@ -42,7 +42,7 @@
 
 .modalImage {
     width: 100px;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     /* margin-bottom: 1rem; */
 }
 
@@ -58,12 +58,13 @@
 .modalHeading{
     font-size: 30px;
     font-weight: 500;
-    line-height: 1.5;
+    line-height: 1.1;
     margin-bottom: 0px;
 }
 .modalPara{
     color: #003449;
     padding: 0;
+    margin-bottom: 1rem;
 }
 .req-model .form-check{
     margin-bottom: 10px;

@@ -2,13 +2,16 @@
     display: flex;
     justify-content: space-between;
     gap: 1rem;
-    padding: 1rem;
+    padding: 2rem 2.5rem;
     align-items: center;
     
 }
-.statsCard-border:not(:last-child){
-    border-right: 2px solid #E1E1E1;
+.dashboard-stats{
+    background-color: #fff;
+    border-radius: 7px;
 }
+
+
 .statsContent {
     display: flex;
     gap: 1rem;
@@ -20,8 +23,8 @@
 }
 
 .statsImg img {
-    width: 60px;
-    aspect-ratio: 1/1;
+    width: 166px;
+    /* aspect-ratio: 1/1; */
     object-fit: cover;
     object-position: center;
     border-radius: 0.5rem;
@@ -32,23 +35,33 @@
 }
 
 .statsNumber {
-    font-size: 28px;
+    font-size: 35px;
     font-weight: 900;
     margin: 0;
+    color: #000;
+    line-height: 1;
 }
 
 .statsText {
-    font-size: 18px;
-    color: #B1B1B1;
+    font-size: 19px;
+    color: #000;
     margin: 0;
+    text-transform: uppercase;
+    font-weight: 300;
 }
 
 .statsChange {
     flex-shrink: 0;
+    line-height: 1;
+    margin-left: 10px;
+}
+.statsChange p{
+    line-height: 1;
 }
 
 .arrow-icon{
-    color: var(--primaryColor);
+    color: #00AD5B;
+    font-size: 25px;
 }
 .greenColor{
     color: #42C900;

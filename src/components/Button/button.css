@@ -18,6 +18,7 @@
     display: inline-block;
     font-size: 18px;
     font-family: "Sofia Sans";
+    text-align: center;
 }
 .site_border_btn{
     background: transparent;

@@ -44,39 +44,35 @@ import Notifications from "@screens/notifications";
 
 import NotFound from "@screens/Page404";
 
+import AdminLogIn from "@screens/admin/auth/login";
+import AdminForgetPassword from "@screens/admin/auth/forgetPassword";
+import AdminForgetPassword2 from "@screens/admin/auth/forgetPassword2";
+import AdminForgetPassword3 from "@screens/admin/auth/forgetPassword3";
 import { Dashboard } from "@screens/admin/dashboard";
+import UserManagement from "@screens/admin/userManagement";
+import OrdersLogs from "@screens/admin/ordersLogs";
+
+
+import UserDetail from "@screens/admin/userManagement/detail";
+import ReportManagement from "@screens/admin/reportManagement";
 
 import AdminNotification from "@screens/admin/notification";
-import MenteeManagement from "@screens/admin/menteeManagement";
-import MenteeDetail from "@screens/admin/menteeManagement/detail";
-import MentorManagement from "@screens/admin/mentorManagement";
-import MentorshipRequest from "@screens/admin/mentorshipRequest";
-import AccountRequest from "@screens/admin/accountRequest";
-import AdminMentorDetail from "@screens/admin/mentorManagement/detail";
-import AdminMentorReqDetail from "@screens/admin/mentorManagement/requestDetail";
-import AdminMentorProfile from "@screens/admin/accountRequest/detail";
-import InterstManagent from "@screens/admin/interstManegement";
-import AddInterest from "@screens/admin/interstManegement/addInterest";
-import EditInterest from "@screens/admin/interstManegement/editInterst";
-import DetailInterest from "@screens/admin/interstManegement/interstDetail";
-import AdminAdSubscription from "@screens/admin/adSubscription";
-import AddSubscriptionFunc from "@screens/admin/adSubscription/addSubscriptin";
-import SubscriptionDetail from "@screens/admin/adSubscription/subscriptionDetail";
-import EditSubscription from "@screens/admin/adSubscription/editSubscription";
-import FeaturingSubscription from "@screens/admin/featuringSubscription";
-import AddFeaturingSubscription from "@screens/admin/featuringSubscription/addFeaturingSubscription";
-import FeaturingSubDetail from "@screens/admin/featuringSubscription/FeaturingsubscriptionDetail";
-import EditFeaturingSubs from "@screens/admin/featuringSubscription/editFeaturingSubscription";
-import MentorShipFee from "@screens/admin/mentorShipFee";
-import QueriesList from "@screens/admin/queries";
-import QueriesDetail from "@screens/admin/queries/detail";
-import PaymentLogs from "@screens/admin/paymentLogs";
+import QueryManagement from "@screens/admin/queryManegement";
+import QueryDetails from "@screens/admin/queryManegement/details";
+
+
 import AdminProfile from "@screens/admin/myProfile";
 import AdminChangePassword from "@screens/admin/myProfile/changePassword";
 import EditAdminProfile from "@screens/admin/myProfile/editProfile";
 import ProtectedRoutes from "./ProtectedRoutes";
 import GuestRoutes from "./GuestRoutes";
 import PreventAdmin from "./PreventAdmin";
+
+
+
+
+
+
 
 const UserRouter = () => {
   return (
@@ -109,76 +105,31 @@ const UserRouter = () => {
         <Route path="/order-logs" element={<OrderLogs />} />
         <Route path="/order-logs/details/:id" element={<OrderDetails />} />
 
-        <Route path="/login" element={<UserLogIn />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/forget-password" element={<ForgetPassword />} />
-        <Route path="/forget-password2" element={<ForgetPassword2 />} />
-        <Route path="/forget-password3" element={<ForgetPassword3 />} />
-
-
-
-
         <Route path="/notifications" element={<Notifications />} />
         <Route path="/profile" element={<MyProfile />} />
         <Route path="/profile/edit-profile" element={<EditProfile />} />
         <Route path="/change-password" element={<PasswordChange />} />
-
-
-
-
-
 
 {/* will be delet after Guest Acount Setup */}
-
-
-        {/* <Route path="/featured-ads" element={<FeaturedAds />} /> */}
-        {/* <Route path="/ads" element={<AdsPage />} /> */}
       </Route>
+
       {/* Guest Screens End */}
 
+
       {/* Auth Screens Start */}
-      {/* <Route element={<GuestRoutes />}>
+      <Route element={<GuestRoutes />}>
         <Route path="/login" element={<UserLogIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/forget-password" element={<ForgetPassword />} />
         <Route path="/forget-password2" element={<ForgetPassword2 />} />
         <Route path="/forget-password3" element={<ForgetPassword3 />} />
-      </Route> */}
+      </Route>
       {/* Auth Screens End */}
 
-      {/* Mentee Screens Start */}
-      {/* <Route element={<ProtectedRoutes roles={[roles.mentee]} />}>
-        <Route path="/mentor/details/:id" element={<MentorDetail />} />
-        <Route path="/my-request" element={<MyRequest />} />
-        <Route path="/my-request/details/:id" element={<MyRequestDetail />} />
-        <Route path="/user/profile" element={<MenteeProfile />} />
-        <Route path="/user/edit-profile" element={<EditUserProfile />} />
-      </Route> */}
-      {/* Mentee Screens End */}
-
-      {/* Mentor Screens Start */}
-      {/* <Route element={<ProtectedRoutes  roles={[roles.mentor]} />}>
-        <Route path="/mentorship-request" element={<MentorShipReq />} />
-        <Route
-          path="/mentorship-request/details/:id"
-          element={<MentorReqDetail />}
-        />
-
-        <Route path="/ads-logs" element={<AdsLogs />} />
-        <Route path="/profile" element={<MyProfile />} />
-        <Route path="/profile/edit-profile" element={<EditProfile />} />
-      </Route> */}
-      {/* Mentor Screens End */}
-
-      {/* Screens for Mentor, Mentee */}
-      {/* <Route element={<ProtectedRoutes roles={[roles.mentor, roles.mentee]} />}>
-        <Route path="/payments" element={<Payment />} />
-        <Route path="/change-password" element={<PasswordChange />} />
-        <Route path="/notifications" element={<Notifications />} />
-      </Route> */}
+     
 
       {/* Admin Screens Start */}
-      {/* <Route element={<GuestRoutes admin />}>
+      {<Route element={<GuestRoutes admin />}>
         <Route path="/admin" element={<AdminLogIn />} />
         <Route path="/admin/login" element={<AdminLogIn />} />
         <Route
@@ -193,104 +144,26 @@ const UserRouter = () => {
           path="/admin/forget-password3"
           element={<AdminForgetPassword3 />}
         />
-      </Route> */}
+      </Route>}
 
       <Route element={<ProtectedRoutes admin roles={[roles.admin]} />}>
         <Route path="/admin/dashboard" element={<Dashboard />} />
         <Route path="/admin/notifications" element={<AdminNotification />} />
 
-        <Route path="/admin/mentee-management" element={<MenteeManagement />} />
-        <Route
-          path="/admin/mentee-management/details/:id"
-          element={<MenteeDetail />}
-        />
+        <Route path="/admin/user-management" element={<UserManagement />} />
+        <Route path="/admin/user-management/details/:id" element={<UserDetail />} />
+        <Route path="/admin/report-management" element={<ReportManagement />} />
 
-        <Route path="/admin/mentor-management" element={<MentorManagement />} />
-        <Route
-          path="/admin/mentor-management/details/:id"
-          element={<AdminMentorDetail />}
-        />
-        <Route
-          path="/admin/mentor-management/account-request"
-          element={<AccountRequest />}
-        />
-        <Route
-          path="/admin/mentor-management/mentor-profile/:id"
-          element={<AdminMentorProfile />}
-        />
+        <Route path="/admin/orders-logs" element={<OrdersLogs />} />
+        <Route path="/admin/orders-logs/details/:id" element={<OrdersLogs />} />
+        <Route path="/admin/query-management" element={<QueryManagement />} />
+        <Route path="/admin/query-management/details/:id" element={<QueryDetails />} />
 
-        <Route
-          path="/admin/mentorship-request"
-          element={<MentorshipRequest />}
-        />
-        <Route
-          path="/admin/mentorship-request/details/:id"
-          element={<AdminMentorReqDetail />}
-        />
 
-        <Route
-          path="/admin/interests-management"
-          element={<InterstManagent />}
-        />
-        <Route
-          path="/admin/interests-management/add-interest"
-          element={<AddInterest />}
-        />
-        {/* <Route path="/admin/interests-management/detail/:id" element={<DetailInterest />} /> */}
-        <Route
-          path="/admin/interests-management/edit-interest/:id"
-          element={<EditInterest />}
-        />
-
-        <Route
-          path="/admin/ad-subscription"
-          element={<AdminAdSubscription />}
-        />
-        <Route
-          path="/admin/ad-subscription/add-subscription"
-          element={<AddSubscriptionFunc />}
-        />
-        <Route
-          path="/admin/ad-subscription/detail/:id"
-          element={<SubscriptionDetail />}
-        />
-        <Route
-          path="/admin/ad-subscription/edit-subscription/:id"
-          element={<EditSubscription />}
-        />
-
-        <Route
-          path="/admin/featuring-subscription"
-          element={<FeaturingSubscription />}
-        />
-        <Route
-          path="/admin/featuring-subscription/add-subscription"
-          element={<AddFeaturingSubscription />}
-        />
-        <Route
-          path="/admin/featuring-subscription/detail/:id"
-          element={<FeaturingSubDetail />}
-        />
-        <Route
-          path="/admin/featuring-subscription/edit-subscription/:id"
-          element={<EditFeaturingSubs />}
-        />
-
-        <Route path="/admin/mentorship-fees" element={<MentorShipFee />} />
-
-        <Route path="/admin/queries-list" element={<QueriesList />} />
-        <Route
-          path="/admin/queries-list/detail/:id"
-          element={<QueriesDetail />}
-        />
-
-        <Route path="/admin/payment-logs" element={<PaymentLogs />} />
+        
 
         <Route path="/admin/my-profile" element={<AdminProfile />} />
-        <Route
-          path="/admin/change-password"
-          element={<AdminChangePassword />}
-        />
+        <Route path="/admin/change-password" element={<AdminChangePassword />} />
         <Route path="/admin/edit/profile" element={<EditAdminProfile />} />
       </Route>
       {/* Admin Screens End */}

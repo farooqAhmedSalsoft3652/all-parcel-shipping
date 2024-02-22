@@ -1,0 +1,58 @@
+.authBg{
+    background-image: none;
+}
+.admin.authBox{
+    border: none;
+    box-shadow: none;
+}
+.authImage{
+    border-radius: 0;
+}
+.admin.authImage:after{
+    right: 10px;
+    bottom: 0px;
+    background-position: center bottom;
+    width: 400px;
+    height: 400px;
+}
+.admin.authImage img{
+    position: absolute;
+    object-fit: cover;
+    /* object-position: top; */
+    transform: translateY(-50%);
+    top: 50%;
+    height: 100%;
+    width: 100%;
+    left: 0;
+}
+.admin .authForm{
+    padding: 70px 10%;
+}
+@media (max-width:1666px){
+    .admin .authImage:after{
+        width: 300px;
+        height: 300px;
+    }
+    .admin .authImage img{
+        max-width: 90%;
+    }
+}
+@media (max-width:1666px){
+    .admin .authImage img{
+        margin-left: 0px;
+        height: auto;
+    }
+}
+@media (max-width:1366px){
+    .admin .authImage:after{
+        width: 250px;
+        height: 250px;
+    }
+}
+@media (max-width:1024px){
+    .admin .authImage:after{
+        width: 200px;
+        height: 200px;
+    }
+}
+

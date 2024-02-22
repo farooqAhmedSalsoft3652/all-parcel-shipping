@@ -36,6 +36,48 @@ const CustomFilters = (props) => {
           <div className="tableFilters">
             <div className="row">
               <div className="col-12 ">
+                {props?.dateFilter2 && (
+                  <div className="filterWrapper">
+                    <label className="filterLabel fw-bold mb-3">Sort By Date</label>
+                    <div className="row mb-4">
+                      <div className="col-12 my-2">
+                        <label className="filterLabel">From:</label>
+                        <input
+                          type="date"
+                          placeholder="From"
+                          name="from"
+                          id="from"
+                          className="filterInput w-100"
+                          value={from ?? props?.filters?.from}
+                          max={to}
+                          onChange={e => {
+                            setFrom(e.target.value);
+                            document.getElementById('to').setAttribute('min', e.target.value);
+
+                          }}
+                        />
+                      </div>
+                      <div className="col-12">
+                        <label className="filterLabel">To:</label>
+                        <input
+                          type="date"
+                          placeholder="To"
+                          name="to"
+                          id="to"
+                          className="filterInput w-100"
+                          value={to ?? props?.filters?.to}
+                          min={from}
+                          onChange={e => {
+                            setTo(e.target.value);
+                            document.getElementById('from').setAttribute('max', e.target.value);
+                          }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+              <div className="col-12 ">
                 {props?.dateFilter && (
                   <div className="filterWrapper">
                     <label className="filterLabel fw-bold mb-3">Filter By Start Order:</label>
@@ -139,7 +181,7 @@ const CustomFilters = (props) => {
             </div>
             <div className="mt-3 text-center d-flex justify-content-center flex-column flex-sm-row">
               <SiteButton onClick={applyFilter} type="button" className="site-btn me-0 me-sm-3 mb-3 mb-sm-0">Apply</SiteButton>
-              <SiteButton type="button" className="site-btn site_border_btn" onClick={handleClose}>Cancel</SiteButton>
+              <SiteButton type="button" className="site-btn site_border_btn" onClick={handleClose}>Clear All</SiteButton>
             </div>
           </div>
         </div>

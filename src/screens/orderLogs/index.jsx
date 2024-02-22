@@ -199,7 +199,7 @@ const OrderLogs = () => {
                           </span>
                         </td>
                         <td>
-                          <Dropdown>
+                          <Dropdown align="start">
                             <Dropdown.Toggle variant="" id="dropdown-basic">
                               <FontAwesomeIcon icon={faEllipsisV} />
                             </Dropdown.Toggle>

@@ -9,6 +9,8 @@ import SiteButton from "@components/Button/button";
 import useAuth from "@hooks/useAuth";
 import axios from "axios";
 import { encode } from 'base-64';
+import { Container, Row, Col } from "react-bootstrap";
+
 
 const AdminLogIn = () => {
   usePageTitle("Admin Login");
@@ -44,54 +46,59 @@ const AdminLogIn = () => {
 
   return (
     <>
-      <AuthLayout authTitle="Admin Login" authPara="Login into your Account">
+      <AuthLayout authTitle="Login" authPara="Please login to your account">
         <div id="response"></div>
         <Form onSubmit={handleSubmit}>
-          <CustomInput
-            label="Email Address"
-            required
-            id="email"
-            type="email"
-            placeholder="Enter Your Email Address"
-            labelClass="mainLabel"
-            inputClass="mainInput"
-            onChange={(event) => {
-              setFormData({ ...formData, email: event.target.value });
-            }}
-          />
-          <CustomInput
-            label="Password"
-            onChange={(event) => {
-              setFormData({ ...formData, password: event.target.value });
-            }}
-            required
-            id="password"
-            type="password"
-            placeholder="Enter Password"
-            labelClass="mainLabel"
-            inputClass="mainInput"
-          />
-          <div className="d-flex align-items-baseline justify-content-between mt-1">
-            <div className="checkBox">
-              <input
-                type="checkbox"
-                name="rememberMe"
-                id="rememberMe"
-                className="me-1"
+          <Row className="pt-4">
+            <Col xs={12} className="mb-4">
+              <CustomInput
+                label="Email Address"
+                required
+                id="email"
+                type="email"
+                placeholder="Enter Your Email Address"
+                labelClass="mainLabel"
+                inputClass="mainInput"
+                onChange={(event) => {
+                  setFormData({ ...formData, email: event.target.value });
+                }}
               />
-              <label htmlFor="rememberMe" className="d-grey-color">
-                Remember Me
-              </label>
-            </div>
-            <Link
-              to={"/admin/forget-password"}
-              className="d-grey-color text-decoration-underline"
-            >
-              Forgot Password?
-            </Link>
-          </div>
+            </Col>
+            <Col xs={12} className="mb-4">
+              <CustomInput
+                label="Password"
+                onChange={(event) => {
+                  setFormData({ ...formData, password: event.target.value });
+                }}
+                required
+                id="password"
+                type="password"
+                placeholder="Enter Password"
+                labelClass="mainLabel"
+                inputClass="mainInput"
+              />
+            </Col>
+            <Col xs={12} className="mb-4">
+              <div className="d-flex align-items-baseline justify-content-between mt-1">
+                <div className="checkBox">
+                  <input
+                    type="checkbox"
+                    name="rememberMe"
+                    id="rememberMe"
+                    className="me-1"
+                  />
+                  <label htmlFor="rememberMe" className="d-grey-color">Remember Me</label>
+                </div>
+                <Link
+                  to={"/admin/forget-password"}
+                  className="d-grey-color text-decoration-underline"
+                >Forgot Password?</Link>
+              </div>
+            </Col>
+          </Row>
+          
           <div className="mt-4 text-center">
-            <SiteButton type="submit" className="site-btn" load={load}>
+            <SiteButton type="submit" className="site-btn w-100" load={load}>
               Login
             </SiteButton>
           </div>

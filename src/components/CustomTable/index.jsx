@@ -73,6 +73,7 @@ const CustomTable = (props) => {
               }
             >
               {/* <option value="3">03</option> */}
+              <option value="all">All</option>
               <option value="5">05</option>
               <option value="10">10</option>
               <option value="15">15</option>
@@ -126,6 +127,7 @@ const CustomTable = (props) => {
               // filterSearchValue={props?.filterSearchValue}
               // setFilterSearchValue={props?.setFilterSearchValue}
               dateFilter={props?.dateFilter}
+              dateFilter2={props?.dateFilter2}
               // filterFrom={props?.filterFrom}
               // setFilterFrom={props?.setFilterFrom}
               // filterTo={props?.filterTo}
@@ -143,7 +145,7 @@ const CustomTable = (props) => {
       </div>
 
       <div className="main-tabble table-responsive mx-n2">
-        <table className="table table-borderless dataTable px-0">
+        <table className={`table table-borderless dataTable px-0 ${props.className}`}>
           <thead>
             <tr>
               {props?.headers.map((header) => (

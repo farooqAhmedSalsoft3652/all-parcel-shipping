@@ -2,7 +2,7 @@ import "./index.css";
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthLayout } from '@/layout/authLayout';
-import { Form } from 'react-bootstrap';
+import { Form, Row, Col, } from 'react-bootstrap';
 import { useFormik } from 'formik';
 import usePageTitle from '@hooks/usePageTitle';
 import SiteButton from '@components/Button/button';
@@ -23,12 +23,12 @@ const AdminForgetPassword3 = () => {
     });
     const [load, setLoad] = useState(false);
 
-    useEffect(() => {
-        if(!state?.email || !state?.code){
-            navigate('/login');
-        }
-        else setFormData({...formData, email: state.email});
-    }, []);
+    // useEffect(() => {
+    //     if(!state?.email || !state?.code){
+    //         navigate('/login');
+    //     }
+    //     else setFormData({...formData, email: state.email});
+    // }, []);
 
     const {values, errors, touched, handleChange, handleBlur, handleSubmit} = useFormik({
         initialValues: formData,
@@ -62,41 +62,45 @@ const AdminForgetPassword3 = () => {
 
     return (
         <>
-            <AuthLayout authTitle='Password Recovery' authPara='Enter a new password.' backOption={true}>
+            <AuthLayout authTitle='Password Recovery' authPara='Please Enter New Password' backOption={true}>
                 <div id="response"></div>
                 <Form onSubmit={handleSubmit}>
-                    <CustomInput 
-                        label='New Password' 
-                        labelClass='mainLabel' 
-                        type='password' 
-                        id='password' 
-                        placeholder='Enter New Password' 
-                        inputClass='mainInput' 
-                        required
-                        value={values.password}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        errors={errors.password}
-                        touched={touched.password}
-                    />
-
-                    <CustomInput 
-                        label='Confirm Password' 
-                        labelClass='mainLabel' 
-                        type='password' 
-                        id='confirm_password' 
-                        placeholder='Enter Confirm Password' 
-                        inputClass='mainInput' 
-                        required 
-                        value={values.confirm_password}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        errors={errors.confirm_password}
-                        touched={touched.confirm_password}
-                    />
-
+                    <Row className="pt-4">
+                        <Col xs={12} className="mb-4">
+                            <CustomInput 
+                                label='New Password' 
+                                labelClass='mainLabel' 
+                                type='password' 
+                                id='password' 
+                                placeholder='Enter New Password' 
+                                inputClass='mainInput' 
+                                required
+                                value={values.password}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                errors={errors.password}
+                                touched={touched.password}
+                            />
+                        </Col>
+                        <Col xs={12} className="mb-4">
+                            <CustomInput 
+                                label='Confirm Password' 
+                                labelClass='mainLabel' 
+                                type='password' 
+                                id='confirm_password' 
+                                placeholder='Confirm New Password' 
+                                inputClass='mainInput' 
+                                required 
+                                value={values.confirm_password}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                errors={errors.confirm_password}
+                                touched={touched.confirm_password}
+                            />
+                        </Col>
+                    </Row>
                     <div className="mt-4 text-center">
-                        <SiteButton type='submit' className="site-btn" load={load}>Update</SiteButton>
+                        <SiteButton type='submit' className="site-btn w-100" load={load}>Update</SiteButton>
                     </div>
                 </Form>
             </AuthLayout>

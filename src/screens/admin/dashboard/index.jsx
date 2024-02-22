@@ -23,40 +23,44 @@ export const Dashboard = () => {
   }, []);
  
   const chartTitles = [
-    "Total Earning",
-    "Mentees Registered",
-    "Mentor Registered",
-    "Requests Received",
+    "User Analytics"
   ];
 
   return (
     <DashboardLayout>
       <Container fluid>
-        <div className="dashCard mb-4 py-5 m-h">
-          <h3 className="mainTitle">Dashboard</h3>
+        <div className="dashCard mb-4 py-0 m-h">
+          <div class="mainTitle mb-0">
+            <div class="row">
+              <div class="col-12 col-sm-12 mb-4">
+                <h2 class="text-black fw-medium">Dashboard</h2>
+              </div>
+            </div>
+          </div>
           <Row>
-            {statistics.map((item, index) => (
+            {statistics.slice(0, 2).map((item, index) => (
               <Col
                 key={item.id}
-                xxl={3}
-                xl={6}
                 md={6}
                 className="statsCard-border"
               >
-                <div className="dashboard-stats">
+                <div className="dashboard-stats rounded-10 shadow-sm">
                   <StatsCard item={item} index={index} stats={stats} />
                 </div>
               </Col>
             ))}
           </Row>
         </div>
-        <Row>
+        <div className="dashCard mb-5  m-h">
+          <div className="bg-white rounded-10 shadow-sm p-5">
+
           {chartTitles.map((title, index) => (
-            <Col key={index} xl={12}>
+            <Col key={index} xl={12} className="px-3">
               <ChartCard key={index} title={title} />
             </Col>
           ))}
-        </Row>
+          </div>
+        </div>
       </Container>
     </DashboardLayout>
   );

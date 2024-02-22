@@ -39,7 +39,7 @@ const ForgetPassword = () => {
     }
 
     return (
-        <AuthLayout authTitle='Forgot Password' authPara='Enter email address to get a verification code' backOption={true}>
+        <AuthLayout authTitle='Forgot Password' authPara='Enter your email address to receive a verification code' backOption={true}>
             <div id="response"></div>
             <Form onSubmit={handleClick}>
                 <CustomInput label='Email Address' required id='userEmail' type='email' placeholder='Enter Your Email Address' labelClass='mainLabel' inputClass='mainInput' onChange={(event) => {

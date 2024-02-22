@@ -7,3 +7,6 @@
 .PhoneInput.mainInput {
     padding: 15px 15px;
 }
+.profile_img_wraper{
+    max-width: 150px;
+}

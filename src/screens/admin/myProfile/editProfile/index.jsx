@@ -17,6 +17,8 @@ import { DashboardLayout } from "@/layout/dashboardLayout";
 import axios from "axios";
 import { decode, encode } from "base-64";
 
+import {userAvatar} from "../../../../assets/images";
+
 const EditAdminProfile = () => {
   usePageTitle("Edit Profile");
   const navigate = useNavigate();
@@ -86,7 +88,7 @@ const EditAdminProfile = () => {
   const avatarUpdated = () => {
     setShowModal2(false);
     localStorage.setItem('user', encode(JSON.stringify(profileData)));
-    navigate("/admin/my-profile");
+    //navigate("/admin/my-profile");
   };
 
   return (
@@ -95,142 +97,101 @@ const EditAdminProfile = () => {
         <section className="edit-profile">
           <Container fluid>
             <div className="dashCard">
-              <Row>
-                <Col xs={12}>
-                  <Row className="pt-5 ms-auto ps-4">
-                    <Col xs={12}>
-                      <div className="section_title">
-                        <h3>
-                          <BackButton />
-                          Edit Profile
-                        </h3>
-                      </div>
-                    </Col>
-                  </Row>
-                  <Row className="pt-5">
-                    <Col xs={12}>
-                      <div className="sec_title d-block text-center">
-                        <div className="mb-2">
-                          <div className="attached position-relative">
-                            <img
-                              src={
-                                editedImage || SERVER_URL + profileData.avatar
-                              }
-                              className="img-fluid ml-0 profile_img "
-                              alt={true.toString()}
-                            />
-
-                            <label
-                              htmlFor={!load2 && "imageUpload"}
-                              className="camera-icon"
-                            >
-                              {load2 ? (
-                                <div
-                                  className="spinner-border text-primary spinner-border-sm"
-                                  role="status"
-                                ></div>
-                              ) : (
-                                <FontAwesomeIcon icon={faCamera} />
-                              )}
-                            </label>
-                            <input
-                              type="file"
-                              id="imageUpload"
-                              accept="image/*"
-                              style={{ display: "none" }}
-                              onChange={handleImageChange}
-                            />
-                          </div>
-                          {profileErrors && (
-                            <small className="text-danger">
-                              {profileErrors}
-                            </small>
-                          )}
-                        </div>
-                      </div>
-                    </Col>
-                  </Row>
-                  <Form onSubmit={handleSubmit}>
-                    <Row className="pt-4">
-                      <Col lg={10} className="offset-lg-1">
-                        <Row className="pt-3">
-                          <Col lg={6} xs={12}>
-                            <CustomInput
-                              label="First Name"
-                              required
-                              id="first_name"
-                              type="text"
-                              placeholder="Enter First Name"
-                              labelClass="mainLabel bold"
-                              inputClass="mainInput"
-                              value={
-                                formData.first_name ?? profileData.first_name
-                              }
-                              onChange={(e) =>
-                                setFormData({
-                                  ...formData,
-                                  first_name: e.target.value,
-                                })
-                              }
-                              inputError={formErrors.first_name}
-                            />
-                          </Col>
-                          <Col lg={6} xs={12}>
-                            <CustomInput
-                              label="Last Name"
-                              required
-                              id="last_name"
-                              type="text"
-                              placeholder="Enter Last Name"
-                              labelClass="mainLabel bold"
-                              inputClass="mainInput"
-                              value={
-                                formData.last_name ?? profileData.last_name
-                              }
-                              onChange={(e) =>
-                                setFormData({
-                                  ...formData,
-                                  last_name: e.target.value,
-                                })
-                              }
-                              inputError={formErrors.last_name}
-                            />
-                          </Col>
-                          <Col lg={6} xs={12}>
-                            <label className="mainLabel bold">
-                              Phone Number
-                            </label>
-                            <PhoneInput
-                              placeholder="Enter phone number"
-                              value={value}
-                              onChange={setValue}
-                              className="mainInput"
-                              defaultCountry="US"
-                              focusInputOnCountrySelection="false"
-                            />
-                            {formErrors.phone_number ? (
-                              <small className="text-danger ms-2">
-                                {formErrors.phone_number[0]}
-                              </small>
-                            ) : null}
-                          </Col>
-                        </Row>
-                      </Col>
-                    </Row>
-                    <Row className="text-center py-5">
+              <div className="bg-white rounded-10 shadow-sm p-5 p-lg-5 p-xxl-5">
+                <div class="mainTitle mb-0 mb-5">
+                  <div className="d-flex align-items-center gap-2 ">
+                    <BackButton />
+                    <h2 class="text-black fw-medium">Edit Profile</h2>  
+                  </div>
+                </div>
+                <Row>
+                  <Col md={5} xs={12} className="detail-block pt-3">
+                    <Row>
                       <Col xs={12}>
-                        <SiteButton
-                          className="site-btn"
-                          type="submit"
-                          load={load}
-                        >
-                          Update
-                        </SiteButton>
+                        <div className="sec_title d-block">
+                          <div className="mb-2">
+                            <div className="attached position-relative profile_img_wraper">
+                              <img
+                                src={
+                                  editedImage || SERVER_URL + profileData.avatar
+                                }
+                                className="img-fluid ml-0 profile_img "
+                                alt={true.toString()}
+                              />
+                              <label
+                                htmlFor={!load2 && "imageUpload"}
+                                className="camera-icon"
+                              >
+                                {load2 ? (
+                                  <div
+                                    className="spinner-border text-primary spinner-border-sm"
+                                    role="status"
+                                  ></div>
+                                ) : (
+                                  <FontAwesomeIcon icon={faCamera} />
+                                )}
+                              </label>
+                              <input
+                                type="file"
+                                id="imageUpload"
+                                accept="image/*"
+                                style={{ display: "none" }}
+                                onChange={handleImageChange}
+                              />
+                            </div>
+                            {profileErrors && (
+                              <small className="text-danger">
+                                {profileErrors}
+                              </small>
+                            )}
+                          </div>
+                        </div>
                       </Col>
+
+                      <Form onSubmit={handleSubmit}>
+                        <Col xs={12} className="my-sm-4">
+                          <CustomInput
+                            label="Name"
+                            required
+                            id="first_name"
+                            type="text"
+                            placeholder="Enter First Name"
+                            labelClass="mainLabel bold ms-0"
+                            inputClass="mainInput"
+                            value={
+                              formData.first_name ?? profileData.first_name
+                            }
+                            onChange={(e) =>
+                              setFormData({
+                                ...formData,
+                                first_name: e.target.value,
+                              })
+                            }
+                            inputError={formErrors.first_name}
+                          />
+                        </Col>
+                        <Col xs={12} className="my-sm-5">
+                          <div className="inputWrapper">
+                            <label for="first_name" class="mainLabel bold d-block ms-0 mb-0">Email:</label>
+                            <p className="fw-regular">{profileData.email}</p>
+                          </div>
+
+                        </Col>
+                        <Col xs={12} className="my-5">
+                          <SiteButton
+                            className="site-btn me-2"
+                            type="submit"
+                            load={load}
+                            >Update</SiteButton>
+                          <SiteButton type="submit" className="site-btn site_border_btn ms-2">Cancel</SiteButton>
+                        </Col>
+                      </Form>
                     </Row>
-                  </Form>
-                </Col>
-              </Row>
+                  </Col>
+                </Row>
+                
+              </div>
+              
             </div>
           </Container>
         </section>
@@ -239,7 +200,8 @@ const EditAdminProfile = () => {
       <CustomModal
         show={showModal}
         close={dataUpdated}
-        para="Your Profile Has Been Successfully Updated"
+        heading="System Message"
+        para="Profile Updated Successfully!"
         success={true}
         onClickOk={dataUpdated}
       />
@@ -247,7 +209,8 @@ const EditAdminProfile = () => {
       <CustomModal
         show={showModal2}
         close={avatarUpdated}
-        para="Your avatar has been successfully updated!"
+        heading="System Message"
+        para="Profile avatar updated successfully!"
         success={true}
         onClickOk={avatarUpdated}
       />

@@ -1,9 +1,9 @@
 .dashCard {
-    background: #fff;
-    border-radius: 20px;
+    /* background: #fff;
+    border-radius: 20px; */
     padding: 1rem 2rem;
-    box-shadow: 0px 8px 6px rgb(133 233 255 / 14%);
-    min-height: calc(100vh - 160px);
+    /* box-shadow: 0px 8px 6px rgb(133 233 255 / 14%);
+    min-height: calc(100vh - 160px); */
 }
 .m-h{
     min-height: 0;
@@ -33,7 +33,24 @@
     margin-bottom: 0.2rem;
     border-radius: 10px;
     cursor: pointer;
+    width: 150px;
+    height: 45px;
 }
+
+.chartjs-tooltip {
+    background: rgba(0,0,0,.7);
+    border-radius: 0.375rem;
+    color: #fff;
+    opacity: 0;
+    padding: 0.25rem 0.5rem;
+    pointer-events: none;
+    position: absolute;
+    transform: translate(-50%);
+    transition: all .15s ease;
+    z-index: 1021;
+    text-align: left;
+}
+
 @media screen and (max-width: 1200px) and (min-width: 768px) {
     .stats, .stats:not(:last-child) {
         border-color: #fff0;

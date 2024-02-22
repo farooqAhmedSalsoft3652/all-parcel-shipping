@@ -121,6 +121,10 @@ table.dataTable td {
   font-weight: 400;
   color: #949494;
 }
+table.dark td{
+  color: #333333;
+}
+
 table.dataTable tbody tr {
   background-color: transparent;
   /* box-shadow:0 0 20px 1px rgb(23 22 22 / 3%), 0 2px 9px 0 rgb(43 43 43 / 10%); */
@@ -253,14 +257,16 @@ table.dataTable a{
 table.dataTable .dropdown-toggle{ font-size:26px ; padding:2px 10px; background:transparent; border:none; color: var(--black); }
 table.dataTable .dropdown-toggle:after{ display: none;}
 table.dataTable .dropdown-menu {
-  min-width: 10rem;
+  min-width: 120px;
   border: 0px solid #fff;
   background:var(--bs-white);
   box-shadow: 0 0 10px 0 rgb(0,0,0,.3);
   border-radius:10px 10px 10px 10px ;
   padding:0px 0;
+  left: 0 !important;
   /* margin-left: 15px; */
-  transform:translate3d(-1.5rem,38px,0)!important
+  /* transform:translate3d(0rem,38px,0)!important */
+  transform:translate3d(-4.5rem,33px,0)!important
 }
 table.dataTable .dropdown-toggle svg{
   margin-right: 0;

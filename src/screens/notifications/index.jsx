@@ -70,7 +70,7 @@ const Notifications = () => {
                   <Row>
                     <Col lg={12} className="">
                         <div className="noti_boxm">   
-                          <ul className="noti_box mb-0">
+                          <ul className="noti_box mb-3">
                           {/* {notifications.length === 0 ? (
                             <h3 className="text-center text-muted">No notification found!</h3>
                           ) : (
