@@ -509,7 +509,10 @@ export const reportApiData = [
     id: 1,
     orderNo: "123",
     name: "John Doe",
+    lastName: "John Doe",
+    email: "bellaedward@gmail.com",
     orderDate: "MM/DD/YYYY",
+    message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes.",
 
     trackingNo: "123456",
     totalPrice: "$2000",
@@ -548,7 +551,9 @@ export const reportApiData = [
         zipCode: "0000",
         estimatedDeliveryTime: "HH:MM AM",
         specialInstructions:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismodn gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montesnascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.",
+        reasonCancellation:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.",
       },
 
   },
@@ -556,7 +561,10 @@ export const reportApiData = [
     id: 2,
     orderNo: "123",
     name: "Alex Hales",
+    lastName: "John Doe",
+    email: "bellaedward@gmail.com",
     orderDate: "MM/DD/YYYY",
+    message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes.",
 
     trackingNo: "123456",
     totalPrice: "$1000",
@@ -596,14 +604,19 @@ export const reportApiData = [
       zipCode: "0000",
       estimatedDeliveryTime: "HH:MM AM",
       specialInstructions:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismodn gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montesnascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.",
+      reasonCancellation:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.",
     },
   },
   {
     id: 3,
     orderNo: "123",
     name: "Chris Evan",
+    lastName: "John Doe",
+    email: "bellaedward@gmail.com",
     orderDate: "MM/DD/YYYY",
+    message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes.",
    
     trackingNo: "123456",
     totalPrice: "$1000",
@@ -643,14 +656,19 @@ export const reportApiData = [
       zipCode: "0000",
       estimatedDeliveryTime: "HH:MM AM",
       specialInstructions:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismodn gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montesnascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.",
+      reasonCancellation:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.",
     },
   },
   {
     id: 4,
     orderNo: "123",
     name: "Andrew Lens",
+    lastName: "John Doe",
+    email: "bellaedward@gmail.com",
     orderDate: "MM/DD/YYYY",
+    message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes.",    
     trackingNo: "123456",
     totalPrice: "$1000",
     totalWeight: "100 KG",
@@ -689,14 +707,19 @@ export const reportApiData = [
       zipCode: "0000",
       estimatedDeliveryTime: "HH:MM AM",
       specialInstructions:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismodn gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montesnascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.",
+      reasonCancellation:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.",
     },
   },
   {
     id: 5,
     orderNo: "123",
     name: "James Barnes",
+    lastName: "John Doe",
+    email: "bellaedward@gmail.com",
     orderDate: "MM/DD/YYYY",
+    message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes.",
 
     trackingNo: "123456",
     totalPrice: "$1000",
@@ -736,7 +759,9 @@ export const reportApiData = [
       zipCode: "0000",
       estimatedDeliveryTime: "HH:MM AM",
       specialInstructions:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismodn gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montesnascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.",
+      reasonCancellation:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.",
     },
   },
   {
@@ -782,7 +807,9 @@ export const reportApiData = [
       zipCode: "0000",
       estimatedDeliveryTime: "HH:MM AM",
       specialInstructions:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismodn gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montesnascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.",
+      reasonCancellation:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.",
     },
   },
 ];
@@ -1084,7 +1111,7 @@ export const queryObjectData = [
     name: "Andrew Lens",
     email: "bellaedward@gmail.com",
     date: "07 July, 2022",
-    userType: "Guest",
+    userType: "Registered",
     subject: "Lorem ipsum dolor sit amet",
     message:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismodn gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montesnascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus.",
@@ -1104,7 +1131,7 @@ export const queryObjectData = [
     name: "Smith olsen",
     email: "bellaedward@gmail.com",
     date: "07 July, 2022",
-    userType: "Guest",
+    userType: "Registered",
     subject: "Lorem ipsum dolor sit amet",
     message:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismodn gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montesnascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus.",

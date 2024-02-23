@@ -202,20 +202,13 @@ const ReportManagement = () => {
                                   <Dropdown.Menu>
                                     <Dropdown.Item
                                       as={Link}
-                                      to={`/order-logs/details/${item?.id}`}
+                                      to={`/admin/report-management/details/${item?.id}`}
                                     >
                                       <FontAwesomeIcon icon={faEye} />
                                       View
                                     </Dropdown.Item>
                                   </Dropdown.Menu>
                                 </Dropdown>
-
-                                {/* <Link
-                                  to={`/admin/mentor-management/details/${item.id}`}
-                                  className="tableAction fw-bold view text-decoration-underline"
-                                >
-                                  <FontAwesomeIcon icon={faEye} />
-                                </Link> */}
                               </td>
                             </tr>
                           )))}

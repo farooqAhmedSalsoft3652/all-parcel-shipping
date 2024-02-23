@@ -112,7 +112,7 @@ const AdminForgetPassword2 = () => {
               <SiteButton
                 type="button"
                 className="resend-btn primary_color"
-                // onClick={resendCode}
+                onClick={resendCode}
               >
                 Resend Code
               </SiteButton>
@@ -129,6 +129,7 @@ const AdminForgetPassword2 = () => {
           </div>
         </Form>
       </AuthLayout>
+      
     </>
   );
 };

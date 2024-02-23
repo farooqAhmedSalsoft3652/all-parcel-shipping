@@ -51,10 +51,14 @@ import AdminForgetPassword3 from "@screens/admin/auth/forgetPassword3";
 import { Dashboard } from "@screens/admin/dashboard";
 import UserManagement from "@screens/admin/userManagement";
 import OrdersLogs from "@screens/admin/ordersLogs";
+import OrdersLogsDetail from "@screens/admin/ordersLogs/details";
 
 
 import UserDetail from "@screens/admin/userManagement/detail";
 import ReportManagement from "@screens/admin/reportManagement";
+
+import ReportDetail from "../screens/admin/reportManagement/details";
+// import ReportDetail from "@screens/admin/reportManagement/details";
 
 import AdminNotification from "@screens/admin/notification";
 import QueryManagement from "@screens/admin/queryManegement";
@@ -153,9 +157,10 @@ const UserRouter = () => {
         <Route path="/admin/user-management" element={<UserManagement />} />
         <Route path="/admin/user-management/details/:id" element={<UserDetail />} />
         <Route path="/admin/report-management" element={<ReportManagement />} />
+        <Route path="/admin/report-management/details/:id" element={<ReportDetail />} />
 
         <Route path="/admin/orders-logs" element={<OrdersLogs />} />
-        <Route path="/admin/orders-logs/details/:id" element={<OrdersLogs />} />
+        <Route path="/admin/orders-logs/details/:id" element={<OrdersLogsDetail />} />
         <Route path="/admin/query-management" element={<QueryManagement />} />
         <Route path="/admin/query-management/details/:id" element={<QueryDetails />} />
 

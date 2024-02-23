@@ -64,7 +64,8 @@ const AdminForgetPassword3 = () => {
         <>
             <AuthLayout authTitle='Password Recovery' authPara='Please Enter New Password' backOption={true}>
                 <div id="response"></div>
-                <Form onSubmit={handleSubmit}>
+                {/* <Form onSubmit={handleSubmit} */}
+                <Form>
                     <Row className="pt-4">
                         <Col xs={12} className="mb-4">
                             <CustomInput 
@@ -99,13 +100,14 @@ const AdminForgetPassword3 = () => {
                             />
                         </Col>
                     </Row>
-                    <div className="mt-4 text-center">
-                        <SiteButton type='submit' className="site-btn w-100" load={load}>Update</SiteButton>
+                    <div className="mt-5 text-center">
+                        {/* <SiteButton type='submit' className="site-btn w-100" load={load} onClick={()=> setShowModal(true)}>Update</SiteButton> */}
+                        <SiteButton type='button' className="site-btn w-100" load={load} onClick={()=> setShowModal(true)}>Update</SiteButton>
                     </div>
                 </Form>
             </AuthLayout>
 
-            <CustomModal show={showModal} close={passwordUpdate} onClickOk={passwordUpdate} btntext="continue" success para='Password Successfully Updated' />
+            <CustomModal show={showModal} close={passwordUpdate} onClickOk={passwordUpdate} heading="System Message"  buttonText="Login" success para='Password Updated Successfully!' />
         </>
     )
 }

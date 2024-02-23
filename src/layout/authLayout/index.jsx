@@ -32,7 +32,7 @@ export const AuthLayout = (props) => {
                                 </div>
                             </div>
                         </Col>
-                        <Col lg={6} className="authImage d-none d-lg-block position-relative">
+                        <Col lg={6} className="authImage d-none d-lg-flex position-relative">
                             <img src={AuthImg} alt="authImage" />
                         </Col>
                     </Row>

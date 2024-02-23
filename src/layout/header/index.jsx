@@ -165,6 +165,7 @@ export const AdminHeader = (props) => {
         show={showModal}
         close={() => setShowModal(false)}
         action={handleLogout}
+        heading="Logout"
         para="Are You Sure You Want To Logout?"
         showYesNoButtons={showYesButton || showNoButton}
       />

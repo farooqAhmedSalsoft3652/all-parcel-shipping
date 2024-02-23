@@ -275,7 +275,7 @@ const OrdersLogs = () => {
                                   <Dropdown.Menu>
                                     <Dropdown.Item
                                       as={Link}
-                                      to={`/orders-logs/details/${item?.id}`}
+                                      to={`/admin/orders-logs/details/${item?.id}`}
                                     >
                                       <FontAwesomeIcon icon={faEye} />
                                       View

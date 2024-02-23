@@ -16,7 +16,7 @@ import {queryObjectData} from "@config/data";
 
 
 const QueryManagement = () => {
-  usePageTitle("Interest Management");
+  usePageTitle("Query Management");
   const navigate = useNavigate();
 
   const querytHeader = [
@@ -220,13 +220,6 @@ const QueryManagement = () => {
                                     </Dropdown.Item>
                                   </Dropdown.Menu>
                                 </Dropdown>
-
-                                {/* <Link
-                                  to={`/admin/mentor-management/details/${item.id}`}
-                                  className="tableAction fw-bold view text-decoration-underline"
-                                >
-                                  <FontAwesomeIcon icon={faEye} />
-                                </Link> */}
                               </td>
                             </tr>
                           )))}

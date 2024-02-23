@@ -1,14 +1,34 @@
-.h-short {
-    padding: 8px 20px;
+.feedback-header{
+    background-color: #0DC1F9;
 }
-.request_list {
-    background: white;
-    border-radius: 99px;
-    display: inline-block;
-    text-align: center;
-    width: 25px;
-    height: 25px;
-    line-height: 25px;
-    color: #00DB48;
-    margin-left: 1.3rem;
+.feedback-header h3{
+    font-size: 28px;
+    line-height: 1.1;
+}
+.feedback-body{
+    border: 1px solid #DEDEDE;
+    border-top: 0px;
+}
+.detail-block h4{
+    font-size: 27px;
+    line-height: 1;
+}
+.repo-status{
+    font-size: 22px;
+    color: #333333;
+}
+.repo-status span{
+    font-size:20px;
+    color: #ff0000;
+}
+@media(max-width:1199px){
+    .feedback-header h3 {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 767px){
+    .feedback-header h3 {
+        font-size: 24px;
+    }
 }

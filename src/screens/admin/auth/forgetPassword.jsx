@@ -44,7 +44,7 @@ const AdminForgetPassword = () => {
                 <CustomInput label='Email Address' required id='userEmail' type='email' placeholder='Enter Your Email Address' labelClass='mainLabel' inputClass='mainInput' onChange={(event) => {
                     setFormData({ ...formData, email: event.target.value })
                 }} />
-                <div className="mt-4 text-center">
+                <div className="mt-5 text-center">
                     <SiteButton type='submit' className="site-btn w-100" load={load}>Continue</SiteButton>
                 </div>
             </Form>

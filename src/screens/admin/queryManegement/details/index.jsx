@@ -8,6 +8,7 @@ import BackButton from "@components/backButton";
 import axios from "axios";
 import {queryObjectData} from "@config/data";
 import SiteButton from "@components/Button/button";
+import CustomModal from "@components/customModal";
 
 const QueryDetails = () => {
   usePageTitle("View Query");
@@ -15,13 +16,14 @@ const QueryDetails = () => {
   const [detailData, setDetailData] = useState({});
   const [load, setLoad] = useState(true);
 
+  const [queryModal, setQueryModal] = useState(false);
+
 
   const loadQueryDetail = async () => {
     setLoad(true);
     let data = await axios.get(`/queries/${id}`)
     .then(response => {
       // setDetailData(response.data.data);
-      //setDetailData(queryObjectData);
       setLoad(false);
     })
     .catch(err => {
@@ -40,7 +42,7 @@ const QueryDetails = () => {
     if (filteredData) {
       setDetailData(filteredData);
     }
-  }, [queryObjectData, id]);
+  }, []);
 
 
   return (
@@ -77,7 +79,7 @@ const QueryDetails = () => {
                       <Col xs={12} className="mt-4 mt-md-4 mt-xxl-5">
                         <h5 className="fw-medium mb-1 mb-md-2">User Type:</h5>
                         <p className="">
-                          {detailData.userType}
+                          {detailData.userype}
                         </p>
                       </Col>
                       <Col xs={12} className="mt-4 mt-md-4 mt-xxl-5">
@@ -99,12 +101,13 @@ const QueryDetails = () => {
                         </p>
                       </Col>
                       <Col xs={12} className="mt-4 mt-md-4 mt-xxl-5">
-                      <label for="first_name" class="mainLabel bold ms-0 mt-0"> Your  Response<span class="text-danger">*</span></label>
+                      <label for="first_name" class="mainLabel bold mt-0"> Your  Response<span class="text-danger">*</span></label>
                       <textarea name="reason" id="reason" rows="8" className='mainInput mt-0' placeholder='Write Here....' required />
                       <SiteButton
                         className="site-btn me-2 mt-5"
                         type="submit"
                         load={load}
+                        onClick={()=> setQueryModal(true)}
                         >Send</SiteButton>
                       </Col>
                     </Row>
@@ -113,10 +116,20 @@ const QueryDetails = () => {
                 </Row>
               </div>
             </div>
-            
           </div>
         </Container>
       </DashboardLayout>
+
+      <CustomModal
+        show={queryModal}
+        close={() => setQueryModal(false)}
+        onClickOk={() => setQueryModal(false)}
+        heading="System Message"
+        para="Your Response has been Sent to User!"
+        buttonText="Okay"
+        success={true}
+
+      />
     </>
   );
 };
