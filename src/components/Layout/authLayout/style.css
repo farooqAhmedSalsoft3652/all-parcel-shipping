@@ -136,6 +136,9 @@
     background: var(--bs-white);
     border-radius: 7px !important;
 }
+.userDropdown .dropdown-menu{
+    min-width: 14rem;
+}
 .notiDropdown .dropdown-menu {
     min-width: 20rem;
     border: none !important;

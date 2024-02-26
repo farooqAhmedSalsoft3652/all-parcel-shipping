@@ -178,13 +178,13 @@
     color: #333;
     font-weight: 400;
     display: block;
-    padding: 0.5rem 0.5rem;
+    padding: 10px 5px 13px 5px;
     transition: 0.3s linear;
-   
 }
 
 .userMenuItem:hover {
-    color: var(--primaryColor);
+    color: #00AD5B;
+    text-decoration: none;
 }
 .notiDropdown span.badge {
     background: #0072CF;
@@ -345,7 +345,8 @@ header a{
     z-index: -1;
 }
 .userMenuItem:hover {
-    color: var(--primary-color)!important;
+    color: #00AD5B;
+    text-decoration: none;
 }
 .fa-square-facebook{ color: #4B6CA4;}
 .fa-square-instagram{ color: #6D6CB0;}

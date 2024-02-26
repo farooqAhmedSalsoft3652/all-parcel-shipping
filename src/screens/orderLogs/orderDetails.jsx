@@ -362,10 +362,10 @@ const OrderDetails = () => {
                     <>
                     
                      <Row>
-                    <Col xs={12} className="mt-4 mt-md-4 mt-xxl-5">
-                    <h5 className="mb-1 mb-md-2">Cancellation Reason</h5>
-                    <p className="">{data.pickupDetails.specialInstructions}</p>
-                  </Col>
+                      <Col xs={12} className="mt-4 mt-md-4 mt-xxl-5">
+                        <h5 className="mb-1 mb-md-2">Cancellation Reason</h5>
+                        <p className="">{data.pickupDetails.specialInstructions}</p>
+                      </Col>
                      </Row>
 
                     <Row>
@@ -415,6 +415,7 @@ const OrderDetails = () => {
       <CustomModal
         show={cancelModal}
         close={() => setCancelModal(false)}
+        heading="System Message"
         para="Your Pickup has been Cancelled!"
         success={true}
         onClickOk={() => setCancelModal(false)}
@@ -440,6 +441,7 @@ const OrderDetails = () => {
       <CustomModal
         show={sendReportModal}
         close={() => setSendReportModal(false)}
+        heading="System Message"
         para="Your Report has been Submitted!"
         success={true}
         onClickOk={() => setSendReportModal(false)}
@@ -465,6 +467,7 @@ const OrderDetails = () => {
       <CustomModal
         show={sendReportBooking}
         close={() => setSendReportBooking(false)}
+        heading="System Message"
         para="Your Report has been Submitted!"
         success={true}
         onClickOk={() => setSendReportBooking(false)}

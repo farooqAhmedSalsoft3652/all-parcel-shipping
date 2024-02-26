@@ -12,6 +12,7 @@ import CustomModal from "@components/customModal";
 import LoadingSpinner from "@components/loader";
 import axios from "axios";
 import { faEllipsisV } from "@fortawesome/free-solid-svg-icons";
+import {UserObjectData} from "@config/data";
 
 const UserManagement = () => {
   usePageTitle("User Management");
@@ -58,20 +59,6 @@ const UserManagement = () => {
       title: "Action",
     },
   ];
-  const sortingValues = [
-    {
-      value: "all",
-      text: "All",
-    },
-    {
-      value: "status",
-      text: "Status",
-    },
-    {
-      value: "registered",
-      text: "Registered Date",
-    },
-  ];
 
   const [userData, setUserData] = useState([]);
   const [activityStatus, setActivityStatus] = useState("");
@@ -88,6 +75,7 @@ const UserManagement = () => {
   const [showModal4, setShowModal4] = useState(false);
   const [showYesButton, setShowYesButton] = useState(true);
   const [showNoButton, setShowNoButton] = useState(true);
+  
 
 
   const loadMenteeData = async () => {
@@ -105,7 +93,9 @@ const UserManagement = () => {
         let records_per_page = response.data.data.meta.per_page;
         let total_pages      = Math.ceil(total_records / records_per_page);
         
-        setUserData(response.data.data.data);
+        setUserData(UserObjectData);
+        // setUserData(response.data.data.data);
+        console.log(userData)
         setCurrentPage(response.data.data.meta.current_page);
         setTotalRecords(total_records);
         setTotalPages(total_pages);
@@ -244,7 +234,7 @@ const UserManagement = () => {
                                 <Dropdown.Menu>
                                   <Dropdown.Item
                                     as={Link}
-                                    to={`/order-logs/details/${item?.id}`}
+                                    to={`/admin/user-management/details/${item?.id}`}
                                   >
                                     <FontAwesomeIcon icon={faEye} />
                                     View

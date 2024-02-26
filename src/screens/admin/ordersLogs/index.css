@@ -1,12 +1,12 @@
-.m-w-tab {
-    max-width: 600px;
+.detail-block .status-tag{
+    font-size: 22px;
+    color: #333333;
 }
-@media screen and (max-width: 768px) {
-  
-    .m-w-tab.nav-tabs .nav-link {
-        font-size: 14px;
-    }
-    .m-w-tab {
-        max-width: 493px;
-    }
+.detail-block .status-tag span{
+    font-size:20px;
+}
+.detail-block .status-tag span.cancell-by{
+    font-size: 16px;
+    margin-left: 10px;
+    font-weight: 300;
 }

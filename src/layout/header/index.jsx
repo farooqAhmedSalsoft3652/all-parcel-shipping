@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell, faUser, faBars, faEllipsisV, faSignOut } from "@fortawesome/free-solid-svg-icons";
 import { logo } from "../../assets/images";
 import { SERVER_URL } from "../../config/data";
+import {userAvatar} from "../../assets/images";
 import CustomModal from "../../components/customModal";
 import SiteButton from "../../components/Button/button";
 import useAuth from "../../Hooks/useAuth";
@@ -57,7 +58,7 @@ export const AdminHeader = (props) => {
           <Link to={"/admin/dashboard"} className="siteLogo order-2 order-lg-1">
             <img src={logo} alt="Logo" className="img-fluid" />
           </Link>
-          <Navbar.Toggle className="order-4 order-lg-2 notButton">
+          <Navbar.Toggle className="order-4 order-lg-2 menu-toggle notButton">
             <FontAwesomeIcon className="bell-icon " icon={faEllipsisV} />
           </Navbar.Toggle>
           <Navbar.Collapse
@@ -72,7 +73,7 @@ export const AdminHeader = (props) => {
                 >
                   <FontAwesomeIcon className="bellIcon" icon={faBell} />
                   {/* <span className="badge">9+</span> */}
-                  {(notifications.length > 0) && (<span className="position-absolute top-0 start-90 translate-middle p-1 bg-danger border border-light rounded-circle"></span>)}
+                  {(notifications.length > 0) && (<span className="position-absolute top-0 start-90 translate-middle p-1  rounded-circle"></span>)}
                 </Dropdown.Toggle>
                 <Dropdown.Menu className="notiMenu" align="end">
                   <div className="notificationsBody">
@@ -125,12 +126,13 @@ export const AdminHeader = (props) => {
               <Dropdown className="userDropdown">
                 <Dropdown.Toggle
                   variant="transparent"
-                  className="notButton toggleButton "
+                  className="notButton toggleButton  pb-0"
                 >
                   <div className="userImage">
-                    <img src={SERVER_URL + profile.avatar} alt={true.toString()} className="img-fluid me-2 rounded-circle" />
+                    <img src={userAvatar} alt={true.toString()} className="img-fluid me-2 rounded-circle" />
+                    {/* <img src={SERVER_URL + profile.avatar} alt={true.toString()} className="img-fluid me-2 rounded-circle" /> */}
                   </div>
-                  <span className="me-2">{ profile.first_name + " " + profile.last_name }</span>
+                  <span className="me-3 user-name">{ profile.first_name + " " + profile.last_name }</span>
                 </Dropdown.Toggle>
                 <Dropdown.Menu className="userMenu" align="end">
                   <Link className="userMenuItem" to={"/admin/my-profile"}>
@@ -151,7 +153,7 @@ export const AdminHeader = (props) => {
               </Dropdown>
             </Nav>
           </Navbar.Collapse>
-          <SiteButton className="notButton ms-md-2 order-lg-4 order-md-4 order-1">
+          <SiteButton className="notButton menu-toggle ms-md-2 order-lg-4 order-md-4 order-1 d-lg-none">
             <FontAwesomeIcon
               className="bell-icon"
               onClick={props.sidebarToggle}

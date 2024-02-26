@@ -16,6 +16,7 @@
     display: flex;
     gap: 1rem;
     flex-grow: 1;
+    align-items: center
 }
 
 .statsImg {
@@ -65,6 +66,31 @@
 }
 .greenColor{
     color: #42C900;
+}
+@media screen and (max-width:1666px) {
+    .statsImg img{
+        max-width: 110px;
+    }
+    .graph-icon img{
+        max-width: 120px;
+    }
+    .statsText{
+        font-size: 18px;
+    }
+}
+@media screen and (max-width:1399px) {
+    .statsCard {
+        padding: 1.5rem 1.5rem;
+    }
+    .statsText {
+        font-size: 16px;
+    }
+    .statsImg img {
+        max-width: 90px;
+    }
+    .graph-icon img{
+        max-width: 100px;
+    }
 }
 @media screen and (max-width:767px) {
     .statsCard-border {

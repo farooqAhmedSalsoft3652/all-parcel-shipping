@@ -9,55 +9,15 @@ import usePageTitle from "@hooks/usePageTitle";
 import UseTableControls from "@config/useTableControls";
 import CustomTable from "@components/CustomTable";
 import BackButton from "@components/backButton";
+import CustomModal from "@components/customModal";
 import axios from "axios";
 import LoadingSpinner from "@components/loader/index";
+import {UserObjectData} from "@config/data";
+import SiteButton from "@components/Button/button";
 
 const MenteeDetail = () => {
-  usePageTitle("Mentee Detail");
-  const mentorshipHeader = [
-    {
-      key: "id",
-      title: "S.no",
-    },    
-    {
-      key: "name",
-      title: "Mentor Name",
-    },
-    {
-      key: "RequestID",
-      title: "Request ID",
-    },
-    {
-      key: "RequestDate",
-      title: "Request Date",
-    },
-    {
-      key: "RequestAmount",
-      title: "Request Amount",
-    },
-    {
-      key: "RequestStatus",
-      title: "Request Status",
-    },
-    {
-      key: "actions",
-      title: "Actions",
-    },
-  ];
-  const sortingValues = [
-    {
-      value: "all",
-      text: "All",
-    },
-    {
-      value: "status",
-      text: "Status",
-    },
-    {
-      value: "registered",
-      text: "Registered Date",
-    },
-  ];
+  usePageTitle("User Details");
+
   const {
     filterSort,
     filterSortValue,
@@ -74,26 +34,42 @@ const MenteeDetail = () => {
   } = UseTableControls();
 
   const { id } = useParams();
-  const [mentorshipRequests, setMentorshipRequests] = useState([]);
-  const [menteeDetail, setMenteeDetail] = useState({});
+  const [detailData, setDetailData] = useState({});
   const [load, setLoad] = useState(true);
 
-  const loadMenteeDetail = async () => {
-    let data = await axios.get(`mentee-management/${id}`)
-      .then(response => {
-        setMenteeDetail(response.data.data);
-        setMentorshipRequests(response.data.data.mentorship_reqs);
-        setLoad(false);
-      })
-      .catch(err => {
-        console.error(err.response.data.message);
-        setLoad(false);
-      });
-  }
+  const [cancellModal, setCancelModal] = useState(false)
+  const [reasonModal, setReasonModal] = useState(false) 
+  const [cancellConfirm, setCancellConfirm] = useState(false) 
+
+  // const loadMenteeDetail = async () => {
+  //   let data = await axios.get(`mentee-management/${id}`)
+  //     .then(response => {
+  //       setMenteeDetail(response.data.data);
+  //       setMentorshipRequests(response.data.data.mentorship_reqs);
+  //       setLoad(false);
+  //     })
+  //     .catch(err => {
+  //       console.error(err.response.data.message);
+  //       setLoad(false);
+  //     });
+  // }
+
+  // useEffect(() => {
+  //  loadMenteeDetail();
+  // }, [id]);
 
   useEffect(() => {
-   loadMenteeDetail();
-  }, [id]);
+    const filteredData = UserObjectData.find((item) => id == item.id);
+    // console.log(filteredData, "text");
+    if (filteredData) {
+      setDetailData(filteredData);
+    }
+  }, []);
+  
+
+  const cancellOrder = () => {
+    setCancelModal(true)
+  }
 
   function getStatusColorClass(status) {
     switch (status) {
@@ -115,211 +91,332 @@ const MenteeDetail = () => {
   return (
     <>
       <DashboardLayout>
-        <Container fluid>
-          <Row>
-            <div
-              className="dashCard position-relative"
-              style={{ minHeight: "auto" }}
-            >
-              <Col xs={12} md={11} className="m-auto">
-                <Row className="my-5">
-                  <Col lg={6} xs={12}>
-                    <div>
-                      <h3>
-                        <BackButton />
-                        Mentee Profile
-                      </h3>
-                    </div>
-                  </Col>
-                  {!load && (
-                    <Col lg={6} xs={12}>
-                      <div
-                        className={`statusMain position ${
-                          menteeDetail.status === "active"
-                            ? "green-bg"
-                            : "red-bg"
-                        }`}
-                      >
-                        <span className="fw-bold">Status:</span>
-                        <span
-                          className={`statusBadge ps-3 text-capitalize ${menteeDetail.status}`}
-                        >
-                          {menteeDetail.status}
-                        </span>
-                      </div>
-                    </Col>
-                  )}
-                </Row>
-                <Row className="pb-5">
-                  {load ? (
-                    <LoadingSpinner />
-                  ) : (
-                    <Col xs={12}>
-                      <div className="d-xl-flex">
-                        <div
-                          className="flex-shrink-0"
-                          style={{ width: "200px", height: "200px" }}
-                        >
-                          <img
-                            className="img-fluid profile-img"
-                            src={SERVER_URL + menteeDetail.avatar}
-                            alt="mentee-profile-image"
-                            style={{
-                              width: "100%",
-                              height: "100%",
-                              objectFit: "contain",
-                            }}
-                          />
-                        </div>
-                        <div className="flex-grow-1 ms-xl-4 mt-4 mt-xl-0">
-                          <Row className="">
-                            <Col lg={4} xs={12}>
-                              <div>
-                                <label className="xl-grey-color p-xs profile_label">
-                                  User Name
-                                </label>
-                                <p className="fw-bold mt-1 label-text">
-                                  {menteeDetail.full_name}
-                                </p>
-                              </div>
-                            </Col>
-                            <Col lg={4} xs={12}>
-                              <div>
-                                <label className="xl-grey-color p-xs profile_label">
-                                  Email Address
-                                </label>
-                                <p className="fw-bold mt-1 label-text">
-                                  {menteeDetail.email}
-                                </p>
-                              </div>
-                            </Col>
-                            <Col lg={4} xs={12}>
-                              <div>
-                                <label className="xl-grey-color p-xs profile_label">
-                                  Phone Number
-                                </label>
-                                <p className="fw-bold mt-1 label-text">
-                                  {menteeDetail.phone_number}
-                                </p>
-                              </div>
-                            </Col>
-                            <Col lg={12}>
-                              <div>
-                                <label className="xl-grey-color p-xs profile_label">
-                                  Area Of Interest
-                                </label>
-                                <p className="fw-bold mt-1 label-text">
-                                  {menteeDetail.interests?.length > 0 ? (
-                                    menteeDetail.interests.map((item, index) =>
-                                      index + 1 ===
-                                      menteeDetail.interests.length ? (
-                                        <>{item.interests}</>
-                                      ) : (
-                                        <>{item.interests}, </>
-                                      )
-                                    )
-                                  ) : (
-                                    <>none</>
-                                  )}
-                                </p>
-                              </div>
-                              <div>
-                                <label className="xl-grey-color p-xs profile_label">
-                                  About Yourself
-                                </label>
-                                <p className="fw-bold mt-1 label-text">
-                                  {menteeDetail.about_yourself}
-                                </p>
-                              </div>
-                            </Col>
-                          </Row>
-                        </div>
-                      </div>
-                    </Col>
-                  )}
-                </Row>
-              </Col>
-            </div>
-          </Row>
-          {!load && (
-            <Row className="py-3">
-              <div className="dashCard">
-                <Col xs={12} md={11} className="m-auto">
-                  <Row>
-                    <Col xs={12}>
-                      <div className="my-5">
-                        <h3>Mentorship Request</h3>
-                      </div>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col xs={12}>
-                      <CustomTable
-                        headers={mentorshipHeader}
-                        // filterSort={true}
-                        // filterSortValue={filterSortValue}
-                        // setFilterSortValue={setFilterSortValue}
-                        // filterSortValues={sortingValues}
-                        // filterSearch={true}
-                        // filterSearchValue={filterSearchValue}
-                        // setFilterSearchValue={setFilterSearchValue}
+      <Container fluid>
+        <div className="dashCard ">
+          <div className="bg-white detail-block rounded-10 shadow-sm p-5 p-lg-5 p-xxl-5">
+            <div class="mainTitle mb-0 mb-4 mb-lg-5">
+              <div className="d-flex justify-content-between">
+                <div className="d-flex align-items-center gap-2">
+                  <BackButton />
+                  <h2 className="text-black fw-medium">Order Details</h2>
+                </div>
+                <div className={`status-tag fw-medium align-self-center`}>Status: 
+                  <span className={`status-tag ms-2 ${
+                  detailData.status === "completed"
+                    ? "text-green"
+                    : detailData.status === "pending"
+                    ? "text-blue"
+                    : detailData.status === "cancelled"
+                    ? "text-red"
+                    : ""
+                }`}>
+                  {detailData.status === "completed"
+                    ? "Completed"
+                    : detailData.status === "cancelled"
+                    ? "Cancelled"
+                    : detailData.status === "pending"
+                    ? "Pending"
+                    : ""}
 
-                        renderEntries={false}
-                        paginateRecords={false}
-                        dateFilter={true}
-                        // filterFrom={filterFrom}
-                        // setFilterFrom={setFilterFrom}
-                        // filterTo={filterTo}
-                        // setFilterTo={setFilterTo}
-                      >
-                        <tbody>
-                          {mentorshipRequests
-                            .toReversed()
-                            .map((item, index) => (
-                              <tr key={index}>
-                                <td>{index + 1}</td>
-                                <td>
-                                  <div className="d-flex justify-content-start">
-                                    <img
-                                      className="ad_poster_img me-2"
-                                      src={SERVER_URL + item.mentor_avatar}
-                                      alt={true.toString()}
-                                    />
-                                    <p className="flex-grow-1 align-self-center text-start mb-0">
-                                      {item.mentor_name}
-                                    </p>
-                                  </div>
-                                </td>
-                                <td>#{item.id}</td>
-                                <td>{item.request_date}</td>
-                                <td>${item.request_amount}</td>
-                                <td
-                                  className={`status-cell text-capitalize ${getStatusColorClass(
-                                    item.request_status
-                                  )}`}
-                                >
-                                  {item.request_status}
-                                </td>
-                                <td>
-                                  <Link
-                                    to={`/admin/mentorship-request/details/${item.id}`}
-                                    className="tableAction view text-decoration-underline"
-                                  >
-                                    <FontAwesomeIcon icon={faEye} />
-                                  </Link>
-                                </td>
-                              </tr>
-                            ))}
-                        </tbody>
-                      </CustomTable>
-                    </Col>
-                  </Row>
-                </Col>
+                    {detailData.status === "cancelled" && (
+                      <span className="cancell-by">
+                      (By user)
+                      </span>
+                    ) }
+
+                  </span>
+                </div>
               </div>
+            </div>
+            <Row>
+              <Col xs={12} md={6} xl={4} className="mb-4 mb-md-4 mb-xxl-5">
+                <h5 className="fw-medium mb-1 mb-md-2">First Name:</h5>
+                <p className="">
+                  {detailData.name}
+                </p>
+              </Col>
+              <Col xs={12} md={6} xl={4} className="mb-4 mb-md-4 mb-xxl-5">
+                <h5 className="fw-medium mb-1 mb-md-2">Contact Number:</h5>
+                <p className="">
+                  {detailData.phoneNo}
+                </p>
+              </Col>
+              <Col xs={12} md={6} xl={4} className="mb-4 mb-md-4 mb-xxl-5">
+                <h5 className="fw-medium mb-1 mb-md-2">Email Address</h5>
+                <p className="">
+                  {detailData.email}
+                </p>
+              </Col>
             </Row>
+          </div>
+          <div className="bg-white rounded-10 shadow-sm p-5 p-lg-5 p-xxl-5 detail-block mt-5">
+            <Row>
+              <Col xs={12}  class="mb-lg-3 mb-xl-0 d-lg-flex justify-content-between">
+                <h4 class="fw-bold text-black mb-0">Current Order Details:</h4>
+                <div className={`status-tag fw-medium align-self-center`}>Status: 
+                  <span className={`status-tag ms-2 ${
+                  detailData.status === "completed"
+                    ? "text-green"
+                    : detailData.status === "pending"
+                    ? "text-blue"
+                    : detailData.status === "cancelled"
+                    ? "text-red"
+                    : ""
+                }`}>
+                  {detailData.status === "completed"
+                    ? "Completed"
+                    : detailData.status === "cancelled"
+                    ? "Cancelled"
+                    : detailData.status === "pending"
+                    ? "Pending"
+                    : ""}
+
+                    {detailData.status === "cancelled" && (
+                      <span className="cancell-by">
+                      (By user)
+                      </span>
+                    ) }
+
+                  </span>
+                </div>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={12} md={6} lg={6} xl={4} xxl={3} className="my-4 my-md-4 my-xxl-5">
+                <h5 className="fw-medium mb-1 mb-md-2">Tracking Number:</h5>
+                <p className="">
+                  {detailData.trackingNo}
+                </p>
+              </Col>
+              <Col xs={12} md={6} lg={6} xl={4} xxl={3} className="my-4 my-md-4 my-xxl-5">
+                <h5 className="fw-medium mb-1 mb-md-2">Order No:</h5>
+                <p className="">
+                  {detailData.orderNo}
+                </p>
+              </Col>
+              <Col xs={12} md={6} lg={6} xl={4} xxl={3} className="my-4 my-md-4 my-xxl-5">
+                <h5 className="fw-medium mb-1 mb-md-2">Shipping Carrier:</h5>
+                <p className="">
+                  {detailData.shippingCarrier}
+                </p>
+              </Col>
+              <Col xs={12} md={6} lg={6} xl={4} xxl={3} className="my-4 my-md-4 my-xxl-5">
+                <h5 className="fw-medium mb-1 mb-md-2">Total Price:</h5>
+                <p className="">
+                  {detailData.totalPrice}
+                </p>
+              </Col>
+              <Col xs={12} md={6} lg={6} xl={4} xxl={3} className="my-4 my-md-4 my-xxl-5">
+                <h5 className="fw-medium mb-1 mb-md-2">No. of Parcels:</h5>
+                <p className="">
+                  {detailData.noParcels}
+                </p>
+              </Col>
+              <Col xs={12} md={6} lg={6} xl={4} xxl={3} className="my-4 my-md-4 my-xxl-5">
+                <h5 className="fw-medium mb-1 mb-md-2">Pick Up Generated:</h5>
+                <p className="">
+                  {detailData.pickUpGenerated}
+                </p>
+              </Col>
+              <Col xs={12} md={6} lg={6} xl={4} xxl={3} className="my-4 my-md-4 my-xxl-5">
+                <h5 className="fw-medium mb-1 mb-md-2">Estimated Delivery Date:</h5>
+                <p className="">
+                  {detailData.estimatedDeliveryDate}
+                </p>
+              </Col>
+              <Col xs={12} md={6} lg={6} xl={4} xxl={3} className="my-4 my-md-4 my-xxl-5">
+                <h5 className="fw-medium mb-1 mb-md-2">Delivery Type:</h5>
+                <p className="">
+                  {detailData.deliveryType}
+                </p>
+              </Col>
+            </Row>
+          </div>
+          {detailData.pickupDetails && (
+            <div className="bg-white rounded-10 shadow-sm p-5 p-lg-5 p-xxl-5 detail-block mt-5">
+            <Row>
+              <Col xs={12} className="mb-lg-3 mb-xl-0">
+                <h4 className="fw-bold text-black">Pickup Details:</h4>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={12} md={6} lg={6} xl={4} xxl={3} className="my-4 my-md-4 my-xxl-5">
+                <h5 className="fw-medium mb-0 mb-md-1">User Contact No:</h5>
+                <p className="">{detailData.pickupDetails.yourContactNo}</p>
+              </Col>
+              <Col xs={12} md={6} lg={6} xl={4} xxl={3} className="my-4 my-md-4 my-xxl-5">
+                <h5 className="fw-medium mb-0 mb-md-1">Account No:</h5>
+                <p className="">
+                  {detailData.pickupDetails.accountNo}
+                </p>
+              </Col>
+              <Col xs={12} md={6} lg={6} xl={4} xxl={3} className="my-4 my-md-4 my-xxl-5">
+                <h5 className="fw-medium mb-0 mb-md-1">Name:</h5>
+                <p className="">
+                  {detailData.pickupDetails.name}
+                </p>
+              </Col>
+              <Col xs={12} md={6} lg={6} xl={4} xxl={3} className="my-4 my-md-4 my-xxl-5">
+                <h5 className="fw-medium mb-0 mb-md-1">Address Line 1:</h5>
+                <p className="">
+                  {detailData.pickupDetails.addressLine1}
+                </p>
+              </Col>
+              <Col xs={12} md={6} lg={6} xl={4} xxl={3} className="my-4 my-md-4 my-xxl-5">
+                <h5 className="fw-medium mb-0 mb-md-1">Address Line 2:</h5>
+                <p className="">
+                  {detailData.pickupDetails.addressLine2}
+                </p>
+              </Col>
+              <Col xs={12} md={6} lg={6} xl={4} xxl={3} className="my-4 my-md-4 my-xxl-5">
+                <h5 className="fw-medium mb-0 mb-md-1">City:</h5>
+                <p className="">
+                  {detailData.pickupDetails.city}
+                </p>
+              </Col>
+              <Col xs={12} md={6} lg={6} xl={4} xxl={3} className="my-4 my-md-4 my-xxl-5">
+                <h5 className="fw-medium mb-0 mb-md-1">State:</h5>
+                <p className="">
+                  {detailData.pickupDetails.state}
+                </p>
+              </Col>
+              <Col xs={12} md={6} lg={6} xl={4} xxl={3} className="my-4 my-md-4 my-xxl-5">
+                <h5 className="fw-medium mb-0 mb-md-1">Zip Code:</h5>
+                <p className="">
+                  {detailData.pickupDetails.zipCode}
+                </p>
+              </Col>
+              <Col xs={12} md={6} lg={6} xl={4} xxl={3} className="my-4 my-md-4 my-xxl-5">
+                <h5 className="fw-medium mb-0 mb-md-1">Estimated Pickup Time:</h5>
+                <p className="">
+                  {detailData.pickupDetails.earliestPickupTime}
+                </p>
+              </Col>
+              <Col xs={12} md={6} lg={6} xl={4} xxl={3} className="my-4 my-md-4 my-xxl-5">
+                <h5 className="fw-medium mb-0 mb-md-1">Maximum Pickup Time:</h5>
+                <p className="">
+                  {detailData.pickupDetails.latestPickupTime}
+                </p>
+              </Col>
+              </Row>
+              <Row>
+              <Col xs={12} lg={10} xl={8} xxl={6} className="my-4 my-md-4 my-xxl-5">
+                <h5 className="fw-medium mb-0 mb-md-1">Special Instructions:</h5>
+                <p className="">
+                  {detailData.pickupDetails.specialInstructions}
+                </p>
+              </Col>
+            </Row>
+          </div>
+          ) }
+          {detailData.dropoffDetails && (
+            <div className="bg-white rounded-10 shadow-sm p-5 p-lg-5 p-xxl-5 detail-block mt-5">
+              <Row>
+                <Col xs={12} className="mb-lg-3 mb-xl-0">
+                  <h4 className="fw-bold text-black">Dropoff Details:</h4>
+                </Col>
+              </Row>
+              <Row>
+                <Col xs={12} md={6} lg={6} xl={4} xxl={3} className="my-4 my-md-4 my-xxl-5">
+                  <h5 className="fw-medium mb-0 mb-md-1">Contact No. of Receiver:</h5>
+                  <p className="">
+                    {detailData.dropoffDetails.contactNoReceiver}
+                  </p>
+                </Col>
+                <Col xs={12} md={6} lg={6} xl={4} xxl={3} className="my-4 my-md-4 my-xxl-5">
+                  <h5 className="fw-medium mb-0 mb-md-1">Country:</h5>
+                  <p className="">
+                    {detailData.dropoffDetails.country}
+                  </p>
+                </Col>
+                <Col xs={12} md={6} lg={6} xl={4} xxl={3} className="my-4 my-md-4 my-xxl-5">
+                  <h5 className="fw-medium mb-0 mb-md-1">Name:</h5>
+                  <p className="">
+                    {detailData.dropoffDetails.name}
+                  </p>
+                </Col>
+                <Col xs={12} md={6} lg={6} xl={4} xxl={3} className="my-4 my-md-4 my-xxl-5">
+                  <h5 className="fw-medium mb-0 mb-md-1">Address Line 1:</h5>
+                  <p className="">
+                    {detailData.dropoffDetails.addressLine1}
+                  </p>
+                </Col>
+                <Col xs={12} md={6} lg={6} xl={4} xxl={3} className="my-4 my-md-4 my-xxl-5">
+                  <h5 className="fw-medium mb-0 mb-md-1">Address Line 2:</h5>
+                  <p className="">
+                    {detailData.dropoffDetails.addressLine2}
+                  </p>
+                </Col>
+                <Col xs={12} md={6} lg={6} xl={4} xxl={3} className="my-4 my-md-4 my-xxl-5">
+                  <h5 className="fw-medium mb-0 mb-md-1">City:</h5>
+                  <p className="">
+                    {detailData.dropoffDetails.city}
+                  </p>
+                </Col>
+                <Col xs={12} md={6} lg={6} xl={4} xxl={3} className="my-4 my-md-4 my-xxl-5">
+                  <h5 className="fw-medium mb-0 mb-md-1">State:</h5>
+                  <p className="">
+                    {detailData.dropoffDetails.state}
+                  </p>
+                </Col>
+                <Col xs={12} md={6} lg={6} xl={4} xxl={3} className="my-4 my-md-4 my-xxl-5">
+                  <h5 className="fw-medium mb-0 mb-md-1">Zip Code:</h5>
+                  <p className="">
+                    {detailData.dropoffDetails.zipCode}
+                  </p>
+                </Col>
+              </Row>
+              <Row>
+                <Col xs={12} md={6} lg={6} xl={6} xxl={6} className="my-4 my-md-4 my-xxl-5">
+                  <h5 className="fw-medium mb-0 mb-md-1">Estimated Delivery Time:</h5>
+                  <p className="">
+                    {detailData.dropoffDetails.estimatedDeliveryTime}
+                  </p>
+                </Col>
+              </Row>
+              <Row>
+                <Col xs={12} lg={10} xl={8} xxl={6} className="my-4 my-md-4 my-xxl-5">
+                  <h5 className="fw-medium mb-0 mb-md-1">Special Instructions:</h5>
+                  <p className="">
+                    {detailData.dropoffDetails.specialInstructions}
+                  </p>
+                </Col>
+              </Row>
+            </div>
           )}
-        </Container>
-      </DashboardLayout>
+        </div>
+      </Container>
+    </DashboardLayout>
+      <CustomModal
+        show={cancellModal}
+        close={() => setCancelModal(false)}
+        heading="System Message"
+        para="Are You Sure You Want to Cancel Order?"
+        showYesNoButtons={true}
+        action={()=> {setCancelModal(false); setReasonModal(true)}}
+      />
+      
+
+
+
+      <CustomModal
+        show={cancellModal}
+        close={() => setCancelModal(false)}
+        heading="System Message"
+        para="Are You Sure You Want to Cancel Order?"
+        showYesNoButtons={true}
+        action={()=> {setCancelModal(false); setReasonModal(true)}}
+      />
+
+      <CustomModal
+        show={cancellConfirm}
+        close={() => setCancellConfirm(false)}
+        heading="System Message"
+        para="This Order Has Been Cancelled!"
+        buttonText="Okay"
+        success={true}
+        onClickOk={() => setCancellConfirm(false)}
+      />
     </>
   );
 };
